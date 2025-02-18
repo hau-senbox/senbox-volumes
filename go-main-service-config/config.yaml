@@ -1,0 +1,54 @@
+config:
+  app:
+    name: 'Sen-App'
+    version: '1.0.0'
+
+  http:
+    port: '8001'
+
+  logger:
+    log_level: 'debug'
+    rollbar_env: 'gopher'
+
+  mysql:
+    host: 'go-main-service-db'
+    port: '3306'
+    user: 'sen_master'
+    password: '6Yw4rmmaDUkpZtdm'
+    database: 'sen_master_db'
+    max_conn: 10
+    max_idle_conn: 5
+    max_lifetime_conn: 1000000
+
+  environment: production
+
+  consul:
+    host: "consul" 
+    port: "8500"
+  
+  registry:
+    host: "192.0.2.5"
+    
+google_config:
+  user_credentials_file_path: 'credentials/google_service_account.json'
+  uploader_credentials_file_path: 'credentials/uploader_service_account.json'
+  scopes:
+    - 'https://spreadsheets.google.com/feeds'
+    - 'https://www.googleapis.com/auth/spreadsheets'
+  spreadsheet_id: '1L0cuLpeOoJlxYCBLcY_DCrDrDUoGSMXRIZvJQqLtg4E'
+  first_column: 'K'
+  first_row: 12
+
+authorize_encrypt_key: 'senbox-dev-secret-key'
+token_expire_duration_in_hour: 1000
+default_request_page_size: 12
+output_spreadsheet_url: 'https://docs.google.com/spreadsheets/d/1L0cuLpeOoJlxYCBLcY_DCrDrDUoGSMXRIZvJQqLtg4E/edit#gid=753138406'
+cron_job_interval: "@every 5m"
+default_cron_job_interval_in_minutes: 30
+smtp:
+  host: 'smtp.gmail.com'
+  port: 587
+  username: 'senboxapp@gmail.com'
+  password: 'rgkwxldypbhtoflb'
+messaging:
+  service_account: 'credentials/google_service_account.json'

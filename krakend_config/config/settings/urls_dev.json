@@ -1,0 +1,6 @@
+{
+    "go_main_service": "http://go-main-service:8001",
+    "go_main_service_dns": "go-main-service.service.consul",
+    "inventory_service": "http://inventory-service:8002",
+    "inventory_service_dns": "inventory-service.service.consul"
+}

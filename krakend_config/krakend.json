@@ -1,0 +1,52 @@
+{
+  "$schema": "https://www.krakend.io/schema/v3.json",
+  "version": 3,
+  "timeout": "10000ms",
+  "cache_ttl": "300s",
+  "extra_config": {
+    "telemetry/logging": {
+      "level": "INFO",
+      "prefix": "[KRAKEND]",
+      "syslog": false,
+      "stdout": true,
+      "format": "default"
+    },
+    "security/cors": {
+      "allow_origins": [
+        "*"
+      ],
+      "allow_methods": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "expose_headers": [
+        "Content-Length",
+        "Content-Type"
+      ],
+      "allow_headers": [
+        "Accept-Language"
+      ],
+      "max_age": "12h",
+      "allow_credentials": false,
+      "debug": false
+    },
+    "auth/api-keys": {
+      "strategy": "header",
+      "identifier": "X-Key",
+      "hash": "fnv128",
+      "salt": "mySalt",
+      "@hashed-with": "https://go.dev/play/p/hHksLLCUJy3",
+      "keys": [
+          {
+              "@key-plain": "5enB@x",
+              "key": "ae2ae7c06f03b2fcaebdd2b8b75b2a26",
+              "roles": ["all"],
+              "@description": "ACME Inc."
+          }
+      ]
+    }
+  },
+  "endpoints": []
+}

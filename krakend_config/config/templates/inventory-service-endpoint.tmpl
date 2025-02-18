@@ -1,0 +1,37 @@
+{{ define "InventorySerivecApiEndpoint" }}
+
+{{ $settings := . }}
+{{ $host := $settings.inventory_service }}
+{{ $sd_dns := $settings.inventory_service_dns }}
+
+{
+  "endpoint": "/user/",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/user/",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 1,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+}
+
+{{end}}

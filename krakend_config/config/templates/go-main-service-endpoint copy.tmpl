@@ -1,0 +1,2720 @@
+{{ define "GoMainSerivecApiEndpoint" }}
+
+{{ $settings := . }}
+{{ $host := $settings.go_main_service }}
+{{ $sd_dns := $settings.go_main_service_dns }}
+
+{
+  "endpoint": "/v1/admin/login",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/admin/login",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/users",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/admin/users",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/me/new-password",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "PUT",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/admin/me/new-password",
+      "extra_config": {
+        
+      },
+      "method": "PUT",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/user/create",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/admin/user/create",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/form/create",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/admin/form/create",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/form/list",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/admin/form/list",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/form/delete/:id",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "DELETE",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/admin/form/delete/:id",
+      "extra_config": {
+        
+      },
+      "method": "DELETE",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/forms/search",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/admin/forms/search",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/form/:id",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "PUT",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/admin/form/:id",
+      "extra_config": {
+        
+      },
+      "method": "PUT",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/forms/import",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/admin/forms/import",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/forms2/import",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/admin/forms2/import",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/forms3/import",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/admin/forms3/import",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/forms4/import",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/admin/forms4/import",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/forms/partially/import",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/admin/forms/partially/import",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/forms/signup",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/admin/forms/signup",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/device/message/:device_id",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/admin/device/message/:device_id",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/device/deactivate/:device_id",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "PUT",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/admin/device/deactivate/:device_id",
+      "extra_config": {
+        
+      },
+      "method": "PUT",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/device/activate/:device_id",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "PUT",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/admin/device/activate/:device_id",
+      "extra_config": {
+        
+      },
+      "method": "PUT",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/device/:device_id/update",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "PUT",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/admin/device/:device_id/update",
+      "extra_config": {
+        
+      },
+      "method": "PUT",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/device/:device_id/updatev2",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "PUT",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/admin/device/:device_id/updatev2",
+      "extra_config": {
+        
+      },
+      "method": "PUT",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/redirect-url/create",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/admin/redirect-url/create",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/redirect-url/list",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/admin/redirect-url/list",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/redirect-url/:id",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "DELETE",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/admin/redirect-url/:id",
+      "extra_config": {
+        
+      },
+      "method": "DELETE",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/redirect-url/:id",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "PUT",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/admin/redirect-url/:id",
+      "extra_config": {
+        
+      },
+      "method": "PUT",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/redirect-url/import",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/admin/redirect-url/import",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/redirect-url/import/partially",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/admin/redirect-url/import/partially",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/todo/import",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/admin/todo/import",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/todo/import/partially",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/admin/todo/import/partially",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/settings",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/settings",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/settings/output-sheet",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/settings/output-sheet",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/settings/output-summary",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/settings/output-summary",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/settings/sync-devices",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/settings/sync-devices",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/settings/email-history",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/settings/email-history",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/settings/output-template",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/settings/output-template",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/settings/output-template-teacher",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/settings/output-template-teacher",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/settings/sign-up-button-1",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/settings/sign-up-button-1",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/settings/sign-up-button-2",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/settings/sign-up-button-2",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/settings/sign-up-button-3",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/settings/sign-up-button-3",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/settings/sign-up-button-4",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/settings/sign-up-button-4",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/settings/sign-up-button-5",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/settings/sign-up-button-5",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/settings/sign-up-button-configuration",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/settings/sign-up-button-configuration",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/settings/registration-form",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/settings/registration-form",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/settings/registration-submission",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/settings/registration-submission",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/settings/registration-preset-2",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/settings/registration-preset-2",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/settings/registration-preset-1",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/settings/registration-preset-1",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/settings/api-distributer",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/settings/api-distributer",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/settings/code-counting-data",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/settings/code-counting-data",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/settings/label/name",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/settings/label/name",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/settings/logo-refresh-interval",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/settings/logo-refresh-interval",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/monitor/google-api",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/monitor/google-api",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/code-counting/list",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/code-counting/list",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/code-counting/update",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "PUT",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/code-counting/update",
+      "extra_config": {
+        
+      },
+      "method": "PUT",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/infra/backup",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/infra/backup",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/sync/start",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/sync/start",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/sync/stop",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/sync/stop",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/device-component-values/company/:company_id",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/device-component-values/company/:company_id",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/device-component-values/device/:company_id",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/device-component-values/device/:company_id",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/device-component-values/company",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/device-component-values/company",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/device-component-values/device",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/device-component-values/device",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/device/{device_id}",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/device/{device_id}",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/device/user/{user_id}",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/device/user/{user_id}",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/device/init",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/device/init",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/device/refresh-token",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/device/refresh-token",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/device/messaging/fcm/register",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/device/messaging/fcm/register",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/device/note",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "PUT",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/device/note",
+      "extra_config": {
+        
+      },
+      "method": "PUT",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/device/send/email",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/device/send/email",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/device/time-table",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/device/time-table",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/device/messages",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/device/messages",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/device/update-info",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "PUT",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/device/update-info",
+      "extra_config": {
+        
+      },
+      "method": "PUT",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/device/status/{device_id}",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/device/status/{device_id}",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/device/reserve",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/device/reserve",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/device/mode-l",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/device/mode-l",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/device/brand-logo",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/device/brand-logo",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/device/discover",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/device/discover",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/device/sign-up",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/device/sign-up",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/form/submit",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/form/submit",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/redirect-url",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/redirect-url",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/buttons/screen/{device_id}",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/buttons/screen/{device_id}",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/buttons/top",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/buttons/top",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/buttons/notification",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/buttons/notification",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/code-counting/reset",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "PUT",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/code-counting/reset",
+      "extra_config": {
+        
+      },
+      "method": "PUT",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/login",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/login",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/user/all",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/user/all",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/user/{id}",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/user/{id}",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/user/{id}/children",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/user/{id}/children",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/user/init",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/user/init",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/user/update",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/user/update",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/user-config/{id}",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/user-config/{id}",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/user-role/all",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/user-role/all",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/user-role/{id}",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/user-role/{id}",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/user-role/name/{role_name}",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/user-role/name/{role_name}",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/user-role/init",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/user-role/init",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/user-role",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/user-role",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/user-role/{id}",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "DELETE",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/user-role/{id}",
+      "extra_config": {
+        
+      },
+      "method": "DELETE",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/role-claim/all/{role_id}",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/role-claim/all/{role_id}",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/role-claim/{id}",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/role-claim/{id}",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/role-claim/name/{claim_name}",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/role-claim/name/{claim_name}",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/role-claim/init",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/role-claim/init",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/role-claim",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/role-claim",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/role-claim/{id}",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "DELETE",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/role-claim/{id}",
+      "extra_config": {
+        
+      },
+      "method": "DELETE",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/role-policy/{id}",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/role-policy/{id}",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/role-policy/name/{policy_name}",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/role-policy/name/{policy_name}",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/role-policy/init",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/role-policy/init",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/role-policy",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/role-policy",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/role-policy/{id}",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "DELETE",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/role-policy/{id}",
+      "extra_config": {
+        
+      },
+      "method": "DELETE",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/company/{id}",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/company/{id}",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/form",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/form",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/question/buttons",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/question/buttons",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/question/show-pics",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/question/show-pics",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/todo",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "GET",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/todo",
+      "extra_config": {
+        
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/todo",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/todo",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/todo/tasks",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "PUT",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/todo/tasks",
+      "extra_config": {
+        
+      },
+      "method": "PUT",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/todo/task/log",
+  "input_query_strings":[
+    "*"
+  ],
+  "method": "POST",
+  "extra_config": {},
+  "backend": [
+    {
+      "url_pattern": "/v1/todo/task/log",
+      "extra_config": {
+        
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+}
+
+{{end}}
