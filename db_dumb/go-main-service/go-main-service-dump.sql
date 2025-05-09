@@ -1,9 +1,9 @@
-/*!999999\- enable the sandbox mode */ 
--- MariaDB dump 10.19  Distrib 10.11.8-MariaDB, for debian-linux-gnu (x86_64)
+/*M!999999\- enable the sandbox mode */ 
+-- MariaDB dump 10.19-11.7.2-MariaDB, for osx10.19 (x86_64)
 --
 -- Host: localhost    Database: sen_master_db
 -- ------------------------------------------------------
--- Server version	11.5.2-MariaDB-ubu2404
+-- Server version	11.7.2-MariaDB-ubu2404
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -14,7 +14,7 @@
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+/*M!100616 SET @OLD_NOTE_VERBOSITY=@@NOTE_VERBOSITY, NOTE_VERBOSITY=0 */;
 
 --
 -- Table structure for table `s_app_key`
@@ -22,7 +22,7 @@
 
 DROP TABLE IF EXISTS `s_app_key`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `s_app_key` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `app_key` varchar(255) NOT NULL,
@@ -49,7 +49,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `s_code_counting`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `s_code_counting` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `created_at` datetime(3) DEFAULT current_timestamp(3),
@@ -77,7 +77,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `s_company`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `s_company` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `company_name` varchar(255) NOT NULL,
@@ -107,7 +107,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `s_device`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `s_device` (
   `id` varchar(36) NOT NULL,
   `device_name` varchar(255) NOT NULL DEFAULT '',
@@ -134,8 +134,6 @@ CREATE TABLE `s_device` (
 
 LOCK TABLES `s_device` WRITE;
 /*!40000 ALTER TABLE `s_device` DISABLE KEYS */;
-INSERT INTO `s_device` VALUES
-('5fb2394c02fb3939','Alihan (11)','back_office','scan','mode t','Message Alihan 1','','','',13,1,'2024-12-25 09:24:26.080','2025-02-14 02:28:10.343');
 /*!40000 ALTER TABLE `s_device` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -145,7 +143,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `s_device_component_values`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `s_device_component_values` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `company_id` bigint(20) DEFAULT NULL,
@@ -175,7 +173,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `s_device_form_dataset`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `s_device_form_dataset` (
   `id` varchar(255) NOT NULL,
   `device_id` varchar(36) NOT NULL,
@@ -228,7 +226,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `s_form`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `s_form` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `note` varchar(255) NOT NULL,
@@ -244,7 +242,7 @@ CREATE TABLE `s_form` (
   `updated_at` datetime(3) NOT NULL DEFAULT current_timestamp(3),
   PRIMARY KEY (`id`),
   UNIQUE KEY `uni_s_form_note` (`note`)
-) ENGINE=InnoDB AUTO_INCREMENT=167 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=182 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -278,7 +276,9 @@ INSERT INTO `s_form` VALUES
 (129,'SENBOX.ORG/[SIGNUP]:Sign Up 10','[SHOW]WORK-SBT Bài học','https://docs.google.com/spreadsheets/d/1UIgoJVfTCJp-Z2jKCsocoY2wfDXJYUZnEFoh1JXi1gQ/edit?gid=547891697#gid=547891697','1UIgoJVfTCJp-Z2jKCsocoY2wfDXJYUZnEFoh1JXi1gQ','',1,'Sign Up 10','general','on_submit','2025-01-03 03:21:35.307','2025-01-03 03:21:35.307'),
 (139,'SENBOX.ORG/SBT-[SBFS-0915]','[SHOW]BEHAVIOUR','https://docs.google.com/spreadsheets/d/1VlK9zrXK7FZa2IJnyrvvm0GV_12-MDLpULMTFy3n1WA/edit#gid=1450593836','1VlK9zrXK7FZa2IJnyrvvm0GV_12-MDLpULMTFy3n1WA','',1,'Questions','general','on_submit','2025-01-03 04:35:50.336','2025-01-03 04:35:50.336'),
 (141,'SENBOX.ORG/User-Information','[SHOW]📲 User Information','https://docs.google.com/spreadsheets/d/1TfGVBfcyKT6y-YEx8wz-zuJ7OYL-53EM7LSQfUvtmb8/edit?gid=1987360762#gid=1987360762','1TfGVBfcyKT6y-YEx8wz-zuJ7OYL-53EM7LSQfUvtmb8','',1,'Questions','general','on_submit','2025-01-06 04:45:21.602','2025-01-06 04:45:21.602'),
-(144,'SENBOX.ORG/Language-Buttons-Signup','[SHOW]Sign up Languages [SB APP]','https://docs.google.com/spreadsheets/d/152d2ZEG8BPu-JFnINOehvr2ARrcOMTbNnr_uzCIa8Zg/edit?gid=1987360762#gid=1987360762','152d2ZEG8BPu-JFnINOehvr2ARrcOMTbNnr_uzCIa8Zg','',1,'Languages','general','on_submit','2025-01-10 04:08:59.286','2025-01-10 04:08:59.286');
+(144,'SENBOX.ORG/Language-Buttons-Signup','[SHOW]Sign up Languages [SB APP]','https://docs.google.com/spreadsheets/d/152d2ZEG8BPu-JFnINOehvr2ARrcOMTbNnr_uzCIa8Zg/edit?gid=1987360762#gid=1987360762','152d2ZEG8BPu-JFnINOehvr2ARrcOMTbNnr_uzCIa8Zg','',1,'Languages','general','on_submit','2025-01-10 04:08:59.286','2025-01-10 04:08:59.286'),
+(168,'SENBOX.ORG/Test-Components','[SHOW]1','https://docs.google.com/spreadsheets/d/1BWU4MqiXGiu7NJTK_evAjcOf6ov4vpBF8fsZO9efyvs/edit?gid=1987360762#gid=1987360762','1BWU4MqiXGiu7NJTK_evAjcOf6ov4vpBF8fsZO9efyvs','',1,'Questions','general','on_submit','2025-02-20 03:08:35.939','2025-02-20 03:08:35.939'),
+(169,'SENBOX.ORG/Test-Search-Inventory','[SHOW]1','https://docs.google.com/spreadsheets/d/1kErnmVoPXoKZvla9GFsXTUL6SGryiEg7NqHDNbBXBpY/edit?gid=1987360762#gid=1987360762','1kErnmVoPXoKZvla9GFsXTUL6SGryiEg7NqHDNbBXBpY','',1,'Questions','general','on_submit','2025-02-20 03:08:37.338','2025-02-20 03:08:37.338');
 /*!40000 ALTER TABLE `s_form` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -288,7 +288,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `s_form_question`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `s_form_question` (
   `form_id` bigint(20) unsigned NOT NULL,
   `question_id` varchar(255) NOT NULL,
@@ -370,6 +370,7 @@ INSERT INTO `s_form_question` VALUES
 (37,'SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_55','CURRENT_TIMESTAMP','CURRENT_TIMESTAMP',56,0),
 (37,'SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_57','CURRENT_TIMESTAMP','CURRENT_TIMESTAMP',58,0),
 (37,'SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_58','CURRENT_TIMESTAMP','CURRENT_TIMESTAMP',59,0),
+(37,'SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_59','CURRENT_TIMESTAMP','CURRENT_TIMESTAMP',60,0),
 (37,'SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_6','CURRENT_TIMESTAMP','CURRENT_TIMESTAMP',8,0),
 (37,'SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_7','CURRENT_TIMESTAMP','CURRENT_TIMESTAMP',9,0),
 (37,'SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_8','CURRENT_TIMESTAMP','CURRENT_TIMESTAMP',10,0),
@@ -925,7 +926,26 @@ INSERT INTO `s_form_question` VALUES
 (144,'SENBOX.ORG/LANGUAGE-BUTTONS-SIGNUP_152d2ZEG8BPu-JFnINOehvr2ARrcOMTbNnr_uzCIa8Zg_2','CURRENT_TIMESTAMP','CURRENT_TIMESTAMP',4,0),
 (144,'SENBOX.ORG/LANGUAGE-BUTTONS-SIGNUP_152d2ZEG8BPu-JFnINOehvr2ARrcOMTbNnr_uzCIa8Zg_3','CURRENT_TIMESTAMP','CURRENT_TIMESTAMP',5,0),
 (144,'SENBOX.ORG/LANGUAGE-BUTTONS-SIGNUP_152d2ZEG8BPu-JFnINOehvr2ARrcOMTbNnr_uzCIa8Zg_4','CURRENT_TIMESTAMP','CURRENT_TIMESTAMP',6,0),
-(144,'SENBOX.ORG/LANGUAGE-BUTTONS-SIGNUP_152d2ZEG8BPu-JFnINOehvr2ARrcOMTbNnr_uzCIa8Zg_5','CURRENT_TIMESTAMP','CURRENT_TIMESTAMP',7,0);
+(144,'SENBOX.ORG/LANGUAGE-BUTTONS-SIGNUP_152d2ZEG8BPu-JFnINOehvr2ARrcOMTbNnr_uzCIa8Zg_5','CURRENT_TIMESTAMP','CURRENT_TIMESTAMP',7,0),
+(168,'SENBOX.ORG/TEST-COMPONENTS_1BWU4MqiXGiu7NJTK_evAjcOf6ov4vpBF8fsZO9efyvs_10','CURRENT_TIMESTAMP','CURRENT_TIMESTAMP',12,0),
+(168,'SENBOX.ORG/TEST-COMPONENTS_1BWU4MqiXGiu7NJTK_evAjcOf6ov4vpBF8fsZO9efyvs_11','CURRENT_TIMESTAMP','CURRENT_TIMESTAMP',13,0),
+(168,'SENBOX.ORG/TEST-COMPONENTS_1BWU4MqiXGiu7NJTK_evAjcOf6ov4vpBF8fsZO9efyvs_12','CURRENT_TIMESTAMP','CURRENT_TIMESTAMP',14,0),
+(168,'SENBOX.ORG/TEST-COMPONENTS_1BWU4MqiXGiu7NJTK_evAjcOf6ov4vpBF8fsZO9efyvs_13','CURRENT_TIMESTAMP','CURRENT_TIMESTAMP',15,0),
+(168,'SENBOX.ORG/TEST-COMPONENTS_1BWU4MqiXGiu7NJTK_evAjcOf6ov4vpBF8fsZO9efyvs_14','CURRENT_TIMESTAMP','CURRENT_TIMESTAMP',16,0),
+(168,'SENBOX.ORG/TEST-COMPONENTS_1BWU4MqiXGiu7NJTK_evAjcOf6ov4vpBF8fsZO9efyvs_15','CURRENT_TIMESTAMP','CURRENT_TIMESTAMP',17,0),
+(168,'SENBOX.ORG/TEST-COMPONENTS_1BWU4MqiXGiu7NJTK_evAjcOf6ov4vpBF8fsZO9efyvs_2','CURRENT_TIMESTAMP','CURRENT_TIMESTAMP',4,0),
+(168,'SENBOX.ORG/TEST-COMPONENTS_1BWU4MqiXGiu7NJTK_evAjcOf6ov4vpBF8fsZO9efyvs_3','CURRENT_TIMESTAMP','CURRENT_TIMESTAMP',5,0),
+(168,'SENBOX.ORG/TEST-COMPONENTS_1BWU4MqiXGiu7NJTK_evAjcOf6ov4vpBF8fsZO9efyvs_4','CURRENT_TIMESTAMP','CURRENT_TIMESTAMP',6,0),
+(168,'SENBOX.ORG/TEST-COMPONENTS_1BWU4MqiXGiu7NJTK_evAjcOf6ov4vpBF8fsZO9efyvs_5','CURRENT_TIMESTAMP','CURRENT_TIMESTAMP',7,0),
+(168,'SENBOX.ORG/TEST-COMPONENTS_1BWU4MqiXGiu7NJTK_evAjcOf6ov4vpBF8fsZO9efyvs_6','CURRENT_TIMESTAMP','CURRENT_TIMESTAMP',8,0),
+(168,'SENBOX.ORG/TEST-COMPONENTS_1BWU4MqiXGiu7NJTK_evAjcOf6ov4vpBF8fsZO9efyvs_7','CURRENT_TIMESTAMP','CURRENT_TIMESTAMP',9,1),
+(168,'SENBOX.ORG/TEST-COMPONENTS_1BWU4MqiXGiu7NJTK_evAjcOf6ov4vpBF8fsZO9efyvs_8','CURRENT_TIMESTAMP','CURRENT_TIMESTAMP',10,0),
+(168,'SENBOX.ORG/TEST-COMPONENTS_1BWU4MqiXGiu7NJTK_evAjcOf6ov4vpBF8fsZO9efyvs_9','CURRENT_TIMESTAMP','CURRENT_TIMESTAMP',11,0),
+(169,'SENBOX.ORG/TEST-SEARCH-INVENTORY_1kErnmVoPXoKZvla9GFsXTUL6SGryiEg7NqHDNbBXBpY_2','CURRENT_TIMESTAMP','CURRENT_TIMESTAMP',4,0),
+(169,'SENBOX.ORG/TEST-SEARCH-INVENTORY_1kErnmVoPXoKZvla9GFsXTUL6SGryiEg7NqHDNbBXBpY_3','CURRENT_TIMESTAMP','CURRENT_TIMESTAMP',5,0),
+(169,'SENBOX.ORG/TEST-SEARCH-INVENTORY_1kErnmVoPXoKZvla9GFsXTUL6SGryiEg7NqHDNbBXBpY_4','CURRENT_TIMESTAMP','CURRENT_TIMESTAMP',6,0),
+(169,'SENBOX.ORG/TEST-SEARCH-INVENTORY_1kErnmVoPXoKZvla9GFsXTUL6SGryiEg7NqHDNbBXBpY_5','CURRENT_TIMESTAMP','CURRENT_TIMESTAMP',7,0),
+(169,'SENBOX.ORG/TEST-SEARCH-INVENTORY_1kErnmVoPXoKZvla9GFsXTUL6SGryiEg7NqHDNbBXBpY_6','CURRENT_TIMESTAMP','CURRENT_TIMESTAMP',8,0);
 /*!40000 ALTER TABLE `s_form_question` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -935,7 +955,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `s_mobile_device`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `s_mobile_device` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `created_at` datetime(3) DEFAULT NULL,
@@ -947,7 +967,7 @@ CREATE TABLE `s_mobile_device` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `idx_s_mobile_device_device_id` (`device_id`),
   KEY `idx_s_mobile_device_deleted_at` (`deleted_at`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -956,6 +976,8 @@ CREATE TABLE `s_mobile_device` (
 
 LOCK TABLES `s_mobile_device` WRITE;
 /*!40000 ALTER TABLE `s_mobile_device` DISABLE KEYS */;
+INSERT INTO `s_mobile_device` VALUES
+(1,'2025-02-20 03:05:43.222','2025-02-20 03:05:43.654',NULL,'gta9wifi','ANDROID','fJt40Pj7QmmI42OMCNdXRb:APA91bEvIT66BOV3R5M-ySTqpMdSIOi4yeXKJ4-gJSvJDYLvsylTsFekDolX2JJUffUgAd-FL2Y3maN6GnNm4VsxUWzIAo6s4494f4VEMsdqzk-g-qdAOJY');
 /*!40000 ALTER TABLE `s_mobile_device` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -965,7 +987,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `s_question`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `s_question` (
   `question_id` varchar(255) NOT NULL,
   `question_name` varchar(1000) NOT NULL DEFAULT '',
@@ -1583,51 +1605,52 @@ INSERT INTO `s_question` VALUES
 ('SENBOX.ORG/LANGUAGE-BUTTONS-SIGNUP_152d2ZEG8BPu-JFnINOehvr2ARrcOMTbNnr_uzCIa8Zg_3','English','button','English','{\"value\": \"#86DEFF;SENBOX.ORG/[SIGNUP]:Sign Up 0\"}',1,'','enabled',NULL,'2025-01-11 02:54:26.073','2025-01-11 02:54:26.073'),
 ('SENBOX.ORG/LANGUAGE-BUTTONS-SIGNUP_152d2ZEG8BPu-JFnINOehvr2ARrcOMTbNnr_uzCIa8Zg_4','Vietnamese','button','Vietnamese','{\"value\": \";\"}',1,'','enabled',NULL,'2025-01-11 02:54:26.073','2025-01-11 02:54:26.073'),
 ('SENBOX.ORG/LANGUAGE-BUTTONS-SIGNUP_152d2ZEG8BPu-JFnINOehvr2ARrcOMTbNnr_uzCIa8Zg_5','German','button','German','{\"value\": \";\"}',1,'','enabled',NULL,'2025-01-11 02:54:26.073','2025-01-11 02:54:26.073'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_','📲 Software Updates (NEW)','button','📲 Software Updates (NEW)','{\"value\": \"#86DEFF;SENBOX.ORG/Menu/Button List - Top Left Menu - School\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_1','Emergency','section','Emergency','{\"value\": \"https://static.vecteezy.com/system/resources/thumbnails/024/553/853/small_2x/colorful-eagle-head-logo-pop-art-style-eagle-face-sticker-pastel-cute-colors-ai-generated-png.png\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_11','🧑‍💻📰 Wiki:SEN by SENBOX 🛜','button','🧑‍💻📰 Wiki:SEN by SENBOX 🛜','{\"value\": \"#86DEFF;https://sites.google.com/senbox.org/doc-jhtvrskdhnksnk/start-here\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_12','📱How to use the SENBOX App','button','📱How to use the SENBOX App','{\"value\": \"#86DEFF;http://STAFF.SENBOX.ORG/app\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_13','💬 Send Feedback to manager','button','💬 Send Feedback to manager','{\"value\": \"#86DEFF;SENBOX.ORG/Feedback for manager\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_14','📰 News - 👨‍👩‍👦 Parents & 👨‍👩‍👦 Teachers','button','📰 News - 👨‍👩‍👦 Parents & 👨‍👩‍👦 Teachers','{\"value\": \"#86DEFF;https://www.senbox.vn/newspt\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_15','📌 Roster & Time table','button','📌 Roster & Time table','{\"value\": \"#86DEFF;https://sites.google.com/d/1uJagZA6OWgBDz52YhnNxvJogSRonC1ym/p/1py7hM6h9NnQEqA61A_tQClumCsh4YpLT/edit\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_16','📆 SENBOX Calendar','button','📆 SENBOX Calendar','{\"value\": \"#86DEFF;https://drive.google.com/file/d/13fB8vGA90Vo1uuTS4YFVbgScIRwQ-sgf/view?usp=sharing\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_17','✅ TODO','button','✅ TODO','{\"value\": \"#000000;SENBOX.ORG/[TODO]:GENERAL\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_18','⚙️ SETTINGS','button','⚙️ SETTINGS','{\"value\": \"#86DEFF;SENBOX.ORG/[SETTINGS]\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_19','💰 Parent fund donation','button','💰 Parent fund donation','{\"value\": \"#86DEFF;[SHOW]:https://docs.google.com/spreadsheets/d/e/2PACX-1vSl8YZsB_WQ0RuGg_bOxCQnHfiex4KguRgKXZO-eapoy-tHhG23VAJRJagE9EjwlkdmYWkPPaXIpGSq/pubhtml?gid=1598208274&single=true\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_2','🆘 Emergency 🆘  Send Email 🆘','button','🆘 Emergency 🆘  Send Email 🆘','{\"value\": \"#EE220C;SENBOX.ORG/[SEND-EMAIL]:From Device;https://static.vecteezy.com/system/resources/thumbnails/024/553/853/small_2x/colorful-eagle-head-logo-pop-art-style-eagle-face-sticker-pastel-cute-colors-ai-generated-png.png\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_21','✅ Task Availability Status','button','✅ Task Availability Status','{\"value\": \"#CCC666;https://www.senbox.vn/tas\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_22','👀 I saw','button','👀 I saw','{\"value\": \"#86DEFF;SENBOX.ORG/TeacherKPI-MyWish\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_23','📍 Location Quality Check','button','📍 Location Quality Check','{\"value\": \"#86DEFF;SENBOX.ORG/QualityCheck\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_24','↔️ Landscape mode','button','↔️ Landscape mode','{\"value\": \"#CCC666;SENBOX.ORG/[Side-view]\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_25','📋 New Roster','button','📋 New Roster','{\"value\": \"#86DEFF;https://www.senbox.vn/rosterview\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_26','🤳 Scan SBT-📍 Location- 🤸‍♀️ Skills','button','🤳 Scan SBT-📍 Location- 🤸‍♀️ Skills','{\"value\": \"#86DEFF;SENBOX.ORG/SBTSkill\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_27','🍽 Lunch duty','button','🍽 Lunch duty','{\"value\": \"#86DEFF;https://docs.google.com/spreadsheets/d/e/2PACX-1vT9gZUx7aw1vqG_cqzB4tciIlQgrnKBj9Nh6_rIXpK4qhxPtQzPCxsMqf_Z2Hudf10Z3PomIAcqOsXp/pubhtml?gid=315123415&single=true\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_28','🌗 Today Login','button','🌗 Today Login','{\"value\": \"#86DEFF;https://docs.google.com/spreadsheets/d/e/2PACX-1vQVBtnLnQyk9eOgRULuzCdAU8RPKuGyMcy0Dg_3iNw4hSfE67zlL29lXF4e7lWmxC5R31FiiS--nRM6/pubhtml?gid=2053197104&single=true\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_29','💁‍♂️👍 Staff Food Quality','button','💁‍♂️👍 Staff Food Quality','{\"value\": \"#A4D873;SENBOX.ORG/Staff_Food_Form\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_3','SECTION','section','SECTION','{\"value\": \"\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_30','🖇️ Ordering Class Room Items','button','🖇️ Ordering Class Room Items','{\"value\": \"#86DEFF;SENBOX.ORG/ORDERING FORM\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_32','TEst Graph','web','TEst Graph','{\"value\": \"aHR0cHM6Ly9zZW5ib3gtZnJvbnRlbmQudmVyY2VsLmFwcC9wdWJsaWMtcGFnZXMvY2hhcnQ/Y2hhcnRUeXBlPWxpbmU7NTAw\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_34','searchtest','button','searchtest','{\"value\": \"#16B100;SENBOX.ORG/Search Test\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_35','Search Inventory Item','button','Search Inventory Item','{\"value\": \"#16B100;SENBOX.ORG/{Search}:SearchLocTest\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_4','🖥  Scaner test','button','🖥  Scaner test','{\"value\": \"#FFA400;SENBOX.ORG/[SCANNER];https://img.freepik.com/free-vector/bird-colorful-gradient-design-vector_343694-2506.jpg\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_42','🧑‍🏫 ----- Menu: Mr Mueller -----🧑‍🏫','section','🧑‍🏫 ----- Menu: Mr Mueller -----🧑‍🏫','{\"value\": \"\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_46','MODE W TEST','button','MODE W TEST','{\"value\": \"#CCC666;SENBOX.ORG/[MODE_W]:[SHOW]https://senbox-frontend.vercel.app/public-pages/question-form\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_47','✅ SENBOX Atendance app','button','✅ SENBOX Atendance app','{\"value\": \"#A4D873;https://www.appsheet.com/start/09ca2407-3fac-40a1-be36-3a94e679e6fe\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_48','📃 Test form','button','📃 Test form','{\"value\": \"#86DEFF;SENBOX.ORG/TestForm\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_49','📲 Test Notification','button','📲 Test Notification','{\"value\": \"#FFA400;SENBOX.ORG/[SEND-NOTIFICATION][TOP-BUTTON-7ddd9e15007ee7f6;][Message-Today is Monday]\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_5','🚑  Accident and Injury Report (Tr&St)','button','🚑  Accident and Injury Report (Tr&St)','{\"value\": \"#f86c6c;SENBOX.ORG/SBT-[SBFS-2159];https://img.freepik.com/free-vector/colorful-letter-gradient-logo-design_474888-2309.jpg\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_50','📔 Photo album test','button','📔 Photo album test','{\"value\": \"#A4D873;SENBOX.ORG/[BROWSE_PHOTOS]:AHBscLy6ShwGxisFO4k0G_iK33nC7jcRI_A7HiXU5A3O9eLDozz9pcJyP7qMBPdoAaMyiU__aDh4\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_51','📥 Update sign up form test','button','📥 Update sign up form test','{\"value\": \"#CC5AF6;SENBOX.ORG/[SIGN-UP][UPDATE]\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_52','📱✅ Mueller mobile Todo','button','📱✅ Mueller mobile Todo','{\"value\": \"#000000;SENBOX.ORG/[TODO-MOBILE]:MUELLER TODO\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_53','📱✅  Huy mobile Todo','button','📱✅  Huy mobile Todo','{\"value\": \"#000000;SENBOX.ORG/[TODO-MOBILE]:HUY\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_54','📔 Photo album test (apptest email)','button','📔 Photo album test (apptest email)','{\"value\": \"#CCC666;SENBOX.ORG/[BROWSE_PHOTOS]:AKH64584HoUYDJP_IH1iQjMeYt2dYaCu65Nsj0Yax2ifXoWbMHQCajOjHFDmwxnzPYlIOgYyRJpS\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_55','📈 Alcot graph','button','📈 Alcot graph','{\"value\": \"#86DEFF;SENBOX.ORG/ST Alcot\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_57','----- Menu: Mr Trung Cao -----','section','----- Menu: Mr Trung Cao -----','{\"value\": \"\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_58','Search Results','button','Search Results','{\"value\": \"#EE220C;SENBOX.ORG/Trung-Test\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_6','😤  Student BEHAVIOUR','button','😤  Student BEHAVIOUR','{\"value\": \"#f86c6c;SENBOX.ORG/SBT-[SBFS-0915];https://img.freepik.com/premium-vector/free-vector-beautiful-flying-hummingbird-design-element-banners-posters-leaflets-brochur_1009653-1.jpg\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_7','📱----- General -----📱','section','📱----- General -----📱','{\"value\": \"\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_8','⏰ Count/Timer','button','⏰ Count/Timer','{\"value\": \"#000000;SENBOX.ORG/Timer\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
-('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_9','🎥 Take Pic/Vid','button','🎥 Take Pic/Vid','{\"value\": \"#86DEFF;SENBOX.ORG/PictureTaking\"}',1,'','enabled',NULL,'2025-01-14 06:44:21.156','2025-01-14 06:44:21.156'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_','📲 Software Updates (NEW)','button','📲 Software Updates (NEW)','{\"value\": \"#86DEFF;SENBOX.ORG/Menu/Button List - Top Left Menu - School\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_1','Emergency','section','Emergency','{\"value\": \"https://static.vecteezy.com/system/resources/thumbnails/024/553/853/small_2x/colorful-eagle-head-logo-pop-art-style-eagle-face-sticker-pastel-cute-colors-ai-generated-png.png\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_11','🧑‍💻📰 Wiki:SEN by SENBOX 🛜','button','🧑‍💻📰 Wiki:SEN by SENBOX 🛜','{\"value\": \"#86DEFF;https://sites.google.com/senbox.org/doc-jhtvrskdhnksnk/start-here\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_12','📱How to use the SENBOX App','button','📱How to use the SENBOX App','{\"value\": \"#86DEFF;http://STAFF.SENBOX.ORG/app\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_13','💬 Send Feedback to manager','button','💬 Send Feedback to manager','{\"value\": \"#86DEFF;SENBOX.ORG/Feedback for manager\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_14','📰 News - 👨‍👩‍👦 Parents & 👨‍👩‍👦 Teachers','button','📰 News - 👨‍👩‍👦 Parents & 👨‍👩‍👦 Teachers','{\"value\": \"#86DEFF;https://www.senbox.vn/newspt\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_15','📌 Roster & Time table','button','📌 Roster & Time table','{\"value\": \"#86DEFF;https://sites.google.com/d/1uJagZA6OWgBDz52YhnNxvJogSRonC1ym/p/1py7hM6h9NnQEqA61A_tQClumCsh4YpLT/edit\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_16','📆 SENBOX Calendar','button','📆 SENBOX Calendar','{\"value\": \"#86DEFF;https://drive.google.com/file/d/13fB8vGA90Vo1uuTS4YFVbgScIRwQ-sgf/view?usp=sharing\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_17','✅ TODO','button','✅ TODO','{\"value\": \"#000000;SENBOX.ORG/[TODO]:GENERAL\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_18','⚙️ SETTINGS','button','⚙️ SETTINGS','{\"value\": \"#86DEFF;SENBOX.ORG/[SETTINGS]\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_19','💰 Parent fund donation','button','💰 Parent fund donation','{\"value\": \"#86DEFF;[SHOW]:https://docs.google.com/spreadsheets/d/e/2PACX-1vSl8YZsB_WQ0RuGg_bOxCQnHfiex4KguRgKXZO-eapoy-tHhG23VAJRJagE9EjwlkdmYWkPPaXIpGSq/pubhtml?gid=1598208274&single=true\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_2','🆘 Emergency 🆘  Send Email 🆘','button','🆘 Emergency 🆘  Send Email 🆘','{\"value\": \"#EE220C;SENBOX.ORG/[SEND-EMAIL]:From Device;https://static.vecteezy.com/system/resources/thumbnails/024/553/853/small_2x/colorful-eagle-head-logo-pop-art-style-eagle-face-sticker-pastel-cute-colors-ai-generated-png.png\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_21','✅ Task Availability Status','button','✅ Task Availability Status','{\"value\": \"#CCC666;https://www.senbox.vn/tas\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_22','👀 I saw','button','👀 I saw','{\"value\": \"#86DEFF;SENBOX.ORG/TeacherKPI-MyWish\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_23','📍 Location Quality Check','button','📍 Location Quality Check','{\"value\": \"#86DEFF;SENBOX.ORG/QualityCheck\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_24','↔️ Landscape mode','button','↔️ Landscape mode','{\"value\": \"#CCC666;SENBOX.ORG/[Side-view]\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_25','📋 New Roster','button','📋 New Roster','{\"value\": \"#86DEFF;https://www.senbox.vn/rosterview\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_26','🤳 Scan SBT-📍 Location- 🤸‍♀️ Skills','button','🤳 Scan SBT-📍 Location- 🤸‍♀️ Skills','{\"value\": \"#86DEFF;SENBOX.ORG/SBTSkill\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_27','🍽 Lunch duty','button','🍽 Lunch duty','{\"value\": \"#86DEFF;https://docs.google.com/spreadsheets/d/e/2PACX-1vT9gZUx7aw1vqG_cqzB4tciIlQgrnKBj9Nh6_rIXpK4qhxPtQzPCxsMqf_Z2Hudf10Z3PomIAcqOsXp/pubhtml?gid=315123415&single=true\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_28','🌗 Today Login','button','🌗 Today Login','{\"value\": \"#86DEFF;https://docs.google.com/spreadsheets/d/e/2PACX-1vQVBtnLnQyk9eOgRULuzCdAU8RPKuGyMcy0Dg_3iNw4hSfE67zlL29lXF4e7lWmxC5R31FiiS--nRM6/pubhtml?gid=2053197104&single=true\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_29','💁‍♂️👍 Staff Food Quality','button','💁‍♂️👍 Staff Food Quality','{\"value\": \"#A4D873;SENBOX.ORG/Staff_Food_Form\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_3','SECTION','section','SECTION','{\"value\": \"SECTION\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_30','🖇️ Ordering Class Room Items','button','🖇️ Ordering Class Room Items','{\"value\": \"#86DEFF;SENBOX.ORG/ORDERING FORM\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_32','TEst Graph','web','TEst Graph','{\"value\": \"aHR0cHM6Ly9zZW5ib3gtZnJvbnRlbmQudmVyY2VsLmFwcC9wdWJsaWMtcGFnZXMvY2hhcnQ/Y2hhcnRUeXBlPWxpbmU7NTAw\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_34','searchtest','button','searchtest','{\"value\": \"#16B100;SENBOX.ORG/Search Test\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_35','Search Inventory Item','button','Search Inventory Item','{\"value\": \"#16B100;SENBOX.ORG/{Search}:SearchLocTest\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_4','🖥  Scaner test','button','🖥  Scaner test','{\"value\": \"#FFA400;SENBOX.ORG/[SCANNER];https://img.freepik.com/free-vector/bird-colorful-gradient-design-vector_343694-2506.jpg\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_42','🧑‍🏫 ----- Menu: Mr Mueller -----🧑‍🏫','section','🧑‍🏫 ----- Menu: Mr Mueller -----🧑‍🏫','{\"value\": \"\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_46','MODE W TEST','button','MODE W TEST','{\"value\": \"#CCC666;SENBOX.ORG/[MODE_W]:[SHOW]https://senbox-frontend.vercel.app/public-pages/question-form\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_47','✅ SENBOX Atendance app','button','✅ SENBOX Atendance app','{\"value\": \"#A4D873;https://www.appsheet.com/start/09ca2407-3fac-40a1-be36-3a94e679e6fe\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_48','📃 Test form','button','📃 Test form','{\"value\": \"#86DEFF;SENBOX.ORG/TestForm\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_49','📲 Test Notification','button','📲 Test Notification','{\"value\": \"#FFA400;SENBOX.ORG/[SEND-NOTIFICATION][TOP-BUTTON-7ddd9e15007ee7f6;][Message-Today is Monday]\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_5','🚑  Accident and Injury Report (Tr&St)','button','🚑  Accident and Injury Report (Tr&St)','{\"value\": \"#f86c6c;SENBOX.ORG/SBT-[SBFS-2159];https://img.freepik.com/free-vector/colorful-letter-gradient-logo-design_474888-2309.jpg\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_50','📔 Photo album test','button','📔 Photo album test','{\"value\": \"#A4D873;SENBOX.ORG/[BROWSE_PHOTOS]:AHBscLy6ShwGxisFO4k0G_iK33nC7jcRI_A7HiXU5A3O9eLDozz9pcJyP7qMBPdoAaMyiU__aDh4\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_51','📥 Update sign up form test','button','📥 Update sign up form test','{\"value\": \"#CC5AF6;SENBOX.ORG/[SIGN-UP][UPDATE]\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_52','📱✅ Mueller mobile Todo','button','📱✅ Mueller mobile Todo','{\"value\": \"#000000;SENBOX.ORG/[TODO-MOBILE]:MUELLER TODO\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_53','📱✅  Huy mobile Todo','button','📱✅  Huy mobile Todo','{\"value\": \"#000000;SENBOX.ORG/[TODO-MOBILE]:HUY\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_54','📔 Photo album test (apptest email)','button','📔 Photo album test (apptest email)','{\"value\": \"#CCC666;SENBOX.ORG/[BROWSE_PHOTOS]:AKH64584HoUYDJP_IH1iQjMeYt2dYaCu65Nsj0Yax2ifXoWbMHQCajOjHFDmwxnzPYlIOgYyRJpS\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_55','📈 Alcot graph','button','📈 Alcot graph','{\"value\": \"#86DEFF;SENBOX.ORG/ST Alcot\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_57','----- Menu: Mr Trung Cao -----','section','----- Menu: Mr Trung Cao -----','{\"value\": \"\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_58','Test Components','button','Test Components','{\"value\": \"#EE220C;SENBOX.ORG/Test-Components\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_59','Test Search Inventory','button','Test Search Inventory','{\"value\": \"#FFA400;SENBOX.ORG/Test-Search-Inventory\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_6','😤  Student BEHAVIOUR','button','😤  Student BEHAVIOUR','{\"value\": \"#f86c6c;SENBOX.ORG/SBT-[SBFS-0915];https://img.freepik.com/premium-vector/free-vector-beautiful-flying-hummingbird-design-element-banners-posters-leaflets-brochur_1009653-1.jpg\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_7','📱----- General -----📱','section','📱----- General -----📱','{\"value\": \"\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_8','⏰ Count/Timer','button','⏰ Count/Timer','{\"value\": \"#000000;SENBOX.ORG/Timer\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
+('SENBOX.ORG/MENU_17wrGEajw-0Cr06umA9alA4SwT41vuem1_53kfRADf4E_9','🎥 Take Pic/Vid','button','🎥 Take Pic/Vid','{\"value\": \"#86DEFF;SENBOX.ORG/PictureTaking\"}',1,'','enabled',NULL,'2025-02-20 03:33:13.653','2025-02-20 03:33:13.653'),
 ('SENBOX.ORG/SBT-[SBFS-0915]_1VlK9zrXK7FZa2IJnyrvvm0GV_12-MDLpULMTFy3n1WA_1','Instruction','button','Instruction','{\"value\": \"#86DEFF;https://sites.google.com/senbox.org/doc-jhtvrskdhnksnk/bcncnbvcnbxb5214251425-bccv\"}',1,'','enabled',NULL,'2025-01-03 04:35:50.329','2025-01-03 04:35:50.329'),
 ('SENBOX.ORG/SBT-[SBFS-0915]_1VlK9zrXK7FZa2IJnyrvvm0GV_12-MDLpULMTFy3n1WA_11','Consequense strip used','qr_code','Consequense strip used','{}',1,'','enabled',NULL,'2025-01-03 04:35:50.329','2025-01-03 04:35:50.329'),
 ('SENBOX.ORG/SBT-[SBFS-0915]_1VlK9zrXK7FZa2IJnyrvvm0GV_12-MDLpULMTFy3n1WA_13','Notes / Comments','text','Notes / Comments','{}',1,'','enabled',NULL,'2025-01-03 04:35:50.329','2025-01-03 04:35:50.329'),
@@ -1641,10 +1664,29 @@ INSERT INTO `s_question` VALUES
 ('SENBOX.ORG/SEARCH TEST_1UnXYV55ZVXlIg96U5ZM-OfqSMkLOwfycKZ7osN0xrKo_2','ℹ️ Introduction','button','ℹ️ Introduction','{\"value\": \"#86DEFF;https://sites.google.com/senbox.org/doc-jhtvrskdhnksnk/gbvgbtstrgg-dytyuyt7uyt67r45te54e6\"}',1,'','enabled',NULL,'2025-01-03 04:35:42.040','2025-01-03 04:35:42.040'),
 ('SENBOX.ORG/SEARCH TEST_1UnXYV55ZVXlIg96U5ZM-OfqSMkLOwfycKZ7osN0xrKo_3','','text','','{}',1,'','enabled',NULL,'2025-01-03 04:35:42.040','2025-01-03 04:35:42.040'),
 ('SENBOX.ORG/SEARCH TEST_1UnXYV55ZVXlIg96U5ZM-OfqSMkLOwfycKZ7osN0xrKo_4','sgh','selection','sgh','{\"options\":[{\"name\":\"a\"},{\"name\":\"b\"},{\"name\":\"c\"},{\"name\":\"f\"}]}',1,'','enabled',NULL,'2025-01-03 04:35:42.040','2025-01-03 04:35:42.040'),
+('SENBOX.ORG/TEST-COMPONENTS_1BWU4MqiXGiu7NJTK_evAjcOf6ov4vpBF8fsZO9efyvs_10','Images','single_choice','Images','{\"options\":[{\"name\":\"https://loremflickr.com/200/200?random=1\"},{\"name\":\"https://loremflickr.com/200/200?random=2\"},{\"name\":\"https://loremflickr.com/200/200?random=3\"},{\"name\":\"https://loremflickr.com/200/200?random=4\"},{\"name\":\"https://loremflickr.com/200/200?random=5\"},{\"name\":\"https://loremflickr.com/200/200?random=6\"},{\"name\":\"https://loremflickr.com/200/200?random=7\"},{\"name\":\"https://loremflickr.com/200/200?random=8\"},{\"name\":\"https://loremflickr.com/200/200?random=9\"},{\"name\":\"https://loremflickr.com/200/200?random=10\"}]}',1,'','enabled',NULL,'2025-02-20 03:33:14.752','2025-02-20 03:33:14.752'),
+('SENBOX.ORG/TEST-COMPONENTS_1BWU4MqiXGiu7NJTK_evAjcOf6ov4vpBF8fsZO9efyvs_11','Choosen Date Time','message_box','Choosen Date Time','{\"value\": \"2000;2025\"}',1,'','enabled',NULL,'2025-02-20 03:33:14.752','2025-02-20 03:33:14.752'),
+('SENBOX.ORG/TEST-COMPONENTS_1BWU4MqiXGiu7NJTK_evAjcOf6ov4vpBF8fsZO9efyvs_12','Two Wheels Selection','message_box','Two Wheels Selection','{\"value\": \"[Title:Fruit;Values:Banana;Apple;Mango;Orange;Watermelon;Tomato;Potato];[Title:Shape;Values:Retangle;Circle;Square]\"}',1,'','enabled',NULL,'2025-02-20 03:33:14.752','2025-02-20 03:33:14.752'),
+('SENBOX.ORG/TEST-COMPONENTS_1BWU4MqiXGiu7NJTK_evAjcOf6ov4vpBF8fsZO9efyvs_13','Single Wheels Selection','message_box','Single Wheels Selection','{\"value\": \"[Title:Color;Values:Red;Blue;Yellow;Grey;White;LightBlue;Green]\"}',1,'','enabled',NULL,'2025-02-20 03:33:14.752','2025-02-20 03:33:14.752'),
+('SENBOX.ORG/TEST-COMPONENTS_1BWU4MqiXGiu7NJTK_evAjcOf6ov4vpBF8fsZO9efyvs_14','Water Cup Components','message_box','Water Cup Components','{\"value\": \"WaterCup\"}',1,'','enabled',NULL,'2025-02-20 03:33:14.752','2025-02-20 03:33:14.752'),
+('SENBOX.ORG/TEST-COMPONENTS_1BWU4MqiXGiu7NJTK_evAjcOf6ov4vpBF8fsZO9efyvs_15','Record Audio Component','message_box','Record Audio Component','{\"value\": \"Record Audio\"}',1,'','enabled',NULL,'2025-02-20 03:33:14.752','2025-02-20 03:33:14.752'),
+('SENBOX.ORG/TEST-COMPONENTS_1BWU4MqiXGiu7NJTK_evAjcOf6ov4vpBF8fsZO9efyvs_2','ℹ️ Introduction','button','ℹ️ Introduction','{\"value\": \"#86DEFF;https://sites.google.com/senbox.org/doc-jhtvrskdhnksnk/gbvgbtstrgg-dytyuyt7uyt67r45te54e6\"}',1,'','enabled',NULL,'2025-02-20 03:33:14.752','2025-02-20 03:33:14.752'),
+('SENBOX.ORG/TEST-COMPONENTS_1BWU4MqiXGiu7NJTK_evAjcOf6ov4vpBF8fsZO9efyvs_3','Results Table View','message_box','Results Table View','{\"value\": \"[Lamborghini Urus;A flagship supercar featuring a 6.5-liter V12 engine, producing 740 CV (544 kW) at 8,400 rpm, with a top speed of 350 km/h (217 mph) and acceleration from 0-100 km/h in 2.9 seconds;https://1cars.org/wp-content/uploads/2019/02/Lamborghini-Urus-12.jpg];[Lamborghini Aventador;The world\'s first Super Sport Utility Vehicle (SUV), combining the performance of a super sports car with the functionality of an SUV. It is powered by a 4.0-liter twin-turbo V8 engine, delivering exceptional performance and versatility;https://images.hdqwalls.com/wallpapers/lamborghini-aventador-lp-750-sv-ca.jpg];[Lamborghini Huracan;A super sports car equipped with a 5.2-liter V10 engine, offering 640 CV (470 kW) at 8,000 rpm, a top speed exceeding 325 km/h (202 mph), and acceleration from 0-100 km/h in 2.9 seconds;https://www.hdcarwallpapers.com/walls/vf_engineering_lamborghini_huracan_performante_2020_4k-HD.jpg];\"}',1,'','enabled',NULL,'2025-02-20 03:33:14.752','2025-02-20 03:33:14.752'),
+('SENBOX.ORG/TEST-COMPONENTS_1BWU4MqiXGiu7NJTK_evAjcOf6ov4vpBF8fsZO9efyvs_4','Wheels Duration Time','duration_backward','Wheels Duration Time','{\"value\": \"3456\"}',1,'','enabled',NULL,'2025-02-20 03:33:14.752','2025-02-20 03:33:14.752'),
+('SENBOX.ORG/TEST-COMPONENTS_1BWU4MqiXGiu7NJTK_evAjcOf6ov4vpBF8fsZO9efyvs_5','Colors','single_choice','Colors','{\"options\":[{\"name\":\"#ECECEC\"},{\"name\":\"#EE220C\"},{\"name\":\"#FFA400\"},{\"name\":\"#CCC666\"},{\"name\":\"#000000\"},{\"name\":\"#16B100\"},{\"name\":\"#A4D873\"},{\"name\":\"#86DEFF\"},{\"name\":\"#007BFF\"}]}',1,'','enabled',NULL,'2025-02-20 03:33:14.752','2025-02-20 03:33:14.752'),
+('SENBOX.ORG/TEST-COMPONENTS_1BWU4MqiXGiu7NJTK_evAjcOf6ov4vpBF8fsZO9efyvs_6','Edit Range Sliders','message_box','Edit Range Sliders','{\"value\": \"0;150\"}',1,'','enabled',NULL,'2025-02-20 03:33:14.752','2025-02-20 03:33:14.752'),
+('SENBOX.ORG/TEST-COMPONENTS_1BWU4MqiXGiu7NJTK_evAjcOf6ov4vpBF8fsZO9efyvs_7','Draggable List','draggable_list','Draggable List','{\"options\":[{\"name\":\"SET BOOKS\"}]}',1,'','enabled',NULL,'2025-02-20 03:33:14.752','2025-02-20 03:33:14.752'),
+('SENBOX.ORG/TEST-COMPONENTS_1BWU4MqiXGiu7NJTK_evAjcOf6ov4vpBF8fsZO9efyvs_8','Product 1','message_box','Product 1','{\"value\": \"productId:1;productName:Bendu AB6807 Super Lightweight Men\'s Sportswear Set;productBrand:Bendu;productDescription:The Bendu AB6807 men\'s sportswear set includes a short-sleeved polo shirt and shorts, made of premium-quality material that is soft, cool, lightweight, sweat-absorbent, and breathable;productImage:https://product.hstatic.net/200000690725/product/fstp001-14_53597537845_o_144f28f5861f42ed8b547ae46daef63e_master.jpg;productPrice:28;productMaxium:5;\"}',1,'','enabled',NULL,'2025-02-20 03:33:14.752','2025-02-20 03:33:14.752'),
+('SENBOX.ORG/TEST-COMPONENTS_1BWU4MqiXGiu7NJTK_evAjcOf6ov4vpBF8fsZO9efyvs_9','View Range Sliders','message_box','View Range Sliders','{\"value\": \"0;120\"}',1,'','enabled',NULL,'2025-02-20 03:33:14.752','2025-02-20 03:33:14.752'),
 ('SENBOX.ORG/TEST-FORM_1wfwntxV19ipMgjmyX_P-SAQuUnHrNaH6_Rsqmw9fS5Y_1','Please enter any text_1','text_value_example_1','Please enter any text_1','{\"value\": \"\"}',1,'','enabled',NULL,'2025-01-14 06:44:22.608','2025-01-14 06:44:22.608'),
 ('SENBOX.ORG/TEST-FORM_1wfwntxV19ipMgjmyX_P-SAQuUnHrNaH6_Rsqmw9fS5Y_2','Please enter any text_2','text_value_example_2','Please enter any text_2','{\"value\": \"\"}',1,'','enabled',NULL,'2025-01-14 06:44:22.608','2025-01-14 06:44:22.608'),
 ('SENBOX.ORG/TEST-FORM-RESPONSE_1dOuEGJWvbn5v4M32uP4s4YpXez8CK9qIz9hDNWYILkg_1','Message Text Response','message_text_response_1','Message Text Response','{\"value\": \"\"}',1,'','enabled',NULL,'2025-01-03 04:35:46.399','2025-01-03 04:35:46.399'),
 ('SENBOX.ORG/TEST-FORM-RESPONSE_1dOuEGJWvbn5v4M32uP4s4YpXez8CK9qIz9hDNWYILkg_2','Message Text Response 2','message_text_response_2','Message Text Response 2','{\"value\": \"\"}',1,'','enabled',NULL,'2025-01-03 04:35:46.399','2025-01-03 04:35:46.399'),
+('SENBOX.ORG/TEST-SEARCH-INVENTORY_1kErnmVoPXoKZvla9GFsXTUL6SGryiEg7NqHDNbBXBpY_2','ℹ️ Introduction','button','ℹ️ Introduction','{\"value\": \"#86DEFF;https://sites.google.com/senbox.org/doc-jhtvrskdhnksnk/gbvgbtstrgg-dytyuyt7uyt67r45te54e6\"}',1,'','enabled',NULL,'2025-02-20 03:33:15.731','2025-02-20 03:33:15.731'),
+('SENBOX.ORG/TEST-SEARCH-INVENTORY_1kErnmVoPXoKZvla9GFsXTUL6SGryiEg7NqHDNbBXBpY_3','SEARCH_BY_NAME','message_box','SEARCH_BY_NAME','{\"value\": \"[Laptop Dell XPS 13;A high-performance ultrabook featuring Intel i7, 16GB RAM, and a sleek aluminum chassis;https://images.unsplash.com/photo-1739477021967-e14dc3938e56?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8];[iPhone 15 Pro Max;A premium smartphone with 256GB Storage and a Titanium Frame for durability;https://images.unsplash.com/photo-1739477021967-e14dc3938e56?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8];[Samsung Galaxy S24 Ultra;A flagship smartphone with 512GB Storage, an S Pen, and a high-refresh-rate display;https://images.unsplash.com/photo-1739477021967-e14dc3938e56?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8];[Sony WH-1000XM5;Wireless noise-canceling headphones with industry-leading sound quality;https://images.unsplash.com/photo-1739477021967-e14dc3938e56?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8];[MacBook Pro 14 M3;Apple\'s latest laptop featuring the powerful M3 chip and 32GB RAM for professionals;https://images.unsplash.com/photo-1739477021967-e14dc3938e56?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8];[Asus ROG Strix G16;A gaming laptop with RTX 4070 graphics, 1TB SSD, and high-refresh-rate display;https://images.unsplash.com/photo-1739477021967-e14dc3938e56?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8];[Google Pixel 8 Pro;A smartphone with AI-powered photography and a 120Hz OLED display;https://images.unsplash.com/photo-1739477021967-e14dc3938e56?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8];[PlayStation 5;Next-gen gaming console with an 825GB SSD and DualSense controller;https://images.unsplash.com/photo-1739477021967-e14dc3938e56?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8];[Xbox Series X;A powerful gaming console with 4K gaming and 1TB storage;https://images.unsplash.com/photo-1739477021967-e14dc3938e56?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8];[NVIDIA RTX 4090;A cutting-edge graphics card with 24GB VRAM and ray tracing support;https://images.unsplash.com/photo-1739477021967-e14dc3938e56?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8];[Apple Watch Ultra 2;A rugged smartwatch with a titanium casing and water-resistant design;https://images.unsplash.com/photo-1739477021967-e14dc3938e56?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8];[DJI Mini 4 Pro;A compact drone featuring a 4K camera and obstacle avoidance technology;https://images.unsplash.com/photo-1739477021967-e14dc3938e56?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8];[Samsung Odyssey G9;A curved 49-inch gaming monitor with a 240Hz refresh rate;https://images.unsplash.com/photo-1739477021967-e14dc3938e56?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8];[Logitech MX Master 3S;An ergonomic wireless mouse with silent clicks and advanced productivity features;https://images.unsplash.com/photo-1739477021967-e14dc3938e56?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8];[Razer BlackWidow V4;A mechanical gaming keyboard with customizable RGB lighting and durable switches;https://images.unsplash.com/photo-1739477021967-e14dc3938e56?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8];[MacBook Air M2;A lightweight and powerful laptop with the M2 chip and a Retina display;https://images.unsplash.com/photo-1739477021967-e14dc3938e56?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8];[iPad Pro M2;A high-end tablet with an M2 chip and a Liquid Retina XDR display;https://images.unsplash.com/photo-1739477021967-e14dc3938e56?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8];[AirPods Pro 2;Noise-canceling wireless earbuds with spatial audio and improved battery life;https://images.unsplash.com/photo-1739477021967-e14dc3938e56?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8];[Apple HomePod 2;A smart speaker with Siri integration and spatial audio technology;https://images.unsplash.com/photo-1739477021967-e14dc3938e56?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8];[Apple Studio Display;A 5K Retina display designed for creative professionals;https://images.unsplash.com/photo-1739477021967-e14dc3938e56?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8];[Samsung Galaxy Tab S9 Ultra;A high-end Android tablet with an AMOLED display and S Pen support;https://images.unsplash.com/photo-1739477021967-e14dc3938e56?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8];[Samsung Galaxy Buds 2 Pro;Premium wireless earbuds with ANC and immersive 360 audio;https://images.unsplash.com/photo-1739477021967-e14dc3938e56?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8];[Samsung Smart Monitor M8;A versatile 4K smart monitor with built-in apps and a webcam;https://images.unsplash.com/photo-1739477021967-e14dc3938e56?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8];[Samsung Galaxy Z Fold5;A foldable smartphone with a large inner display and powerful performance;https://images.unsplash.com/photo-1739477021967-e14dc3938e56?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8];[Samsung The Frame TV;A lifestyle TV that blends into home decor with customizable bezels;https://images.unsplash.com/photo-1739477021967-e14dc3938e56?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8];\"}',1,'','enabled',NULL,'2025-02-20 03:33:15.731','2025-02-20 03:33:15.731'),
+('SENBOX.ORG/TEST-SEARCH-INVENTORY_1kErnmVoPXoKZvla9GFsXTUL6SGryiEg7NqHDNbBXBpY_4','SEARCH_BY_ATTRIBUTE','message_box','SEARCH_BY_ATTRIBUTE','{\"value\": \"Empty\"}',1,'','enabled',NULL,'2025-02-20 03:33:15.731','2025-02-20 03:33:15.731'),
+('SENBOX.ORG/TEST-SEARCH-INVENTORY_1kErnmVoPXoKZvla9GFsXTUL6SGryiEg7NqHDNbBXBpY_5','RESULT','section','RESULT','{\"value\": \"RESULT\"}',1,'','enabled',NULL,'2025-02-20 03:33:15.731','2025-02-20 03:33:15.731'),
+('SENBOX.ORG/TEST-SEARCH-INVENTORY_1kErnmVoPXoKZvla9GFsXTUL6SGryiEg7NqHDNbBXBpY_6','SEARCH_INVENTORY_RESULT','message_box','SEARCH_INVENTORY_RESULT','{\"value\": \"Empty\"}',1,'','enabled',NULL,'2025-02-20 03:33:15.731','2025-02-20 03:33:15.731'),
 ('SENBOX.ORG/TESTFORM_1J8gIEjehIDXVEGDGsSsrie7PTyXJkVSUiOepiQnb0DI_11','COUNT','count','COUNT','{}',1,'','enabled',NULL,'2025-01-03 04:35:47.882','2025-01-03 04:35:47.882'),
 ('SENBOX.ORG/TESTFORM_1J8gIEjehIDXVEGDGsSsrie7PTyXJkVSUiOepiQnb0DI_12','NUMBER','number','NUMBER','{}',1,'','enabled',NULL,'2025-01-03 04:35:47.882','2025-01-03 04:35:47.882'),
 ('SENBOX.ORG/TESTFORM_1J8gIEjehIDXVEGDGsSsrie7PTyXJkVSUiOepiQnb0DI_13','TEXT','text','TEXT','{}',1,'','enabled',NULL,'2025-01-03 04:35:47.882','2025-01-03 04:35:47.882'),
@@ -1715,7 +1757,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `s_redirect_url`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `s_redirect_url` (
   `redirect_url_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `qr_code` varchar(255) NOT NULL,
@@ -1745,7 +1787,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `s_role`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `s_role` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `role_name` varchar(255) NOT NULL DEFAULT '',
@@ -1780,7 +1822,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `s_role_claim`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `s_role_claim` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `claim_name` varchar(255) NOT NULL,
@@ -1809,7 +1851,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `s_role_policy`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `s_role_policy` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `policy_name` varchar(255) NOT NULL,
@@ -1835,7 +1877,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `s_role_policy_claims`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `s_role_policy_claims` (
   `policy_id` bigint(20) NOT NULL,
   `claim_id` bigint(20) NOT NULL,
@@ -1861,7 +1903,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `s_role_policy_roles`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `s_role_policy_roles` (
   `policy_id` bigint(20) NOT NULL,
   `role_id` bigint(20) NOT NULL,
@@ -1887,7 +1929,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `s_setting`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `s_setting` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `settings` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '{}' CHECK (json_valid(`settings`)),
@@ -1918,7 +1960,7 @@ INSERT INTO `s_setting` VALUES
 (14,'{\"spreadsheet_id\":\"1sng4-hUjgeu54wxj_XlRNGRt7_qeZDA5WFniHgKVZoA\"}',4,'2023-04-09 23:13:11.559','2024-10-05 15:44:59.875','SUMMARY',0),
 (15,'{\"spreadsheet_url\":\"https://docs.google.com/spreadsheets/d/1GuhHrsysU5l5gozmI1MYpXKOxVb-KWbuBltbNnp0BhM/edit?gid=1470872227#gid=1470872227\",\"auto\":false,\"interval\":1440}',10,'2023-07-15 09:11:36.630','2024-10-18 13:49:02.488','FORM ⍰ 2 [UPLOADER]',0),
 (16,'{\"spreadsheet_url\":\"https://docs.google.com/spreadsheets/d/1Mn4cTOJw-krQ63WtlE8TScV6arz1eg5P0J-z-TOvePE/edit?gid=269156543#gid=269156543\",\"auto\":true,\"interval\":60}',11,'2023-07-15 09:11:38.986','2024-10-18 13:49:03.643','FORM ⍰ 3  [UPLOADER]',0),
-(17,'{\"spreadsheet_url\":\"https://docs.google.com/spreadsheets/d/16x8QQK-r8f0Hbe-9sQvI73y_ToHbqMCLBB4bUC-eXoU/edit?gid=1470872227#gid=1470872227\",\"auto\":false,\"interval\":0}',12,'2023-07-15 09:11:42.079','2025-01-14 13:49:30.530','FORM ⍰ 4 [UPLOADER]',0),
+(17,'{\"spreadsheet_url\":\"https://docs.google.com/spreadsheets/d/16x8QQK-r8f0Hbe-9sQvI73y_ToHbqMCLBB4bUC-eXoU/edit?gid=1470872227#gid=1470872227\",\"auto\":false,\"interval\":0}',12,'2023-07-15 09:11:42.079','2025-02-20 03:33:11.543','FORM ⍰ 4 [UPLOADER]',0),
 (18,'{\"spreadsheet_id\":\"11xDtKyCq2-ve5nWYShZkc-aNELmUPTtoTKuq4xp5Yw0\"}',9,'2023-07-15 09:11:57.427','2024-10-05 15:45:00.434','🚪OUTPUT TEMPLATE FOR TEACHER (VALUE32)',0),
 (19,'{\"name\":\"SENBOX.org\",\"value\":\"https://www.senbox.org/\"}',13,'2024-01-28 23:54:23.542','2024-10-05 15:47:09.900','SIGN UP - [BUTTON 1]',0),
 (20,'{\"name\":\"Read Terms\",\"value\":\"https://sites.google.com/senbox.org/senboxtac/senbox-terms-conditions\"}',14,'2024-01-28 23:54:26.712','2024-10-05 15:47:08.896','SIGN UP - [BUTTON 2]',0),
@@ -1943,7 +1985,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `s_submission`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `s_submission` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `form_id` bigint(20) unsigned DEFAULT NULL,
@@ -1957,7 +1999,7 @@ CREATE TABLE `s_submission` (
   KEY `fk_s_submission_device` (`device_id`),
   CONSTRAINT `fk_s_submission_device` FOREIGN KEY (`device_id`) REFERENCES `s_device` (`id`) ON DELETE CASCADE,
   CONSTRAINT `fk_s_submission_form` FOREIGN KEY (`form_id`) REFERENCES `s_form` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1975,7 +2017,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `s_to_do`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `s_to_do` (
   `id` varchar(255) NOT NULL,
   `spreadsheet_id` varchar(255) NOT NULL,
@@ -2007,7 +2049,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `s_user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `s_user` (
   `user_id` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL DEFAULT '',
@@ -2047,7 +2089,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `s_user_config`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `s_user_config` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `top_button_config` varchar(255) NOT NULL DEFAULT '',
@@ -2088,7 +2130,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `s_user_devices`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `s_user_devices` (
   `user_id` char(36) NOT NULL,
   `device_id` varchar(36) NOT NULL,
@@ -2105,28 +2147,6 @@ CREATE TABLE `s_user_devices` (
 
 LOCK TABLES `s_user_devices` WRITE;
 /*!40000 ALTER TABLE `s_user_devices` DISABLE KEYS */;
-INSERT INTO `s_user_devices` VALUES
-('03fcd98e-e9b7-11ef-80ca-0242c0000205','5fb2394c02fb3939'),
-('1da60699-cca0-11ef-b72d-9457a5ea5b47','5fb2394c02fb3939'),
-('2e0fc222-ea77-11ef-91f5-0242c0000205','5fb2394c02fb3939'),
-('4a951042-d232-11ef-81b1-9457a5ea5b47','5fb2394c02fb3939'),
-('52e46361-cc9f-11ef-826a-9457a5ea5b47','5fb2394c02fb3939'),
-('539ebe0f-ea7b-11ef-91f5-0242c0000205','5fb2394c02fb3939'),
-('570e0e22-d22f-11ef-81b1-9457a5ea5b47','5fb2394c02fb3939'),
-('58d4e72b-e9b5-11ef-80ca-0242c0000205','5fb2394c02fb3939'),
-('5b682645-c267-11ef-9c79-9457a5ea5b47','5fb2394c02fb3939'),
-('6281d0a8-d23e-11ef-81b1-9457a5ea5b47','5fb2394c02fb3939'),
-('71c61ba5-e920-11ef-80ca-0242c0000205','5fb2394c02fb3939'),
-('76a111ec-cca0-11ef-b72d-9457a5ea5b47','5fb2394c02fb3939'),
-('839dacc3-e833-11ef-80ca-0242c0000205','5fb2394c02fb3939'),
-('8986f3aa-d559-11ef-93c3-9457a5ea5b47','5fb2394c02fb3939'),
-('94e5179c-d558-11ef-93c3-9457a5ea5b47','5fb2394c02fb3939'),
-('9f0ebef4-c26f-11ef-9c79-9457a5ea5b47','5fb2394c02fb3939'),
-('a45bfd7e-cc9d-11ef-9d77-9457a5ea5b47','5fb2394c02fb3939'),
-('b77d7343-e9b5-11ef-80ca-0242c0000205','5fb2394c02fb3939'),
-('b8b474a7-d154-11ef-a4f3-9457a5ea5b47','5fb2394c02fb3939'),
-('cff60a10-e832-11ef-80ca-0242c0000205','5fb2394c02fb3939'),
-('d43baaf8-d272-11ef-81b1-9457a5ea5b47','5fb2394c02fb3939');
 /*!40000 ALTER TABLE `s_user_devices` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2136,7 +2156,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `s_user_entity`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `s_user_entity` (
   `id` char(36) NOT NULL,
   `username` varchar(255) NOT NULL DEFAULT '',
@@ -2163,28 +2183,6 @@ CREATE TABLE `s_user_entity` (
 
 LOCK TABLES `s_user_entity` WRITE;
 /*!40000 ALTER TABLE `s_user_entity` DISABLE KEYS */;
-INSERT INTO `s_user_entity` VALUES
-('03fcd98e-e9b7-11ef-80ca-0242c0000205','yyyyyy','SENBOX USER','','','2000-02-23 00:00:00.000','$2a$10$3O/WdbKcgkrChEDuiG2CSeLPCaK5UCgyZxPJvXU2BzowV2vVFzV56',NULL,1,'2025-02-13 03:02:52.826','2025-02-13 03:02:52.826'),
-('1da60699-cca0-11ef-b72d-9457a5ea5b47','thanh','SENBOX USER','','','2000-01-07 07:00:00.000','$2a$10$F1vW0WszwAI1HYNiwwEufuj1vxMc9.kQfiYVc7wPUW2eoiChzXM/a',7,1,'2025-01-07 02:35:53.774','2025-02-11 04:15:48.170'),
-('2e0fc222-ea77-11ef-91f5-0242c0000205','gggg','SENBOX USERTG','1111111111','','1978-02-16 00:00:00.000','$2a$10$CvGuacytf6z2OEiKTIkz1.qNinTMHwESIw08zcnOyLczro8hDg2zq',NULL,1,'2025-02-14 01:58:26.828','2025-02-14 01:59:15.482'),
-('4a951042-d232-11ef-81b1-9457a5ea5b47','trungcao','SENBOX USER','','','2000-01-20 07:00:00.000','$2a$10$3uEqW6bzzo6ALOPl7c1if.dgahC/1bn7nY6HlESqatYK/8u.Wg3AO',8,1,'2025-01-14 04:44:51.508','2025-02-11 04:15:48.194'),
-('52e46361-cc9f-11ef-826a-9457a5ea5b47','hau','SENBOX USER','','','2000-01-07 07:00:00.000','$2a$10$iATP/QRjWj5.6JcV.x4/2OmKpfc2q3xkKpK7VICEuZndRjo92E6Xa',9,1,'2025-01-07 02:30:13.584','2025-02-11 04:15:48.216'),
-('539ebe0f-ea7b-11ef-91f5-0242c0000205','frfff','SENBOX USER','','','1996-02-14 00:00:00.000','$2a$10$MawdhFLthpektIjT6kTRGu8cA1znuWW1N22sXXlBP33Z0NAm6PQim',NULL,1,'2025-02-14 02:28:07.796','2025-02-14 02:28:07.796'),
-('570e0e22-d22f-11ef-81b1-9457a5ea5b47','huy test','SENBOX USER','','','2000-01-14 07:00:00.000','$2a$10$KM9zMzF.uUpTWEvazr/hCevKer/olTzYl4GDyPG41gGaXu13ypmVm',10,1,'2025-01-14 04:23:43.945','2025-02-11 04:15:48.242'),
-('58d4e72b-e9b5-11ef-80ca-0242c0000205','ygy123#','SENBOX USER','0396071116','','1900-02-15 00:00:00.000','$2a$10$7nxcW6qMyC.18ZJ0xSedaeYcyQw7jsK9QzsNsj4L/hBbDucaeKKL6',NULL,1,'2025-02-13 02:50:56.178','2025-02-13 02:52:00.695'),
-('5b682645-c267-11ef-9c79-9457a5ea5b47','loc','SENBOX USER','0912356789','stnktu','2000-12-25 07:00:00.000','$2a$10$m0kAPJMUtx0c2Q/CczaMOuODQ.Sn0ardpctEfbOKfd64k9em1KV6y',11,1,'2024-12-25 02:24:24.453','2025-02-12 07:00:19.567'),
-('6281d0a8-d23e-11ef-81b1-9457a5ea5b47','trungproo','SENBOX USER','','','2000-01-18 07:00:00.000','$2a$10$ipjoM1Dy30wgBxtrNoYlZelWej2gFfAL3Bn2V7lBKeeGQ5Vxgmmvi',12,1,'2025-01-14 06:11:25.610','2025-02-11 04:15:48.288'),
-('71c61ba5-e920-11ef-80ca-0242c0000205','trungprooo123','SENBOX USER','','','1900-02-12 00:00:00.000','$2a$10$c2TZEUgNu7.IgCOTNAsZ8OG.mKuKVdNWlm9IVWianQVFClmqqPwTa',NULL,1,'2025-02-12 09:05:03.017','2025-02-12 09:05:03.017'),
-('76a111ec-cca0-11ef-b72d-9457a5ea5b47','wrhrw','SENBOX USER','','','2000-01-07 07:00:00.000','$2a$10$QtrsM1BKovh.QRvO/3NxVuiuqnOPBvwbKkJuVzysfRwbQZsHC22mq',13,1,'2025-01-07 02:38:23.063','2025-02-11 04:15:48.311'),
-('839dacc3-e833-11ef-80ca-0242c0000205','huy senbox','SENBOX USER','','','2000-02-15 00:00:00.000','$2a$10$c7dzrrhyG6xfrrpKU/6tOuNwg5LsVmnHJoTUYQWsTnrlLgTTOpThK',NULL,1,'2025-02-11 04:49:02.229','2025-02-11 04:49:02.229'),
-('8986f3aa-d559-11ef-93c3-9457a5ea5b47','trungcaooooo','SENBOX USER 2223','0937185733','','2000-01-18 07:00:00.000','$2a$10$TpgRvWSGTpJh7plEq6iE2uSxxMubQ0NkQWIg9m09QR44ivoUDo4yS',14,1,'2025-01-18 05:03:20.925','2025-02-14 03:08:41.999'),
-('94e5179c-d558-11ef-93c3-9457a5ea5b47','trungcaovipproo','SENBOX USER','','','2000-01-18 07:00:00.000','$2a$10$EZ0Zcvwlt6LJzl8RvV7ju.O0oMqVV/NdUNn3s8vF.CeN7giFtAc2e',15,1,'2025-01-18 04:56:30.600','2025-02-11 04:15:48.356'),
-('9f0ebef4-c26f-11ef-9c79-9457a5ea5b47','trung','SENBOX USER','','','2000-12-25 07:00:00.000','$2a$10$711WauH0VBg5kQNKtMcQ0.7s5HtFCsFUfVyOIuVwanGJd/32QSds.',16,1,'2024-12-25 03:23:33.946','2025-02-11 04:15:48.381'),
-('a45bfd7e-cc9d-11ef-9d77-9457a5ea5b47','locds','SENBOX USER','','','2000-01-07 07:00:00.000','$2a$10$sJLdlQgeTQx0JahoxMvM6OqjLJ.1mIPOdEymUqrrQnIOYzG3XPY8G',17,1,'2025-01-07 02:18:11.347','2025-02-11 04:15:48.402'),
-('b77d7343-e9b5-11ef-80ca-0242c0000205','yygqw','SENBOX USER','','','1901-02-15 00:00:00.000','$2a$10$Zy71g0w3XpXDxcQXG3XtV.Bkj.gMge5dCyyzMqVbz45Een8UoPYzW',NULL,1,'2025-02-13 02:53:35.012','2025-02-13 02:53:35.012'),
-('b8b474a7-d154-11ef-a4f3-9457a5ea5b47','msnhu','SENBOX USER','','','2000-01-13 07:00:00.000','$2a$10$3F6nUBH93g6nJz/jQPWXee6PBxgaj1YUqiZPiRRNvSKBJlqz8kOUa',18,1,'2025-01-13 02:18:47.987','2025-02-11 04:15:48.424'),
-('cff60a10-e832-11ef-80ca-0242c0000205','mrtrung','SENBOX USER','','','2000-02-11 00:00:00.000','$2a$10$QaZac9NYNTo8/aljAd4H8OJNvrnooevVN6/A2/rul.58zzm1uFU8G',NULL,1,'2025-02-11 04:44:00.810','2025-02-11 04:44:00.810'),
-('d43baaf8-d272-11ef-81b1-9457a5ea5b47','trung cao','SENBOX USER','','','2000-01-18 07:00:00.000','$2a$10$YhceP5sMZh8KzQpw1XDA7.zqcWw3uajs8bNCWtRYHqhSU5SbNfNdW',19,1,'2025-01-14 12:26:50.236','2025-02-11 04:15:48.449');
 /*!40000 ALTER TABLE `s_user_entity` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2194,7 +2192,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `s_user_guardians`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `s_user_guardians` (
   `user_id` char(36) NOT NULL,
   `guardian_id` char(36) NOT NULL,
@@ -2220,7 +2218,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `s_user_policies`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `s_user_policies` (
   `user_id` char(36) NOT NULL,
   `policy_id` bigint(20) NOT NULL,
@@ -2246,7 +2244,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `s_user_roles`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `s_user_roles` (
   `user_id` char(36) NOT NULL,
   `role_id` bigint(20) NOT NULL,
@@ -2263,73 +2261,6 @@ CREATE TABLE `s_user_roles` (
 
 LOCK TABLES `s_user_roles` WRITE;
 /*!40000 ALTER TABLE `s_user_roles` DISABLE KEYS */;
-INSERT INTO `s_user_roles` VALUES
-('03fcd98e-e9b7-11ef-80ca-0242c0000205',3),
-('1da60699-cca0-11ef-b72d-9457a5ea5b47',3),
-('2e0fc222-ea77-11ef-91f5-0242c0000205',3),
-('4a951042-d232-11ef-81b1-9457a5ea5b47',3),
-('52e46361-cc9f-11ef-826a-9457a5ea5b47',3),
-('539ebe0f-ea7b-11ef-91f5-0242c0000205',3),
-('58d4e72b-e9b5-11ef-80ca-0242c0000205',3),
-('5b682645-c267-11ef-9c79-9457a5ea5b47',3),
-('6281d0a8-d23e-11ef-81b1-9457a5ea5b47',3),
-('71c61ba5-e920-11ef-80ca-0242c0000205',3),
-('76a111ec-cca0-11ef-b72d-9457a5ea5b47',3),
-('839dacc3-e833-11ef-80ca-0242c0000205',3),
-('8986f3aa-d559-11ef-93c3-9457a5ea5b47',3),
-('94e5179c-d558-11ef-93c3-9457a5ea5b47',3),
-('9f0ebef4-c26f-11ef-9c79-9457a5ea5b47',3),
-('a45bfd7e-cc9d-11ef-9d77-9457a5ea5b47',3),
-('b77d7343-e9b5-11ef-80ca-0242c0000205',3),
-('b8b474a7-d154-11ef-a4f3-9457a5ea5b47',3),
-('cff60a10-e832-11ef-80ca-0242c0000205',3),
-('d43baaf8-d272-11ef-81b1-9457a5ea5b47',3),
-('03fcd98e-e9b7-11ef-80ca-0242c0000205',6),
-('1da60699-cca0-11ef-b72d-9457a5ea5b47',6),
-('2e0fc222-ea77-11ef-91f5-0242c0000205',6),
-('4a951042-d232-11ef-81b1-9457a5ea5b47',6),
-('58d4e72b-e9b5-11ef-80ca-0242c0000205',6),
-('6281d0a8-d23e-11ef-81b1-9457a5ea5b47',6),
-('71c61ba5-e920-11ef-80ca-0242c0000205',6),
-('76a111ec-cca0-11ef-b72d-9457a5ea5b47',6),
-('8986f3aa-d559-11ef-93c3-9457a5ea5b47',6),
-('94e5179c-d558-11ef-93c3-9457a5ea5b47',6),
-('b77d7343-e9b5-11ef-80ca-0242c0000205',6),
-('cff60a10-e832-11ef-80ca-0242c0000205',6),
-('d43baaf8-d272-11ef-81b1-9457a5ea5b47',6),
-('03fcd98e-e9b7-11ef-80ca-0242c0000205',7),
-('1da60699-cca0-11ef-b72d-9457a5ea5b47',7),
-('2e0fc222-ea77-11ef-91f5-0242c0000205',7),
-('4a951042-d232-11ef-81b1-9457a5ea5b47',7),
-('58d4e72b-e9b5-11ef-80ca-0242c0000205',7),
-('6281d0a8-d23e-11ef-81b1-9457a5ea5b47',7),
-('71c61ba5-e920-11ef-80ca-0242c0000205',7),
-('76a111ec-cca0-11ef-b72d-9457a5ea5b47',7),
-('8986f3aa-d559-11ef-93c3-9457a5ea5b47',7),
-('94e5179c-d558-11ef-93c3-9457a5ea5b47',7),
-('b77d7343-e9b5-11ef-80ca-0242c0000205',7),
-('cff60a10-e832-11ef-80ca-0242c0000205',7),
-('d43baaf8-d272-11ef-81b1-9457a5ea5b47',7),
-('03fcd98e-e9b7-11ef-80ca-0242c0000205',8),
-('1da60699-cca0-11ef-b72d-9457a5ea5b47',8),
-('2e0fc222-ea77-11ef-91f5-0242c0000205',8),
-('4a951042-d232-11ef-81b1-9457a5ea5b47',8),
-('52e46361-cc9f-11ef-826a-9457a5ea5b47',8),
-('539ebe0f-ea7b-11ef-91f5-0242c0000205',8),
-('570e0e22-d22f-11ef-81b1-9457a5ea5b47',8),
-('58d4e72b-e9b5-11ef-80ca-0242c0000205',8),
-('5b682645-c267-11ef-9c79-9457a5ea5b47',8),
-('6281d0a8-d23e-11ef-81b1-9457a5ea5b47',8),
-('71c61ba5-e920-11ef-80ca-0242c0000205',8),
-('76a111ec-cca0-11ef-b72d-9457a5ea5b47',8),
-('8986f3aa-d559-11ef-93c3-9457a5ea5b47',8),
-('94e5179c-d558-11ef-93c3-9457a5ea5b47',8),
-('9f0ebef4-c26f-11ef-9c79-9457a5ea5b47',8),
-('a45bfd7e-cc9d-11ef-9d77-9457a5ea5b47',8),
-('b77d7343-e9b5-11ef-80ca-0242c0000205',8),
-('b8b474a7-d154-11ef-a4f3-9457a5ea5b47',8),
-('cff60a10-e832-11ef-80ca-0242c0000205',8),
-('d43baaf8-d272-11ef-81b1-9457a5ea5b47',8);
 /*!40000 ALTER TABLE `s_user_roles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2344,6 +2275,6 @@ UNLOCK TABLES;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+/*M!100616 SET NOTE_VERBOSITY=@OLD_NOTE_VERBOSITY */;
 
--- Dump completed on 2025-02-14 11:50:43
+-- Dump completed on 2025-02-20 11:14:49

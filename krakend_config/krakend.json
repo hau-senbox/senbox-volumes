@@ -1,7 +1,7 @@
 {
   "$schema": "https://www.krakend.io/schema/v3.json",
   "version": 3,
-  "timeout": "10000ms",
+  "timeout": "20000ms",
   "cache_ttl": "300s",
   "extra_config": {
     "telemetry/logging": {

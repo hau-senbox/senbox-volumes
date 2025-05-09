@@ -3,6 +3,9 @@
 {{$settings := .}}
 
 {{ template "GoMainSerivecApiEndpoint" $settings }},
-{{ template "InventorySerivecApiEndpoint" $settings }}
+{{ template "InventorySerivecApiEndpoint" $settings }},
+{{ template "ProductSerivecApiEndpoint" $settings }},
+{{ template "CartSerivecApiEndpoint" $settings }},
+{{ template "OrderSerivecApiEndpoint" $settings }}
 
 {{end}}

@@ -2,7 +2,7 @@
   "$schema": "https://www.krakend.io/schema/v3.json",
   "version": 3,
   "name": "Krakend Api Gateway",
-  "timeout": "10000ms",
+  "timeout": "120000ms",
   "cache_ttl": "300s",
   "extra_config": {
     "telemetry/logging": {
@@ -62,13 +62,11 @@
 
 {
   "endpoint": "/v1/admin/login",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "v1/admin/login",
@@ -92,13 +90,11 @@
 },
 {
   "endpoint": "/v1/admin/users",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/users",
@@ -122,13 +118,11 @@
 },
 {
   "endpoint": "/v1/admin/me/new-password",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/me/new-password",
@@ -152,13 +146,11 @@
 },
 {
   "endpoint": "/v1/admin/user/create",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/user/create",
@@ -182,13 +174,11 @@
 },
 {
   "endpoint": "/v1/admin/form/create",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/form/create",
@@ -212,13 +202,11 @@
 },
 {
   "endpoint": "/v1/admin/form/list",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/form/list",
@@ -242,13 +230,11 @@
 },
 {
   "endpoint": "/v1/admin/form/delete/{id}",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "DELETE",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/form/delete/{id}",
@@ -272,13 +258,11 @@
 },
 {
   "endpoint": "/v1/admin/forms/search",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/forms/search",
@@ -302,13 +286,11 @@
 },
 {
   "endpoint": "/v1/admin/form/{id}",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/form/{id}",
@@ -332,13 +314,11 @@
 },
 {
   "endpoint": "/v1/admin/forms/import",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/forms/import",
@@ -362,13 +342,11 @@
 },
 {
   "endpoint": "/v1/admin/forms2/import",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/forms2/import",
@@ -392,13 +370,11 @@
 },
 {
   "endpoint": "/v1/admin/forms3/import",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/forms3/import",
@@ -422,13 +398,11 @@
 },
 {
   "endpoint": "/v1/admin/forms4/import",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/forms4/import",
@@ -436,7 +410,7 @@
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
-          "timeout": 10,
+          "timeout": 20,
           "max_errors": 5,
           "log_status_change": true
         }
@@ -452,13 +426,11 @@
 },
 {
   "endpoint": "/v1/admin/forms/partially/import",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/forms/partially/import",
@@ -482,13 +454,11 @@
 },
 {
   "endpoint": "/v1/admin/forms/signup",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/forms/signup",
@@ -511,44 +481,12 @@
   ]
 },
 {
-  "endpoint": "/v1/admin/device/message/{device_id}",
-  "input_query_strings":[
-    "*"
-  ],
-  "method": "GET",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
-  "backend": [
-    {
-      "url_pattern": "/v1/admin/device/message/{device_id}",
-      "output_encoding": "no-op",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
-        }
-      },
-      "method": "GET",
-      
-      "sd": "dns",
-      "host": ["go-main-service.service.consul"],
-      
-      "disable_host_sanitize": true
-    }
-  ]
-},
-{
   "endpoint": "/v1/admin/device/deactivate/{device_id}",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/device/deactivate/{device_id}",
@@ -572,13 +510,11 @@
 },
 {
   "endpoint": "/v1/admin/device/activate/{device_id}",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/device/activate/{device_id}",
@@ -602,13 +538,11 @@
 },
 {
   "endpoint": "/v1/admin/device/{device_id}/update",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/device/{device_id}/update",
@@ -632,13 +566,11 @@
 },
 {
   "endpoint": "/v1/admin/device/{device_id}/updatev2",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/device/{device_id}/updatev2",
@@ -662,13 +594,11 @@
 },
 {
   "endpoint": "/v1/admin/redirect-url/create",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/redirect-url/create",
@@ -692,13 +622,11 @@
 },
 {
   "endpoint": "/v1/admin/redirect-url/list",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/redirect-url/list",
@@ -722,13 +650,11 @@
 },
 {
   "endpoint": "/v1/admin/redirect-url/{id}",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "DELETE",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/redirect-url/{id}",
@@ -752,13 +678,11 @@
 },
 {
   "endpoint": "/v1/admin/redirect-url/{id}",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/redirect-url/{id}",
@@ -782,13 +706,11 @@
 },
 {
   "endpoint": "/v1/admin/redirect-url/import",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/redirect-url/import",
@@ -812,13 +734,11 @@
 },
 {
   "endpoint": "/v1/admin/redirect-url/import/partially",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/redirect-url/import/partially",
@@ -842,13 +762,11 @@
 },
 {
   "endpoint": "/v1/admin/todo/import",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/todo/import",
@@ -872,13 +790,11 @@
 },
 {
   "endpoint": "/v1/admin/todo/import/partially",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/todo/import/partially",
@@ -902,13 +818,11 @@
 },
 {
   "endpoint": "/v1/admin/settings",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings",
@@ -932,13 +846,11 @@
 },
 {
   "endpoint": "/v1/admin/settings/output-sheet",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/output-sheet",
@@ -962,13 +874,11 @@
 },
 {
   "endpoint": "/v1/admin/settings/output-summary",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/output-summary",
@@ -992,13 +902,11 @@
 },
 {
   "endpoint": "/v1/admin/settings/sync-devices",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/sync-devices",
@@ -1022,13 +930,11 @@
 },
 {
   "endpoint": "/v1/admin/settings/email-history",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/email-history",
@@ -1052,13 +958,11 @@
 },
 {
   "endpoint": "/v1/admin/settings/output-template",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/output-template",
@@ -1082,13 +986,11 @@
 },
 {
   "endpoint": "/v1/admin/settings/output-template-teacher",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/output-template-teacher",
@@ -1112,13 +1014,11 @@
 },
 {
   "endpoint": "/v1/admin/settings/sign-up-button-1",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/sign-up-button-1",
@@ -1142,13 +1042,11 @@
 },
 {
   "endpoint": "/v1/admin/settings/sign-up-button-2",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/sign-up-button-2",
@@ -1172,13 +1070,11 @@
 },
 {
   "endpoint": "/v1/admin/settings/sign-up-button-3",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/sign-up-button-3",
@@ -1202,13 +1098,11 @@
 },
 {
   "endpoint": "/v1/admin/settings/sign-up-button-4",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/sign-up-button-4",
@@ -1232,13 +1126,11 @@
 },
 {
   "endpoint": "/v1/admin/settings/sign-up-button-5",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/sign-up-button-5",
@@ -1262,13 +1154,11 @@
 },
 {
   "endpoint": "/v1/admin/settings/sign-up-button-configuration",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/sign-up-button-configuration",
@@ -1292,13 +1182,11 @@
 },
 {
   "endpoint": "/v1/admin/settings/registration-form",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/registration-form",
@@ -1322,13 +1210,11 @@
 },
 {
   "endpoint": "/v1/admin/settings/registration-submission",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/registration-submission",
@@ -1352,13 +1238,11 @@
 },
 {
   "endpoint": "/v1/admin/settings/registration-preset-2",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/registration-preset-2",
@@ -1382,13 +1266,11 @@
 },
 {
   "endpoint": "/v1/admin/settings/registration-preset-1",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/registration-preset-1",
@@ -1412,13 +1294,11 @@
 },
 {
   "endpoint": "/v1/admin/settings/api-distributer",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/api-distributer",
@@ -1442,13 +1322,11 @@
 },
 {
   "endpoint": "/v1/admin/settings/code-counting-data",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/code-counting-data",
@@ -1472,13 +1350,11 @@
 },
 {
   "endpoint": "/v1/admin/settings/label/name",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/label/name",
@@ -1502,13 +1378,11 @@
 },
 {
   "endpoint": "/v1/admin/settings/logo-refresh-interval",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/logo-refresh-interval",
@@ -1532,13 +1406,11 @@
 },
 {
   "endpoint": "/v1/admin/monitor/google-api",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/monitor/google-api",
@@ -1562,13 +1434,11 @@
 },
 {
   "endpoint": "/v1/admin/code-counting/list",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/code-counting/list",
@@ -1592,13 +1462,11 @@
 },
 {
   "endpoint": "/v1/admin/code-counting/update",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/code-counting/update",
@@ -1622,13 +1490,11 @@
 },
 {
   "endpoint": "/infra/backup",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/infra/backup",
@@ -1652,13 +1518,11 @@
 },
 {
   "endpoint": "/v1/admin/sync/start",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/sync/start",
@@ -1682,13 +1546,11 @@
 },
 {
   "endpoint": "/v1/admin/sync/stop",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/sync/stop",
@@ -1711,17 +1573,15 @@
   ]
 },
 {
-  "endpoint": "/v1/admin/device-component-values/company/{company_id}",
-  "input_query_strings":[
-    "*"
-  ],
+  "endpoint": "/v1/admin/device-component-values/organization/{organization_id}",
+  "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/v1/admin/device-component-values/company/{company_id}",
+      "url_pattern": "/v1/admin/device-component-values/organization/{organization_id}",
       "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
@@ -1741,17 +1601,15 @@
   ]
 },
 {
-  "endpoint": "/v1/admin/device-component-values/device/{company_id}",
-  "input_query_strings":[
-    "*"
-  ],
+  "endpoint": "/v1/admin/device-component-values/device/{organization_id}",
+  "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/v1/admin/device-component-values/device/{company_id}",
+      "url_pattern": "/v1/admin/device-component-values/device/{organization_id}",
       "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
@@ -1771,17 +1629,15 @@
   ]
 },
 {
-  "endpoint": "/v1/admin/device-component-values/company",
-  "input_query_strings":[
-    "*"
-  ],
+  "endpoint": "/v1/admin/device-component-values/organization",
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/v1/admin/device-component-values/company",
+      "url_pattern": "/v1/admin/device-component-values/organization",
       "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
@@ -1802,13 +1658,11 @@
 },
 {
   "endpoint": "/v1/admin/device-component-values/device",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/admin/device-component-values/device",
@@ -1832,13 +1686,11 @@
 },
 {
   "endpoint": "/v1/device/{device_id}",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/device/{device_id}",
@@ -1862,13 +1714,11 @@
 },
 {
   "endpoint": "/v1/device/user/{user_id}",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/device/user/{user_id}",
@@ -1892,13 +1742,11 @@
 },
 {
   "endpoint": "/v1/device/init",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/device/init",
@@ -1922,13 +1770,11 @@
 },
 {
   "endpoint": "/v1/device/refresh-token",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/device/refresh-token",
@@ -1952,13 +1798,11 @@
 },
 {
   "endpoint": "/v1/device/messaging/fcm/register",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/device/messaging/fcm/register",
@@ -1982,13 +1826,11 @@
 },
 {
   "endpoint": "/v1/device/note",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/device/note",
@@ -2012,13 +1854,11 @@
 },
 {
   "endpoint": "/v1/device/send/email",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/device/send/email",
@@ -2041,104 +1881,12 @@
   ]
 },
 {
-  "endpoint": "/v1/device/time-table",
-  "input_query_strings":[
-    "*"
-  ],
-  "method": "GET",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
-  "backend": [
-    {
-      "url_pattern": "/v1/device/time-table",
-      "output_encoding": "no-op",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
-        }
-      },
-      "method": "GET",
-      
-      "sd": "dns",
-      "host": ["go-main-service.service.consul"],
-      
-      "disable_host_sanitize": true
-    }
-  ]
-},
-{
-  "endpoint": "/v1/device/messages",
-  "input_query_strings":[
-    "*"
-  ],
-  "method": "GET",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
-  "backend": [
-    {
-      "url_pattern": "/v1/device/messages",
-      "output_encoding": "no-op",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
-        }
-      },
-      "method": "GET",
-      
-      "sd": "dns",
-      "host": ["go-main-service.service.consul"],
-      
-      "disable_host_sanitize": true
-    }
-  ]
-},
-{
-  "endpoint": "/v1/device/update-info",
-  "input_query_strings":[
-    "*"
-  ],
-  "method": "PUT",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
-  "backend": [
-    {
-      "url_pattern": "/v1/device/update-info",
-      "output_encoding": "no-op",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
-        }
-      },
-      "method": "PUT",
-      
-      "sd": "dns",
-      "host": ["go-main-service.service.consul"],
-      
-      "disable_host_sanitize": true
-    }
-  ]
-},
-{
   "endpoint": "/v1/device/status/{device_id}",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/device/status/{device_id}",
@@ -2162,13 +1910,11 @@
 },
 {
   "endpoint": "/v1/device/reserve",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/device/reserve",
@@ -2191,74 +1937,12 @@
   ]
 },
 {
-  "endpoint": "/v1/device/mode-l",
-  "input_query_strings":[
-    "*"
-  ],
-  "method": "GET",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
-  "backend": [
-    {
-      "url_pattern": "/v1/device/mode-l",
-      "output_encoding": "no-op",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
-        }
-      },
-      "method": "GET",
-      
-      "sd": "dns",
-      "host": ["go-main-service.service.consul"],
-      
-      "disable_host_sanitize": true
-    }
-  ]
-},
-{
-  "endpoint": "/v1/device/brand-logo",
-  "input_query_strings":[
-    "*"
-  ],
-  "method": "GET",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
-  "backend": [
-    {
-      "url_pattern": "/v1/device/brand-logo",
-      "output_encoding": "no-op",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
-        }
-      },
-      "method": "GET",
-      
-      "sd": "dns",
-      "host": ["go-main-service.service.consul"],
-      
-      "disable_host_sanitize": true
-    }
-  ]
-},
-{
   "endpoint": "/v1/device/discover",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/device/discover",
@@ -2282,13 +1966,11 @@
 },
 {
   "endpoint": "/v1/device/sign-up",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/device/sign-up",
@@ -2312,43 +1994,11 @@
 },
 {
   "endpoint": "/v1/device/sign-up/form",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
-  "backend": [
-    {
-      "url_pattern": "/v1/device/sign-up/form",
-      "output_encoding": "no-op",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
-        }
-      },
-      "method": "GET",
-      
-      "sd": "dns",
-      "host": ["go-main-service.service.consul"],
-      
-      "disable_host_sanitize": true
-    }
-  ]
-},
-{
-  "endpoint": "/v1/device/sign-up/form",
-  "input_query_strings":[
-    "*"
-  ],
-  "method": "POST",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/device/sign-up/form",
@@ -2372,13 +2022,11 @@
 },
 {
   "endpoint": "/v1/device/sign-up/pre-set-1",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/device/sign-up/pre-set-1",
@@ -2402,13 +2050,11 @@
 },
 {
   "endpoint": "/v1/device/sign-up/pre-set-2",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/device/sign-up/pre-set-2",
@@ -2432,13 +2078,11 @@
 },
 {
   "endpoint": "/v1/form/submit",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/form/submit",
@@ -2462,13 +2106,11 @@
 },
 {
   "endpoint": "/v1/form/submission/last",
-  "input_query_strings":[
-    "*"
-  ],
-  "method": "GET",
+  "input_query_strings":["*"],
+  "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/form/submission/last",
@@ -2481,67 +2123,7 @@
           "log_status_change": true
         }
       },
-      "method": "GET",
-      
-      "sd": "dns",
-      "host": ["go-main-service.service.consul"],
-      
-      "disable_host_sanitize": true
-    }
-  ]
-},
-{
-  "endpoint": "/v1/form/device/sign-up",
-  "input_query_strings":[
-    "*"
-  ],
-  "method": "GET",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
-  "backend": [
-    {
-      "url_pattern": "/v1/form/device/sign-up",
-      "output_encoding": "no-op",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
-        }
-      },
-      "method": "GET",
-      
-      "sd": "dns",
-      "host": ["go-main-service.service.consul"],
-      
-      "disable_host_sanitize": true
-    }
-  ]
-},
-{
-  "endpoint": "/v1/form/device/sign-up",
-  "input_query_strings":[
-    "*"
-  ],
-  "method": "PUT",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
-  "backend": [
-    {
-      "url_pattern": "/v1/form/device/sign-up",
-      "output_encoding": "no-op",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
-        }
-      },
-      "method": "GET",
+      "method": "POST",
       
       "sd": "dns",
       "host": ["go-main-service.service.consul"],
@@ -2552,13 +2134,11 @@
 },
 {
   "endpoint": "/v1/redirect-url",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/redirect-url",
@@ -2581,74 +2161,12 @@
   ]
 },
 {
-  "endpoint": "/v1/buttons/screen/{device_id}",
-  "input_query_strings":[
-    "*"
-  ],
-  "method": "GET",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
-  "backend": [
-    {
-      "url_pattern": "/v1/buttons/screen/{device_id}",
-      "output_encoding": "no-op",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
-        }
-      },
-      "method": "GET",
-      
-      "sd": "dns",
-      "host": ["go-main-service.service.consul"],
-      
-      "disable_host_sanitize": true
-    }
-  ]
-},
-{
-  "endpoint": "/v1/buttons/top",
-  "input_query_strings":[
-    "*"
-  ],
-  "method": "GET",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
-  "backend": [
-    {
-      "url_pattern": "/v1/buttons/top",
-      "output_encoding": "no-op",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
-        }
-      },
-      "method": "GET",
-      
-      "sd": "dns",
-      "host": ["go-main-service.service.consul"],
-      
-      "disable_host_sanitize": true
-    }
-  ]
-},
-{
   "endpoint": "/v1/buttons/notification",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/buttons/notification",
@@ -2672,13 +2190,11 @@
 },
 {
   "endpoint": "/v1/code-counting/reset",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/code-counting/reset",
@@ -2702,13 +2218,11 @@
 },
 {
   "endpoint": "/v1/login",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/login",
@@ -2732,13 +2246,11 @@
 },
 {
   "endpoint": "/v1/user/all",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/user/all",
@@ -2762,13 +2274,11 @@
 },
 {
   "endpoint": "/v1/user/{id}",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/user/{id}",
@@ -2791,14 +2301,40 @@
   ]
 },
 {
-  "endpoint": "/v1/user/{id}/children",
-  "input_query_strings":[
-    "*"
-  ],
+  "endpoint": "/v1/user/name/{username}",
+  "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/user/name/{username}",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/user/{id}/children",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/user/{id}/children",
@@ -2822,13 +2358,11 @@
 },
 {
   "endpoint": "/v1/user/init",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/user/init",
@@ -2852,13 +2386,11 @@
 },
 {
   "endpoint": "/v1/user/update",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/user/update",
@@ -2881,17 +2413,43 @@
   ]
 },
 {
-  "endpoint": "/v1/user-config/{id}",
-  "input_query_strings":[
-    "*"
-  ],
+  "endpoint": "/v1/user/role/update",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/user/role/update",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/user/org/{organization_id}/{user_id}",
+  "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/v1/user-config/{id}",
+      "url_pattern": "/v1/user/org/{organization_id}/{user_id}",
       "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
@@ -2911,17 +2469,15 @@
   ]
 },
 {
-  "endpoint": "/v1/user-role/all",
-  "input_query_strings":[
-    "*"
-  ],
+  "endpoint": "/v1/user/org/{organization_id}/manager",
+  "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/v1/user-role/all",
+      "url_pattern": "/v1/user/org/{organization_id}/manager",
       "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
@@ -2932,6 +2488,118 @@
         }
       },
       "method": "GET",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/user/org/update",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/user/org/update",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/user/{id}/func",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/user/{id}/func",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/user/func",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/user/func",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/user/func",
+  "input_query_strings":["*"],
+  "method": "DELETE",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/user/func",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "DELETE",
       
       "sd": "dns",
       "host": ["go-main-service.service.consul"],
@@ -2942,13 +2610,11 @@
 },
 {
   "endpoint": "/v1/user-role/{id}",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/user-role/{id}",
@@ -2971,14 +2637,40 @@
   ]
 },
 {
-  "endpoint": "/v1/user-role/name/{role_name}",
-  "input_query_strings":[
-    "*"
-  ],
+  "endpoint": "/v1/user-role/all",
+  "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/user-role/all",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/user-role/name/{role_name}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/user-role/name/{role_name}",
@@ -3002,13 +2694,11 @@
 },
 {
   "endpoint": "/v1/user-role/init",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/user-role/init",
@@ -3032,13 +2722,11 @@
 },
 {
   "endpoint": "/v1/user-role",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/user-role",
@@ -3062,13 +2750,11 @@
 },
 {
   "endpoint": "/v1/user-role/{id}",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "DELETE",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/user-role/{id}",
@@ -3091,17 +2777,15 @@
   ]
 },
 {
-  "endpoint": "/v1/role-claim/all/{role_id}",
-  "input_query_strings":[
-    "*"
-  ],
+  "endpoint": "/v1/function-claim/{id}",
+  "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/v1/role-claim/all/{role_id}",
+      "url_pattern": "/v1/function-claim/{id}",
       "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
@@ -3121,17 +2805,15 @@
   ]
 },
 {
-  "endpoint": "/v1/role-claim/{id}",
-  "input_query_strings":[
-    "*"
-  ],
+  "endpoint": "/v1/function-claim/name/{function_name}",
+  "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/v1/role-claim/{id}",
+      "url_pattern": "/v1/function-claim/name/{function_name}",
       "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
@@ -3151,47 +2833,15 @@
   ]
 },
 {
-  "endpoint": "/v1/role-claim/name/{claim_name}",
-  "input_query_strings":[
-    "*"
-  ],
-  "method": "GET",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
-  "backend": [
-    {
-      "url_pattern": "/v1/role-claim/name/{claim_name}",
-      "output_encoding": "no-op",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
-        }
-      },
-      "method": "GET",
-      
-      "sd": "dns",
-      "host": ["go-main-service.service.consul"],
-      
-      "disable_host_sanitize": true
-    }
-  ]
-},
-{
-  "endpoint": "/v1/role-claim/init",
-  "input_query_strings":[
-    "*"
-  ],
+  "endpoint": "/v1/function-claim/init",
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/v1/role-claim/init",
+      "url_pattern": "/v1/function-claim/init",
       "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
@@ -3211,17 +2861,15 @@
   ]
 },
 {
-  "endpoint": "/v1/role-claim",
-  "input_query_strings":[
-    "*"
-  ],
+  "endpoint": "/v1/function-claim/",
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/v1/role-claim",
+      "url_pattern": "/v1/function-claim/",
       "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
@@ -3241,17 +2889,15 @@
   ]
 },
 {
-  "endpoint": "/v1/role-claim/{id}",
-  "input_query_strings":[
-    "*"
-  ],
+  "endpoint": "/v1/function-claim/{id}",
+  "input_query_strings":["*"],
   "method": "DELETE",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/v1/role-claim/{id}",
+      "url_pattern": "/v1/function-claim/{id}",
       "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
@@ -3271,17 +2917,15 @@
   ]
 },
 {
-  "endpoint": "/v1/role-policy/{id}",
-  "input_query_strings":[
-    "*"
-  ],
+  "endpoint": "/v1/function-claim-permission/function/{function_claim_id}/all",
+  "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/v1/role-policy/{id}",
+      "url_pattern": "/v1/function-claim-permission/function/{function_claim_id}/all",
       "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
@@ -3301,17 +2945,15 @@
   ]
 },
 {
-  "endpoint": "/v1/role-policy/name/{policy_name}",
-  "input_query_strings":[
-    "*"
-  ],
+  "endpoint": "/v1/function-claim-permission/{id}",
+  "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/v1/role-policy/name/{policy_name}",
+      "url_pattern": "/v1/function-claim-permission/{id}",
       "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
@@ -3331,17 +2973,43 @@
   ]
 },
 {
-  "endpoint": "/v1/role-policy/init",
-  "input_query_strings":[
-    "*"
-  ],
+  "endpoint": "/v1/function-claim-permission/name/{permission_name}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/function-claim-permission/name/{permission_name}",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/function-claim-permission/init",
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/v1/role-policy/init",
+      "url_pattern": "/v1/function-claim-permission/init",
       "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
@@ -3361,17 +3029,15 @@
   ]
 },
 {
-  "endpoint": "/v1/role-policy",
-  "input_query_strings":[
-    "*"
-  ],
+  "endpoint": "/v1/function-claim-permission/",
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/v1/role-policy",
+      "url_pattern": "/v1/function-claim-permission/",
       "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
@@ -3391,17 +3057,15 @@
   ]
 },
 {
-  "endpoint": "/v1/role-policy/{id}",
-  "input_query_strings":[
-    "*"
-  ],
+  "endpoint": "/v1/function-claim-permission/{id}",
+  "input_query_strings":["*"],
   "method": "DELETE",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/v1/role-policy/{id}",
+      "url_pattern": "/v1/function-claim-permission/{id}",
       "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
@@ -3421,17 +3085,15 @@
   ]
 },
 {
-  "endpoint": "/v1/company/{id}",
-  "input_query_strings":[
-    "*"
-  ],
+  "endpoint": "/v1/organization/{id}",
+  "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/v1/company/{id}",
+      "url_pattern": "/v1/organization/{id}",
       "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
@@ -3442,6 +3104,118 @@
         }
       },
       "method": "GET",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/organization/{id}/users",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/organization/{id}/users",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/organization/",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/organization/",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/organization/",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/organization/",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/organization/join",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/organization/join",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
       
       "sd": "dns",
       "host": ["go-main-service.service.consul"],
@@ -3452,13 +3226,11 @@
 },
 {
   "endpoint": "/v1/form",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/form",
@@ -3481,44 +3253,12 @@
   ]
 },
 {
-  "endpoint": "/v1/question/buttons",
-  "input_query_strings":[
-    "*"
-  ],
-  "method": "GET",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
-  "backend": [
-    {
-      "url_pattern": "/v1/question/buttons",
-      "output_encoding": "no-op",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
-        }
-      },
-      "method": "GET",
-      
-      "sd": "dns",
-      "host": ["go-main-service.service.consul"],
-      
-      "disable_host_sanitize": true
-    }
-  ]
-},
-{
   "endpoint": "/v1/question/show-pics",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/question/show-pics",
@@ -3542,13 +3282,11 @@
 },
 {
   "endpoint": "/v1/todo",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/todo",
@@ -3572,13 +3310,11 @@
 },
 {
   "endpoint": "/v1/todo",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/todo",
@@ -3602,13 +3338,11 @@
 },
 {
   "endpoint": "/v1/todo/tasks",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/todo/tasks",
@@ -3632,16 +3366,98 @@
 },
 {
   "endpoint": "/v1/todo/task/log",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
       "url_pattern": "/v1/todo/task/log",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/images/",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/images/",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/images/upload",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/images/upload",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/images/delete",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/images/delete",
       "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
@@ -3670,9 +3486,7 @@
 
 {
   "endpoint": "/user/",
-  "input_query_strings":[
-    "*"
-  ],
+  "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
   "backend": [
@@ -3690,6 +3504,2074 @@
       
       "sd": "dns",
       "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/aggregated_history/",
+  "input_query_strings": ["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/aggregated_history/",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/aggregated_history/save",
+  "input_query_strings": ["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/aggregated_history/save",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/warehouse/",
+  "input_query_strings": ["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/warehouse/",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/warehouse/save",
+  "input_query_strings": ["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/warehouse/save",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/warehouse/update",
+  "input_query_strings": ["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/warehouse/update",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/warehouse/delete",
+  "input_query_strings": ["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/warehouse/delete",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/building/",
+  "input_query_strings": ["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/building/",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/building/save",
+  "input_query_strings": ["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/building/save",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/building/update",
+  "input_query_strings": ["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/building/update",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/building/delete",
+  "input_query_strings": ["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/building/delete",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/building/floors",
+  "input_query_strings": ["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/building/floors",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/building/floors/save",
+  "input_query_strings": ["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/building/floors/save",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/building_room/save",
+  "input_query_strings": ["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/building_room/save",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/building_room/",
+  "input_query_strings": ["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/building_room/",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/building_room/update",
+  "input_query_strings": ["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/building_room/update",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/building_room/delete",
+  "input_query_strings": ["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/building_room/delete",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/shelf/",
+  "input_query_strings": ["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/shelf/",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/shelf/save",
+  "input_query_strings": ["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/shelf/save",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/shelf/update",
+  "input_query_strings": ["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/shelf/update",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/shelf/delete",
+  "input_query_strings": ["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/shelf/delete",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/shelf/save_with_floor_and_slot",
+  "input_query_strings": ["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/shelf/save_with_floor_and_slot",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/shelf_slot/",
+  "input_query_strings": ["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/shelf_slot/",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/shelf_slot/save",
+  "input_query_strings": ["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/shelf_slot/save",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/shelf_slot/update",
+  "input_query_strings": ["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/shelf_slot/update",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/shelf_slot/delete",
+  "input_query_strings": ["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/shelf_slot/delete",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/shelf_slot_box/",
+  "input_query_strings": ["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/shelf_slot_box/",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/shelf_slot_box/save",
+  "input_query_strings": ["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/shelf_slot_box/save",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/shelf_slot_box/update",
+  "input_query_strings": ["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/shelf_slot_box/update",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/shelf_slot_box/delete",
+  "input_query_strings": ["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/shelf_slot_box/delete",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/shelf_product/",
+  "input_query_strings": ["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/shelf_product/",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/shelf_product/save",
+  "input_query_strings": ["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/shelf_product/save",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/shelf_product/update",
+  "input_query_strings": ["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/shelf_product/update",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/shelf_product/delete",
+  "input_query_strings": ["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/shelf_product/delete",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/shelf_product/search",
+  "input_query_strings": ["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/shelf_product/search",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/shelf_product/products",
+  "input_query_strings": ["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/shelf_product/products",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/location/",
+  "input_query_strings": ["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/location/",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/location/{type}",
+  "input_query_strings": ["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/location/{type}",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/location/save/shelfs",
+  "input_query_strings": ["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/location/save/shelfs",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/inventory/images/",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/inventory/images/",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/inventory/images/upload",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/inventory/images/upload",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/inventory/images/delete",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/inventory/images/delete",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["inventory-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+}
+
+,
+
+
+
+
+
+
+{
+  "endpoint": "/api/v1/products/",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/products/",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["product-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/products/{id}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/products/{id}",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["product-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/products/search",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/products/search",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["product-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/products/",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/products/",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["product-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/products/{id}",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/products/{id}",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["product-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/products/{id}/dispose",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/products/{id}/dispose",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["product-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/categories/",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/categories/",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["product-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/categories/{id}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/categories/{id}",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["product-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/categories/search",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/categories/search",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["product-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/categories/",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/categories/",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["product-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/categories/{id}",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/categories/{id}",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["product-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/topics/",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/topics/",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["product-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/topics/{id}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/topics/{id}",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["product-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/topics/search",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/topics/search",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["product-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/topics/",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/topics/",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["product-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/topics/{id}",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/topics/{id}",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["product-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+}
+
+,
+
+
+
+
+
+
+{
+  "endpoint": "/api/v1/admin/cart",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/admin/cart",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["cart-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/cart/items/{user_id}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/cart/items/{user_id}",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["cart-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/cart/items",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/cart/items",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["cart-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/cart/items/checkout",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/cart/items/checkout",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["cart-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/cart/items/{product_id}",
+  "input_query_strings":["*"],
+  "method": "PUT",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/cart/items/{product_id}",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "PUT",
+      
+      "sd": "dns",
+      "host": ["cart-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/cart/items/{product_id}",
+  "input_query_strings":["*"],
+  "method": "DELETE",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/cart/items/{product_id}",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "DELETE",
+      
+      "sd": "dns",
+      "host": ["cart-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/cart/items",
+  "input_query_strings":["*"],
+  "method": "DELETE",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/cart/items",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "DELETE",
+      
+      "sd": "dns",
+      "host": ["cart-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/test/add",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/test/add",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["cart-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/test/get",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/test/get",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["cart-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+}
+
+,
+
+
+
+
+
+
+{
+  "endpoint": "/api/v1/admin/orders/",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/admin/orders/",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["order-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/orders/{id}/verify-payment",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/orders/{id}/verify-payment",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["order-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/orders/{id}/cancel",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/orders/{id}/cancel",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["order-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/orders/{user}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/orders/{user}",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["order-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/orders/items",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/orders/items",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["order-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/orders/items/{id}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/orders/items/{id}",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["order-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/orders/items/{id}",
+  "input_query_strings":["*"],
+  "method": "DELETE",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/orders/items/{id}",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "DELETE",
+      
+      "sd": "dns",
+      "host": ["order-service.service.consul"],
       
       "disable_host_sanitize": true
     }

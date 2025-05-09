@@ -2,5 +2,11 @@
     "go_main_service": "http://go-main-service:8001",
     "go_main_service_dns": "go-main-service.service.consul",
     "inventory_service": "http://inventory-service:8002",
-    "inventory_service_dns": "inventory-service.service.consul"
+    "inventory_service_dns": "inventory-service.service.consul",
+    "product_service": "http://product-service:8003",
+    "product_service_dns": "product-service.service.consul",
+    "cart_service": "http://cart-service:8004",
+    "cart_service_dns": "cart-service.service.consul",
+    "order_service": "http://order-service:8005",
+    "order_service_dns": "order-service.service.consul"
 }

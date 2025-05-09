@@ -27,7 +27,7 @@ config:
     port: "8500"
   
   registry:
-    host: "192.0.2.5"
+    host: "192.0.2.50"
     
 google_config:
   user_credentials_file_path: 'credentials/google_service_account.json'
@@ -52,3 +52,13 @@ smtp:
   password: 'rgkwxldypbhtoflb'
 messaging:
   service_account: 'credentials/google_service_account.json'
+
+s3:
+  senbox-form-submit-bucket:
+    domain: 'https://d2tlyqjp4runby.cloudfront.net'
+    region: 'ap-southeast-1'
+    bucket_name: 'senbox-form-submit-bucket'
+    access_key: 'AKIA2HVQ5GUIDTHLCKP3'
+    secret_key: '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'
+    cloudfront_key_group_id: 'K1RAOUJU1Q3EVC'
+    cloudfront_key_path: '/keys/senbox-form-submit-bucket/private_key.pem'

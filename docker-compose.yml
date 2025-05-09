@@ -1,7 +1,6 @@
 services:
   consul:
     image: hashicorp/consul:latest
-    restart: 'always'
     container_name: consul
     hostname: consul
     # command: "consul agent -server -ui -data-dir /tmp -node=server-1 -bootstrap-expect=1 -client=0.0.0.0"
@@ -37,9 +36,10 @@ services:
       - "8500:8500"  # Web UI for Consul
       - "8600:53/udp"
       - "8600:53/tcp"
+    restart: unless-stopped
   
   krakend:
-    image: devopsfaith/krakend:2.9
+    image: krakend:latest
     container_name: krakend
     command: run -dc /etc/krakend/krakend.tmpl
     volumes:
@@ -57,6 +57,50 @@ services:
       - vpcbr
     depends_on:
       - consul
+    restart: unless-stopped
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    hostname: mongodb
+    volumes:
+      - ./data/db/mongodb/initdb.d/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+      - ./data/db/mongodb/data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: senbox
+      MONGO_INITDB_ROOT_PASSWORD: senbox
+    networks:
+      vpcbr:
+        ipv4_address: 192.0.2.10
+    ports:
+      - "27017:27017"
+    restart: unless-stopped
+
+  cart_db:
+    image: mongo:latest
+    container_name: cart_db
+    hostname: cart_db
+    volumes:
+      - ./data/db/cart_db/data:/data/db
+    networks:
+      vpcbr:
+        ipv4_address: 192.0.2.11
+    ports:
+      - "27018:27017"
+    restart: unless-stopped
+
+  order_db:
+    image: mongo:latest
+    container_name: order_db
+    hostname: order_db
+    volumes:
+      - ./data/db/order_db/data:/data/db
+    networks:
+      vpcbr:
+        ipv4_address: 192.0.2.12
+    ports:
+      - "27019:27017"
+    restart: unless-stopped
 
   go-main-service-db:
     image: mariadb:latest
@@ -70,9 +114,11 @@ services:
       - ./data/db/go-main-service:/var/lib/mysql # persistent database storage
       - ./db_dumb/go-main-service:/docker-entrypoint-initdb.d # scripts to initialize DB
     networks:
-      - vpcbr
+      vpcbr:
+        ipv4_address: 192.0.2.13
     ports:
       - "3308:3306"
+    restart: unless-stopped
 
   go-main-service:
     build: 
@@ -80,39 +126,272 @@ services:
       dockerfile: Dockerfile
     container_name: go-main-service
     volumes:
-      - ./go-main-service-config:/root/config
+      - ./config/go-main-service.yaml:/root/config/config.yaml
     networks:
       vpcbr:
-        ipv4_address: 192.0.2.5
+        ipv4_address: 192.0.2.50
     ports:
-      - "8001"
+      - "8001:8001"
     depends_on:
-      go-main-service-db:
-        condition: service_started
+      - consul
+      - go-main-service-db
+      # - kafka-1
+      # - kafka-2
+      # - kafka-3
     restart: unless-stopped
   
-  # inventory-service:
-  #   build: 
-  #     context: ../senbox-inventory
-  #     dockerfile: Dockerfile
-  #   container_name: inventory-service
+  inventory-service:
+    build: 
+      context: ../senbox-inventory
+      dockerfile: Dockerfile
+    container_name: inventory-service
+    environment:
+      - JAVA_HOME=/jre
+      # - TZ=UTC          # Set timezone if needed
+      - SPRING_CLOUD_CONSUL_HOST=consul
+      - SPRING_CLOUD_CONSUL_PORT=8500
+      - SPRING_CLOUD_CONSUL_DISCOVERY_HOSTNAME=192.0.2.51
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      vpcbr:
+        ipv4_address: 192.0.2.51
+    ports:
+      - "8002:8002"
+    depends_on:
+      - consul
+      # - kafka-1
+      # - kafka-2
+      # - kafka-3
+    restart: unless-stopped  # Restart the container unless it is explicitly stopped
+
+  product-service:
+    build:
+      context: ../product-service
+      dockerfile: Dockerfile
+    container_name: product-service
+    volumes:
+      - ./config/product-service.yaml:/root/.bin/config.dev.yaml
+    networks:
+      vpcbr:
+        ipv4_address: 192.0.2.52
+    ports:
+      - "8003:8003"
+    depends_on:
+      - consul
+      - mongodb
+      # - kafka-1
+      # - kafka-2
+      # - kafka-3
+    restart: unless-stopped
+
+  cart-service:
+    build:
+      context: ../cart-service
+      dockerfile: Dockerfile
+    container_name: cart-service
+    env_file:
+      - ./config/cart-service.env
+    # volumes:
+    #   - ./config/cart-service.env:/root/.env
+    networks:
+      vpcbr:
+        ipv4_address: 192.0.2.53
+    ports:
+      - "8004:8004"
+    depends_on:
+      - consul
+      - cart_db
+      # - kafka-1
+      # - kafka-2
+      # - kafka-3
+    restart: unless-stopped
+
+  order-service:
+    build:
+      context: ../order-service
+      dockerfile: Dockerfile
+    container_name: order-service
+    env_file:
+      - ./config/order-service.env
+    # volumes:
+    #   - ./config/order-service.env:/root/.env
+    networks:
+      vpcbr:
+        ipv4_address: 192.0.2.54
+    ports:
+      - "8005:8005"
+    depends_on:
+      - consul
+      - order_db
+      # - kafka-1
+      # - kafka-2
+      # - kafka-3
+    restart: unless-stopped
+
+  # # kafka kraft cluster
+  # kafka-1:
+  #   image: "bitnami/kafka:latest"
+  #   container_name: kafka-1
+  #   hostname: kafka-1
   #   environment:
-  #     - JAVA_HOME=/jre
-  #     # - TZ=UTC          # Set timezone if needed
-  #     - SPRING_CLOUD_CONSUL_HOST=consul
-  #     - SPRING_CLOUD_CONSUL_PORT=8500
-  #     - SPRING_CLOUD_CONSUL_DISCOVERY_HOSTNAME=192.0.2.6
+  #     - ALLOW_ANONYMOUS_LOGIN=yes
+  #     - KAFKA_ENABLE_KRAFT=yes
+  #     - KAFKA_CFG_PROCESS_ROLES=broker,controller
+  #     - KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER
+  #     - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=kraft:PLAINTEXT,CONTROLLER:PLAINTEXT,INTERNAL:PLAINTEXT
+  #     - KAFKA_BROKER_ID=1
+  #     - KAFKA_CFG_NODE_ID=1
+  #     - KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=1@kafka-1:9094,2@kafka-2:9094,3@kafka-3:9094
+  #     - ALLOW_PLAINTEXT_LISTENER=yes
+  #     - BITNAMI_DEBUG=yes
+  #     - KAFKA_KRAFT_CLUSTER_ID=OTMwNzFhYTY1ODNiNGE5OT
+  #     - KAFKA_CFG_KRAFT_REPLICATION_FACTOR=3
+  #     - KAFKA_CFG_ADVERTISED_LISTENERS=kraft://kafka-1:9093,INTERNAL://kafka-1:9092
+  #     - KAFKA_CFG_LISTENERS=kraft://0.0.0.0:9093,CONTROLLER://kafka-1:9094,INTERNAL://0.0.0.0:9092
+  #     - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=INTERNAL
+  #     - KAFKA_CFG_DEFAULT_REPLICATION_FACTOR=3
+  #     - KAFKA_CFG_MIN_INSYNC_REPLICAS=2
+  #   ports:
+  #     - "9101:9092"
+  #     - "9102:9093"
+  #     - "9103:9094"
+  #   networks:
+  #     vpcbr:
+  #       ipv4_address: 192.0.2.5
   #   volumes:
-  #     - ./logs:/app/logs
+  #     - ./data/kafka/kafka-1:/bitnami/kafka/data
+  
+  # kafka-2:
+  #   image: "bitnami/kafka:latest"
+  #   container_name: kafka-2
+  #   hostname: kafka-2
+  #   environment:
+  #     - ALLOW_ANONYMOUS_LOGIN=yes
+  #     - KAFKA_ENABLE_KRAFT=yes
+  #     - KAFKA_CFG_PROCESS_ROLES=broker,controller
+  #     - KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER
+  #     - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=kraft:PLAINTEXT,CONTROLLER:PLAINTEXT,INTERNAL:PLAINTEXT
+  #     - KAFKA_BROKER_ID=2
+  #     - KAFKA_CFG_NODE_ID=2
+  #     - KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=1@kafka-1:9094,2@kafka-2:9094,3@kafka-3:9094
+  #     - ALLOW_PLAINTEXT_LISTENER=yes
+  #     - BITNAMI_DEBUG=yes
+  #     - KAFKA_KRAFT_CLUSTER_ID=OTMwNzFhYTY1ODNiNGE5OT
+  #     - KAFKA_CFG_KRAFT_REPLICATION_FACTOR=3
+  #     - KAFKA_CFG_ADVERTISED_LISTENERS=kraft://kafka-2:9093,INTERNAL://kafka-2:9092
+  #     - KAFKA_CFG_LISTENERS=kraft://0.0.0.0:9093,CONTROLLER://kafka-2:9094,INTERNAL://0.0.0.0:9092
+  #     - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=INTERNAL
+  #     - KAFKA_CFG_DEFAULT_REPLICATION_FACTOR=3
+  #     - KAFKA_CFG_MIN_INSYNC_REPLICAS=2
+  #   ports:
+  #     - "9095:9092"
+  #     - "9096:9093"
+  #     - "9097:9094"
   #   networks:
   #     vpcbr:
   #       ipv4_address: 192.0.2.6
+  #   volumes:
+  #     - ./data/kafka/kafka-2:/bitnami/kafka/data
+  
+  # kafka-3:
+  #   image: "bitnami/kafka:latest"
+  #   container_name: kafka-3
+  #   hostname: kafka-3
+  #   environment:
+  #     - ALLOW_ANONYMOUS_LOGIN=yes
+  #     - KAFKA_ENABLE_KRAFT=yes
+  #     - KAFKA_CFG_PROCESS_ROLES=broker,controller
+  #     - KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER
+  #     - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=kraft:PLAINTEXT,CONTROLLER:PLAINTEXT,INTERNAL:PLAINTEXT
+  #     - KAFKA_BROKER_ID=3
+  #     - KAFKA_CFG_NODE_ID=3
+  #     - KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=1@kafka-1:9094,2@kafka-2:9094,3@kafka-3:9094
+  #     - ALLOW_PLAINTEXT_LISTENER=yes
+  #     - BITNAMI_DEBUG=yes
+  #     - KAFKA_KRAFT_CLUSTER_ID=OTMwNzFhYTY1ODNiNGE5OT
+  #     - KAFKA_CFG_KRAFT_REPLICATION_FACTOR=3
+  #     - KAFKA_CFG_ADVERTISED_LISTENERS=kraft://kafka-3:9093,INTERNAL://kafka-3:9092
+  #     - KAFKA_CFG_LISTENERS=kraft://0.0.0.0:9093,CONTROLLER://kafka-3:9094,INTERNAL://0.0.0.0:9092
+  #     - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=INTERNAL
+  #     - KAFKA_CFG_DEFAULT_REPLICATION_FACTOR=3
+  #     - KAFKA_CFG_MIN_INSYNC_REPLICAS=2
   #   ports:
-  #     - "8002"
+  #     - "9098:9092"
+  #     - "9099:9093"
+  #     - "9100:9094"
+  #   networks:
+  #     vpcbr:
+  #       ipv4_address: 192.0.2.7
+  #   volumes:
+  #     - ./data/kafka/kafka-3:/bitnami/kafka/data
+  # # end kafka kraft cluster
+      
+  # kafka-ui:
+  #   image: "provectuslabs/kafka-ui:latest"
+  #   container_name: kafka-ui
+  #   environment:
+  #     # - DYNAMIC_CONFIG_ENABLED=true
+  #     - KAFKA_CLUSTERS_0_NAME=local
+  #     - KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS=kafka-1:9093,kafka-2:9093,kafka-3:9093  # List of your Kafka brokers
+  #   ports:
+  #     - "8088:8080"  # Expose the Kafka UI on port 8080
+  #   networks:
+  #     vpcbr:
+  #       ipv4_address: 192.0.2.8
   #   depends_on:
-  #     consul:
-  #       condition: service_started
-  #   restart: unless-stopped  # Restart the container unless it is explicitly stopped
+  #     - kafka-1
+  #     - kafka-2
+  #     - kafka-3
+
+  # redpanda-console:
+  #   image: "redpandadata/console:latest"
+  #   container_name: redpanda-console
+  #   environment:
+  #     - KAFKA_BROKERS=kafka-1:9093,kafka-2:9093,kafka-3:9093  # List of your Kafka brokers
+  #   ports:
+  #     - "8011:8080"  # Expose the Kafka UI on port 8080
+  #   networks:
+  #     - kafka
+  #   depends_on:
+  #     - kafka-1
+  #     - kafka-2
+  #     - kafka-3
+
+  # schema-registry:
+  #   image: "confluentinc/cp-schema-registry:latest"
+  #   container_name: schema-registry
+  #   environment:
+  #     - SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS=kafka-1:9093,kafka-2:9093,kafka-3:9093
+  #     - SCHEMA_REGISTRY_LISTENER_HTTP_PORT=8081
+  #     - SCHEMA_REGISTRY_KAFKASTORE_TOPIC=_schemas
+  #     - SCHEMA_REGISTRY_HOST_NAME=schema-registry
+  #   ports:
+  #     - "8081:8081"  # Expose Schema Registry UI
+  #   networks:
+  #     - kafka
+  #   depends_on:
+  #     - kafka-1
+  #     - kafka-2
+  #     - kafka-3
+
+  # rest-proxy:
+  #   image: "confluentinc/cp-kafka-rest:latest"
+  #   container_name: kafka-rest-proxy
+  #   environment:
+  #     - KAFKA_REST_HOST_NAME=kafka-rest-proxy
+  #     - KAFKA_REST_LISTENER=http://0.0.0.0:8082
+  #     - KAFKA_REST_BOOTSTRAP_SERVERS=kafka-1:9093,kafka-2:9093,kafka-3:9093
+  #     - KAFKA_REST_SCHEMA_REGISTRY_URL=http://schema-registry:8081
+  #   ports:
+  #     - "8082:8082"  # Expose REST Proxy API
+  #   networks:
+  #     - kafka
+  #   depends_on:
+  #     - schema-registry
+  #     - kafka-1
+  #     - kafka-2
+  #     - kafka-3
 
 networks:
   vpcbr:
@@ -120,3 +399,7 @@ networks:
     ipam:
       config:
       - subnet: 192.0.2.0/24
+
+# sudo apib -c 1000000 -d 60 http://localhost:8080/user/
+# h2load -n100000 -c100 -m10 http://localhost:8080/user/
+# autocannon -c 1000 -p 100 -d 60 http://localhost:8080/v1/user/all?role=all
