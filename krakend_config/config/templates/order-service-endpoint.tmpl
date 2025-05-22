@@ -14,7 +14,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/admin/orders/",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -44,7 +43,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/orders/{id}/verify-payment",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -74,7 +72,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/orders/{id}/cancel",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -104,7 +101,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/orders/{user}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -134,7 +130,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/orders/items",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -164,7 +159,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/orders/items/{id}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -194,7 +188,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/orders/items/{id}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,

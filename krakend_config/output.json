@@ -70,7 +70,6 @@
   "backend": [
     {
       "url_pattern": "v1/admin/login",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -98,7 +97,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/users",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -126,7 +124,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/me/new-password",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -154,7 +151,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/user/create",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -182,7 +178,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/form/create",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -210,7 +205,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/form/list",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -238,7 +232,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/form/delete/{id}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -266,7 +259,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/forms/search",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -294,7 +286,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/form/{id}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -322,7 +313,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/forms/import",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -350,7 +340,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/forms2/import",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -378,7 +367,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/forms3/import",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -406,7 +394,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/forms4/import",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -434,7 +421,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/forms/partially/import",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -462,7 +448,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/forms/signup",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -490,7 +475,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/device/deactivate/{device_id}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -518,7 +502,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/device/activate/{device_id}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -546,7 +529,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/device/{device_id}/update",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -574,7 +556,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/device/{device_id}/updatev2",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -602,7 +583,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/redirect-url/create",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -630,7 +610,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/redirect-url/list",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -658,7 +637,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/redirect-url/{id}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -686,7 +664,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/redirect-url/{id}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -714,7 +691,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/redirect-url/import",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -742,7 +718,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/redirect-url/import/partially",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -770,7 +745,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/todo/import",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -798,7 +772,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/todo/import/partially",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -826,7 +799,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/settings",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -854,7 +826,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/output-sheet",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -882,7 +853,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/output-summary",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -910,7 +880,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/sync-devices",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -938,7 +907,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/email-history",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -966,7 +934,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/output-template",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -994,7 +961,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/output-template-teacher",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -1022,7 +988,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/sign-up-button-1",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -1050,7 +1015,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/sign-up-button-2",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -1078,7 +1042,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/sign-up-button-3",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -1106,7 +1069,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/sign-up-button-4",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -1134,7 +1096,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/sign-up-button-5",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -1162,7 +1123,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/sign-up-button-configuration",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -1190,7 +1150,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/registration-form",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -1218,7 +1177,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/registration-submission",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -1246,7 +1204,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/registration-preset-2",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -1274,7 +1231,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/registration-preset-1",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -1302,7 +1258,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/api-distributer",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -1330,7 +1285,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/code-counting-data",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -1358,7 +1312,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/label/name",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -1386,7 +1339,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/logo-refresh-interval",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -1414,7 +1366,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/monitor/google-api",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -1442,7 +1393,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/code-counting/list",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -1470,7 +1420,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/code-counting/update",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -1498,7 +1447,6 @@
   "backend": [
     {
       "url_pattern": "/infra/backup",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -1526,7 +1474,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/sync/start",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -1554,7 +1501,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/sync/stop",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -1582,7 +1528,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/device-component-values/organization/{organization_id}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -1610,7 +1555,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/device-component-values/device/{organization_id}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -1638,7 +1582,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/device-component-values/organization",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -1666,7 +1609,6 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/device-component-values/device",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -1694,7 +1636,6 @@
   "backend": [
     {
       "url_pattern": "/v1/device/{device_id}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -1722,7 +1663,6 @@
   "backend": [
     {
       "url_pattern": "/v1/device/user/{user_id}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -1750,7 +1690,6 @@
   "backend": [
     {
       "url_pattern": "/v1/device/init",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -1778,7 +1717,6 @@
   "backend": [
     {
       "url_pattern": "/v1/device/refresh-token",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -1806,7 +1744,6 @@
   "backend": [
     {
       "url_pattern": "/v1/device/messaging/fcm/register",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -1834,7 +1771,6 @@
   "backend": [
     {
       "url_pattern": "/v1/device/note",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -1862,7 +1798,6 @@
   "backend": [
     {
       "url_pattern": "/v1/device/send/email",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -1890,7 +1825,6 @@
   "backend": [
     {
       "url_pattern": "/v1/device/status/{device_id}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -1918,7 +1852,6 @@
   "backend": [
     {
       "url_pattern": "/v1/device/reserve",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -1946,7 +1879,6 @@
   "backend": [
     {
       "url_pattern": "/v1/device/discover",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -1974,7 +1906,6 @@
   "backend": [
     {
       "url_pattern": "/v1/device/sign-up",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2002,7 +1933,6 @@
   "backend": [
     {
       "url_pattern": "/v1/device/sign-up/form",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2030,7 +1960,6 @@
   "backend": [
     {
       "url_pattern": "/v1/device/sign-up/pre-set-1",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2058,7 +1987,6 @@
   "backend": [
     {
       "url_pattern": "/v1/device/sign-up/pre-set-2",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2086,7 +2014,6 @@
   "backend": [
     {
       "url_pattern": "/v1/form/submit",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2114,7 +2041,6 @@
   "backend": [
     {
       "url_pattern": "/v1/form/submission/last",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2142,7 +2068,6 @@
   "backend": [
     {
       "url_pattern": "/v1/redirect-url",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2170,7 +2095,6 @@
   "backend": [
     {
       "url_pattern": "/v1/buttons/notification",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2198,7 +2122,6 @@
   "backend": [
     {
       "url_pattern": "/v1/code-counting/reset",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2226,7 +2149,6 @@
   "backend": [
     {
       "url_pattern": "/v1/login",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2245,6 +2167,33 @@
   ]
 },
 {
+  "endpoint": "/v1/user/current-user",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/user/current-user",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
   "endpoint": "/v1/user/all",
   "input_query_strings":["*"],
   "method": "GET",
@@ -2254,7 +2203,6 @@
   "backend": [
     {
       "url_pattern": "/v1/user/all",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2282,7 +2230,6 @@
   "backend": [
     {
       "url_pattern": "/v1/user/{id}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2310,7 +2257,6 @@
   "backend": [
     {
       "url_pattern": "/v1/user/name/{username}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2338,7 +2284,6 @@
   "backend": [
     {
       "url_pattern": "/v1/user/{id}/children",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2366,7 +2311,6 @@
   "backend": [
     {
       "url_pattern": "/v1/user/init",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2394,7 +2338,6 @@
   "backend": [
     {
       "url_pattern": "/v1/user/update",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2422,7 +2365,33 @@
   "backend": [
     {
       "url_pattern": "/v1/user/role/update",
-      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/user/block/{id}",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/user/block/{id}",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2450,7 +2419,6 @@
   "backend": [
     {
       "url_pattern": "/v1/user/org/{organization_id}/{user_id}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2478,7 +2446,6 @@
   "backend": [
     {
       "url_pattern": "/v1/user/org/{organization_id}/manager",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2506,7 +2473,6 @@
   "backend": [
     {
       "url_pattern": "/v1/user/org/update",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2534,7 +2500,6 @@
   "backend": [
     {
       "url_pattern": "/v1/user/{id}/func",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2562,7 +2527,6 @@
   "backend": [
     {
       "url_pattern": "/v1/user/func",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2590,7 +2554,6 @@
   "backend": [
     {
       "url_pattern": "/v1/user/func",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2609,6 +2572,60 @@
   ]
 },
 {
+  "endpoint": "/v1/user/pre-register/",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/user/pre-register/",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/user/pre-register/",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/user/pre-register/",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
   "endpoint": "/v1/user-role/{id}",
   "input_query_strings":["*"],
   "method": "GET",
@@ -2618,7 +2635,6 @@
   "backend": [
     {
       "url_pattern": "/v1/user-role/{id}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2646,7 +2662,6 @@
   "backend": [
     {
       "url_pattern": "/v1/user-role/all",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2674,7 +2689,6 @@
   "backend": [
     {
       "url_pattern": "/v1/user-role/name/{role_name}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2702,7 +2716,6 @@
   "backend": [
     {
       "url_pattern": "/v1/user-role/init",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2730,7 +2743,6 @@
   "backend": [
     {
       "url_pattern": "/v1/user-role",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2758,7 +2770,6 @@
   "backend": [
     {
       "url_pattern": "/v1/user-role/{id}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2786,7 +2797,6 @@
   "backend": [
     {
       "url_pattern": "/v1/function-claim/{id}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2814,7 +2824,6 @@
   "backend": [
     {
       "url_pattern": "/v1/function-claim/name/{function_name}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2842,7 +2851,6 @@
   "backend": [
     {
       "url_pattern": "/v1/function-claim/init",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2870,7 +2878,6 @@
   "backend": [
     {
       "url_pattern": "/v1/function-claim/",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2898,7 +2905,6 @@
   "backend": [
     {
       "url_pattern": "/v1/function-claim/{id}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2926,7 +2932,6 @@
   "backend": [
     {
       "url_pattern": "/v1/function-claim-permission/function/{function_claim_id}/all",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2954,7 +2959,6 @@
   "backend": [
     {
       "url_pattern": "/v1/function-claim-permission/{id}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2982,7 +2986,6 @@
   "backend": [
     {
       "url_pattern": "/v1/function-claim-permission/name/{permission_name}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -3010,7 +3013,6 @@
   "backend": [
     {
       "url_pattern": "/v1/function-claim-permission/init",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -3038,7 +3040,6 @@
   "backend": [
     {
       "url_pattern": "/v1/function-claim-permission/",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -3066,7 +3067,6 @@
   "backend": [
     {
       "url_pattern": "/v1/function-claim-permission/{id}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -3094,7 +3094,6 @@
   "backend": [
     {
       "url_pattern": "/v1/organization/{id}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -3122,7 +3121,6 @@
   "backend": [
     {
       "url_pattern": "/v1/organization/{id}/users",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -3150,7 +3148,6 @@
   "backend": [
     {
       "url_pattern": "/v1/organization/",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -3178,7 +3175,6 @@
   "backend": [
     {
       "url_pattern": "/v1/organization/",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -3206,7 +3202,141 @@
   "backend": [
     {
       "url_pattern": "/v1/organization/join",
-      "output_encoding": "no-op",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/organization/application/",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/organization/application/",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/organization/application/{id}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/organization/application/{id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/organization/application/",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/organization/application/",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/organization/application/{id}/approve",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/organization/application/{id}/approve",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/organization/application/{id}/block",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/organization/application/{id}/block",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -3234,7 +3364,6 @@
   "backend": [
     {
       "url_pattern": "/v1/form",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -3262,7 +3391,6 @@
   "backend": [
     {
       "url_pattern": "/v1/question/show-pics",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -3290,7 +3418,6 @@
   "backend": [
     {
       "url_pattern": "/v1/todo",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -3318,7 +3445,6 @@
   "backend": [
     {
       "url_pattern": "/v1/todo",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -3346,7 +3472,6 @@
   "backend": [
     {
       "url_pattern": "/v1/todo/tasks",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -3374,7 +3499,6 @@
   "backend": [
     {
       "url_pattern": "/v1/todo/task/log",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -3402,7 +3526,6 @@
   "backend": [
     {
       "url_pattern": "/v1/images/",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -3430,7 +3553,6 @@
   "backend": [
     {
       "url_pattern": "/v1/images/upload",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -3458,7 +3580,6 @@
   "backend": [
     {
       "url_pattern": "/v1/images/delete",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -3519,7 +3640,6 @@
   "backend": [
     {
       "url_pattern": "/v1/aggregated_history/",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -3547,7 +3667,6 @@
   "backend": [
     {
       "url_pattern": "/v1/aggregated_history/save",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -3575,7 +3694,6 @@
   "backend": [
     {
       "url_pattern": "/v1/warehouse/",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -3603,7 +3721,6 @@
   "backend": [
     {
       "url_pattern": "/v1/warehouse/save",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -3631,7 +3748,6 @@
   "backend": [
     {
       "url_pattern": "/v1/warehouse/update",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -3659,7 +3775,6 @@
   "backend": [
     {
       "url_pattern": "/v1/warehouse/delete",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -3687,7 +3802,6 @@
   "backend": [
     {
       "url_pattern": "/v1/building/",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -3715,7 +3829,6 @@
   "backend": [
     {
       "url_pattern": "/v1/building/save",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -3743,7 +3856,6 @@
   "backend": [
     {
       "url_pattern": "/v1/building/update",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -3771,7 +3883,6 @@
   "backend": [
     {
       "url_pattern": "/v1/building/delete",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -3799,7 +3910,6 @@
   "backend": [
     {
       "url_pattern": "/v1/building/floors",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -3827,7 +3937,6 @@
   "backend": [
     {
       "url_pattern": "/v1/building/floors/save",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -3855,7 +3964,6 @@
   "backend": [
     {
       "url_pattern": "/v1/building_room/save",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -3883,7 +3991,6 @@
   "backend": [
     {
       "url_pattern": "/v1/building_room/",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -3911,7 +4018,6 @@
   "backend": [
     {
       "url_pattern": "/v1/building_room/update",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -3939,7 +4045,6 @@
   "backend": [
     {
       "url_pattern": "/v1/building_room/delete",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -3967,7 +4072,6 @@
   "backend": [
     {
       "url_pattern": "/v1/shelf/",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -3995,7 +4099,6 @@
   "backend": [
     {
       "url_pattern": "/v1/shelf/save",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -4023,7 +4126,6 @@
   "backend": [
     {
       "url_pattern": "/v1/shelf/update",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -4051,7 +4153,6 @@
   "backend": [
     {
       "url_pattern": "/v1/shelf/delete",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -4079,7 +4180,6 @@
   "backend": [
     {
       "url_pattern": "/v1/shelf/save_with_floor_and_slot",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -4107,7 +4207,6 @@
   "backend": [
     {
       "url_pattern": "/v1/shelf_slot/",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -4135,7 +4234,6 @@
   "backend": [
     {
       "url_pattern": "/v1/shelf_slot/save",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -4163,7 +4261,6 @@
   "backend": [
     {
       "url_pattern": "/v1/shelf_slot/update",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -4191,7 +4288,6 @@
   "backend": [
     {
       "url_pattern": "/v1/shelf_slot/delete",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -4219,7 +4315,6 @@
   "backend": [
     {
       "url_pattern": "/v1/shelf_slot_box/",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -4247,7 +4342,6 @@
   "backend": [
     {
       "url_pattern": "/v1/shelf_slot_box/save",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -4275,7 +4369,6 @@
   "backend": [
     {
       "url_pattern": "/v1/shelf_slot_box/update",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -4303,7 +4396,6 @@
   "backend": [
     {
       "url_pattern": "/v1/shelf_slot_box/delete",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -4331,7 +4423,6 @@
   "backend": [
     {
       "url_pattern": "/v1/shelf_product/",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -4359,7 +4450,6 @@
   "backend": [
     {
       "url_pattern": "/v1/shelf_product/save",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -4387,7 +4477,6 @@
   "backend": [
     {
       "url_pattern": "/v1/shelf_product/update",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -4415,7 +4504,6 @@
   "backend": [
     {
       "url_pattern": "/v1/shelf_product/delete",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -4443,7 +4531,6 @@
   "backend": [
     {
       "url_pattern": "/v1/shelf_product/search",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -4471,7 +4558,6 @@
   "backend": [
     {
       "url_pattern": "/v1/shelf_product/products",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -4499,7 +4585,6 @@
   "backend": [
     {
       "url_pattern": "/v1/location/",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -4527,7 +4612,6 @@
   "backend": [
     {
       "url_pattern": "/v1/location/{type}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -4555,7 +4639,6 @@
   "backend": [
     {
       "url_pattern": "/v1/location/save/shelfs",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -4583,7 +4666,6 @@
   "backend": [
     {
       "url_pattern": "/v1/inventory/images/",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -4611,7 +4693,6 @@
   "backend": [
     {
       "url_pattern": "/v1/inventory/images/upload",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -4639,7 +4720,6 @@
   "backend": [
     {
       "url_pattern": "/v1/inventory/images/delete",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -4675,7 +4755,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/products/",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -4703,7 +4782,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/products/{id}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -4731,7 +4809,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/products/search",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -4759,7 +4836,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/products/",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -4787,7 +4863,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/products/{id}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -4815,7 +4890,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/products/{id}/dispose",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -4843,7 +4917,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/categories/",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -4871,7 +4944,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/categories/{id}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -4899,7 +4971,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/categories/search",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -4927,7 +4998,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/categories/",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -4955,7 +5025,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/categories/{id}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -4983,7 +5052,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/topics/",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -5011,7 +5079,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/topics/{id}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -5039,7 +5106,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/topics/search",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -5067,7 +5133,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/topics/",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -5095,7 +5160,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/topics/{id}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -5131,7 +5195,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/admin/cart",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -5159,7 +5222,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/cart/items/{user_id}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -5187,7 +5249,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/cart/items",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -5215,7 +5276,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/cart/items/checkout",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -5243,7 +5303,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/cart/items/{product_id}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -5271,7 +5330,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/cart/items/{product_id}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -5299,7 +5357,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/cart/items",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -5327,7 +5384,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/test/add",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -5355,7 +5411,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/test/get",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -5391,7 +5446,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/admin/orders/",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -5419,7 +5473,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/orders/{id}/verify-payment",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -5447,7 +5500,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/orders/{id}/cancel",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -5475,7 +5527,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/orders/{user}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -5503,7 +5554,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/orders/items",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -5531,7 +5581,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/orders/items/{id}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -5559,7 +5608,6 @@
   "backend": [
     {
       "url_pattern": "/api/v1/orders/items/{id}",
-      "output_encoding": "no-op",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
