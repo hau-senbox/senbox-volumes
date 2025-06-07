@@ -2,10 +2,12 @@
 
 {{$settings := .}}
 
-{{ template "GoMainSerivecApiEndpoint" $settings }},
-{{ template "InventorySerivecApiEndpoint" $settings }},
-{{ template "ProductSerivecApiEndpoint" $settings }},
-{{ template "CartSerivecApiEndpoint" $settings }},
-{{ template "OrderSerivecApiEndpoint" $settings }}
+{{ template "GoMainServiceApiEndpoint" $settings }},
+{{ template "InventoryServiceApiEndpoint" $settings }},
+{{ template "ProductServiceApiEndpoint" $settings }},
+{{ template "CartServiceApiEndpoint" $settings }},
+{{ template "OrderServiceApiEndpoint" $settings }},
+{{ template "PortalServiceApiEndpoint" $settings }},
+{{ template "ChatServiceApiEndpoint" $settings }}
 
 {{end}}

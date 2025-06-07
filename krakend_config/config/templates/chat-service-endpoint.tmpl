@@ -1,11 +1,12 @@
-{{ define "ProductServiceApiEndpoint" }}
+{{ define "ChatServiceApiEndpoint" }}
 
 {{ $settings := . }}
-{{ $host := $settings.product_service }}
-{{ $sd_dns := $settings.product_service_dns }}
+{{ $host := $settings.chat_service }}
+{{ $sd_dns := $settings.chat_service_dns }}
+{{ $ws := $settings.chat_service_ws }}
 
 {
-  "endpoint": "/api/v1/products/",
+  "endpoint": "/api/v1/chat/{group_id}",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -13,7 +14,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/products/",
+      "url_pattern": "/api/v1/chat/{group_id}",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -34,7 +35,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/products/{id}",
+  "endpoint": "/api/v1/chat/check/{user_id}/{group_id}",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -42,7 +43,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/products/{id}",
+      "url_pattern": "/api/v1/chat/check/{user_id}/{group_id}",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -63,7 +64,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/products/search",
+  "endpoint": "/api/v1/chat/download/{group_id}",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -71,7 +72,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/products/search",
+      "url_pattern": "/api/v1/chat/download/{group_id}",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -92,7 +93,152 @@
   ]
 },
 {
-  "endpoint": "/api/v1/products/",
+  "endpoint": "/api/v1/chat/information/user/{user_id}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/chat/information/user/{user_id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/chat/react/:group_id/{message_id}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/chat/react/:group_id/{message_id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/group/",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/group/",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/group/{group_id}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/group/{group_id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/group/count/keywod",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/group/count/keywod",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/group/",
   "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
@@ -100,7 +246,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/products/",
+      "url_pattern": "/api/v1/group/",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -121,7 +267,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/products/{id}",
+  "endpoint": "/api/v1/group/generate/qrcode",
   "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
@@ -129,7 +275,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/products/{id}",
+      "url_pattern": "/api/v1/group/generate/qrcode",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -150,7 +296,65 @@
   ]
 },
 {
-  "endpoint": "/api/v1/products/{id}/dispose",
+  "endpoint": "/api/v1/group/{group_id}",
+  "input_query_strings":["*"],
+  "method": "PUT",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/group/{group_id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "PUT",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/group/{group_id}",
+  "input_query_strings":["*"],
+  "method": "DELETE",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/group/{group_id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "DELETE",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/group/user",
   "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
@@ -158,7 +362,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/products/{id}/dispose",
+      "url_pattern": "/api/v1/group/user",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -179,94 +383,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/categories/",
-  "input_query_strings":["*"],
-  "method": "GET",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
-  "backend": [
-    {
-      "url_pattern": "/api/v1/categories/",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
-        }
-      },
-      "method": "GET",
-      {{ if $sd_dns }}
-      "sd": "dns",
-      "host": ["{{ $sd_dns }}"],
-      {{ else }}
-      "host": ["{{ $host }}"],
-      {{ end }}
-      "disable_host_sanitize": true
-    }
-  ]
-},
-{
-  "endpoint": "/api/v1/categories/{id}",
-  "input_query_strings":["*"],
-  "method": "GET",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
-  "backend": [
-    {
-      "url_pattern": "/api/v1/categories/{id}",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
-        }
-      },
-      "method": "GET",
-      {{ if $sd_dns }}
-      "sd": "dns",
-      "host": ["{{ $sd_dns }}"],
-      {{ else }}
-      "host": ["{{ $host }}"],
-      {{ end }}
-      "disable_host_sanitize": true
-    }
-  ]
-},
-{
-  "endpoint": "/api/v1/categories/search",
-  "input_query_strings":["*"],
-  "method": "GET",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
-  "backend": [
-    {
-      "url_pattern": "/api/v1/categories/search",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
-        }
-      },
-      "method": "GET",
-      {{ if $sd_dns }}
-      "sd": "dns",
-      "host": ["{{ $sd_dns }}"],
-      {{ else }}
-      "host": ["{{ $host }}"],
-      {{ end }}
-      "disable_host_sanitize": true
-    }
-  ]
-},
-{
-  "endpoint": "/api/v1/categories/",
+  "endpoint": "/api/v1/group/join_group/by_qrcode",
   "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
@@ -274,7 +391,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/categories/",
+      "url_pattern": "/api/v1/group/join_group/by_qrcode",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -295,36 +412,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/categories/{id}",
-  "input_query_strings":["*"],
-  "method": "POST",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
-  "backend": [
-    {
-      "url_pattern": "/api/v1/categories/{id}",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
-        }
-      },
-      "method": "POST",
-      {{ if $sd_dns }}
-      "sd": "dns",
-      "host": ["{{ $sd_dns }}"],
-      {{ else }}
-      "host": ["{{ $host }}"],
-      {{ end }}
-      "disable_host_sanitize": true
-    }
-  ]
-},
-{
-  "endpoint": "/api/v1/topics/",
+  "endpoint": "/api/v1/group/user/{user_id}",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -332,7 +420,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/topics/",
+      "url_pattern": "/api/v1/group/user/{user_id}",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -353,15 +441,15 @@
   ]
 },
 {
-  "endpoint": "/api/v1/topics/{id}",
+  "endpoint": "/api/v1/group/user/{group_id}",
   "input_query_strings":["*"],
-  "method": "GET",
+  "method": "DELETE",
   "extra_config": {},
   "output_encoding": "no-op",
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/topics/{id}",
+      "url_pattern": "/api/v1/group/user/{group_id}",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -370,7 +458,7 @@
           "log_status_change": true
         }
       },
-      "method": "GET",
+      "method": "DELETE",
       {{ if $sd_dns }}
       "sd": "dns",
       "host": ["{{ $sd_dns }}"],
@@ -381,92 +469,38 @@
     }
   ]
 },
+
 {
-  "endpoint": "/api/v1/topics/search",
-  "input_query_strings":["*"],
-  "method": "GET",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
-  "backend": [
-    {
-      "url_pattern": "/api/v1/topics/search",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
+    "endpoint": "/ws/{user_id}/{group_id}",
+    "input_query_strings": ["*"],
+    "backend": [
+        {
+            "url_pattern": "/ws",
+            "disable_host_sanitize": true,
+            "host": [
+                "{{ $ws }}"
+            ]
         }
-      },
-      "method": "GET",
-      {{ if $sd_dns }}
-      "sd": "dns",
-      "host": ["{{ $sd_dns }}"],
-      {{ else }}
-      "host": ["{{ $host }}"],
-      {{ end }}
-      "disable_host_sanitize": true
-    }
-  ]
-},
-{
-  "endpoint": "/api/v1/topics/",
-  "input_query_strings":["*"],
-  "method": "POST",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
-  "backend": [
-    {
-      "url_pattern": "/api/v1/topics/",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
+    ],
+    "extra_config": {
+        "websocket": {
+            "input_headers": [
+                "Cookie",
+                "Authorization"
+            ],
+            "connect_event": true,
+            "disconnect_event": true,
+            "read_buffer_size": 4096,
+            "write_buffer_size": 4096,
+            "message_buffer_size": 4096,
+            "max_message_size": 3200000,
+            "write_wait": "10s",
+            "pong_wait": "60s",
+            "ping_period": "54s",
+            "max_retries": 0,
+            "backoff_strategy": "exponential"
         }
-      },
-      "method": "POST",
-      {{ if $sd_dns }}
-      "sd": "dns",
-      "host": ["{{ $sd_dns }}"],
-      {{ else }}
-      "host": ["{{ $host }}"],
-      {{ end }}
-      "disable_host_sanitize": true
     }
-  ]
-},
-{
-  "endpoint": "/api/v1/topics/{id}",
-  "input_query_strings":["*"],
-  "method": "POST",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
-  "backend": [
-    {
-      "url_pattern": "/api/v1/topics/{id}",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
-        }
-      },
-      "method": "POST",
-      {{ if $sd_dns }}
-      "sd": "dns",
-      "host": ["{{ $sd_dns }}"],
-      {{ else }}
-      "host": ["{{ $host }}"],
-      {{ end }}
-      "disable_host_sanitize": true
-    }
-  ]
 }
 
 {{end}}

@@ -8,5 +8,10 @@
     "cart_service": "http://cart-service:8004",
     "cart_service_dns": "cart-service.service.consul",
     "order_service": "http://order-service:8005",
-    "order_service_dns": "order-service.service.consul"
+    "order_service_dns": "order-service.service.consul",
+    "portal_service": "http://portal-service:8006",
+    "portal_service_dns": "portal-service.service.consul",
+    "chat_service": "http://chat-service:8007",
+    "chat_service_dns": "chat-service.service.consul",
+    "chat_service_ws": "ws://chat-service:8007"
 }

@@ -102,6 +102,32 @@ services:
       - "27019:27017"
     restart: unless-stopped
 
+  portal_db:
+    image: mongo:latest
+    container_name: portal_db
+    hostname: portal_db
+    volumes:
+      - ./data/db/portal_db/data:/data/db
+    networks:
+      vpcbr:
+        ipv4_address: 192.0.2.13
+    ports:
+      - "27020:27017"
+    restart: unless-stopped
+
+  chat_db:
+    image: mongo:latest
+    container_name: chat_db
+    hostname: chat_db
+    volumes:
+      - ./data/db/chat_db/data:/data/db
+    networks:
+      vpcbr:
+        ipv4_address: 192.0.2.14
+    ports:
+      - "27021:27017"
+    restart: unless-stopped
+
   go-main-service-db:
     image: mariadb:latest
     container_name: go-main-service-db
@@ -115,7 +141,7 @@ services:
       - ./db_dumb/go-main-service:/docker-entrypoint-initdb.d # scripts to initialize DB
     networks:
       vpcbr:
-        ipv4_address: 192.0.2.13
+        ipv4_address: 192.0.2.15
     ports:
       - "3308:3306"
     restart: unless-stopped
@@ -224,6 +250,50 @@ services:
     depends_on:
       - consul
       - order_db
+      # - kafka-1
+      # - kafka-2
+      # - kafka-3
+    restart: unless-stopped
+
+  portal-service:
+    build:
+      context: ../portal-service
+      dockerfile: Dockerfile
+    container_name: portal-service
+    env_file:
+      - ./config/portal-service.env
+    # volumes:
+    #   - ./config/portal-service.env:/root/.env
+    networks:
+      vpcbr:
+        ipv4_address: 192.0.2.55
+    ports:
+      - "8006:8006"
+    depends_on:
+      - consul
+      - portal_db
+      # - kafka-1
+      # - kafka-2
+      # - kafka-3
+    restart: unless-stopped
+
+  chat-service:
+    build:
+      context: ../chat-service
+      dockerfile: Dockerfile
+    container_name: chat-service
+    env_file:
+      - ./config/chat-service.env
+    # volumes:
+    #   - ./config/chat-service.env:/root/.env
+    networks:
+      vpcbr:
+        ipv4_address: 192.0.2.56
+    ports:
+      - "8007:8007"
+    depends_on:
+      - consul
+      - chat_db
       # - kafka-1
       # - kafka-2
       # - kafka-3
