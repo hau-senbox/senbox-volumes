@@ -238,7 +238,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/group/",
+  "endpoint": "/api/v1/group",
   "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
@@ -246,7 +246,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/group/",
+      "url_pattern": "/api/v1/group",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
