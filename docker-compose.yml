@@ -154,7 +154,7 @@ services:
       - ./db_dumb/go-main-service:/docker-entrypoint-initdb.d # scripts to initialize DB
     networks:
       vpcbr:
-        ipv4_address: 192.0.2.15
+        ipv4_address: 192.0.2.16
     ports:
       - "3308:3306"
     restart: unless-stopped
