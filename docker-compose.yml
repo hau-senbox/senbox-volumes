@@ -128,6 +128,19 @@ services:
       - "27021:27017"
     restart: unless-stopped
 
+  holiday_db:
+    image: mongo:latest
+    container_name: holiday_db
+    hostname: holiday_db
+    volumes:
+      - ./data/db/holiday_db/data:/data/db
+    networks:
+      vpcbr:
+        ipv4_address: 192.0.2.15
+    ports:
+      - "27022:27017"
+    restart: unless-stopped
+
   go-main-service-db:
     image: mariadb:latest
     container_name: go-main-service-db
@@ -294,6 +307,28 @@ services:
     depends_on:
       - consul
       - chat_db
+      # - kafka-1
+      # - kafka-2
+      # - kafka-3
+    restart: unless-stopped
+
+  holiday-service:
+    build:
+      context: ../holiday-service
+      dockerfile: Dockerfile
+    container_name: holiday-service
+    env_file:
+      - ./config/holiday-service.env
+    # volumes:
+    #   - ./config/holiday-service.env:/root/.env
+    networks:
+      vpcbr:
+        ipv4_address: 192.0.2.57
+    ports:
+      - "8008:8008"
+    depends_on:
+      - consul
+      - holiday_db
       # - kafka-1
       # - kafka-2
       # - kafka-3
