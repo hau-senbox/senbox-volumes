@@ -12,6 +12,5 @@
     "portal_service": "http://portal-service:8006",
     "portal_service_dns": "portal-service.service.consul",
     "chat_service": "http://chat-service:8007",
-    "chat_service_dns": "chat-service.service.consul",
-    "chat_service_ws": "ws://chat-service:8007"
+    "chat_service_dns": "chat-service.service.consul"
 }

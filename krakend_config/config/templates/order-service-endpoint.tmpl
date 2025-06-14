@@ -92,7 +92,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/orders/{user}",
+  "endpoint": "/api/v1/orders",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -100,7 +100,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/orders/{user}",
+      "url_pattern": "/api/v1/orders",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
