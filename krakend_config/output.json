@@ -5969,6 +5969,33 @@
 
 
 {
+  "endpoint": "/api/v1/admin/cart/history",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/admin/cart/history",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["cart-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
   "endpoint": "/api/v1/admin/cart",
   "input_query_strings":["*"],
   "method": "GET",
@@ -5996,7 +6023,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/cart/items/{user_id}",
+  "endpoint": "/api/v1/cart/items",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -6004,7 +6031,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/cart/items/{user_id}",
+      "url_pattern": "/api/v1/cart/items",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -6156,60 +6183,6 @@
       "disable_host_sanitize": true
     }
   ]
-},
-{
-  "endpoint": "/api/v1/test/add",
-  "input_query_strings":["*"],
-  "method": "POST",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
-  "backend": [
-    {
-      "url_pattern": "/api/v1/test/add",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
-        }
-      },
-      "method": "POST",
-      
-      "sd": "dns",
-      "host": ["cart-service.service.consul"],
-      
-      "disable_host_sanitize": true
-    }
-  ]
-},
-{
-  "endpoint": "/api/v1/test/get",
-  "input_query_strings":["*"],
-  "method": "GET",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
-  "backend": [
-    {
-      "url_pattern": "/api/v1/test/get",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
-        }
-      },
-      "method": "GET",
-      
-      "sd": "dns",
-      "host": ["cart-service.service.consul"],
-      
-      "disable_host_sanitize": true
-    }
-  ]
 }
 
 ,
@@ -6301,7 +6274,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/orders/{user}",
+  "endpoint": "/api/v1/orders",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -6309,7 +6282,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/orders/{user}",
+      "url_pattern": "/api/v1/orders",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -6444,7 +6417,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/portal/",
+  "endpoint": "/api/v1/portal",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -6452,7 +6425,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/portal/",
+      "url_pattern": "/api/v1/portal",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -6472,7 +6445,6 @@
 }
 
 ,
-
 
 
 
@@ -6507,7 +6479,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/chat/check/{user_id}/{group_id}",
+  "endpoint": "/api/v1/chat/check/{group_id}",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -6515,7 +6487,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/chat/check/{user_id}/{group_id}",
+      "url_pattern": "/api/v1/chat/check/{group_id}",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -6561,7 +6533,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/chat/information/user/{user_id}",
+  "endpoint": "/api/v1/chat/information/user",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -6569,7 +6541,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/chat/information/user/{user_id}",
+      "url_pattern": "/api/v1/chat/information/user",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -6615,7 +6587,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/group/",
+  "endpoint": "/api/v1/group",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -6623,7 +6595,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/group/",
+      "url_pattern": "/api/v1/group",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -6858,7 +6830,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/group/user/{user_id}",
+  "endpoint": "/api/v1/group/user",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -6866,7 +6838,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/group/user/{user_id}",
+      "url_pattern": "/api/v1/group/user",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -6910,39 +6882,392 @@
       "disable_host_sanitize": true
     }
   ]
-},
+}
+
+,
+
+
+
+
+
 
 {
-    "endpoint": "/ws/{user_id}/{group_id}",
-    "input_query_strings": ["*"],
-    "backend": [
-        {
-            "url_pattern": "/ws",
-            "disable_host_sanitize": true,
-            "host": [
-                "ws://chat-service:8007"
-            ]
+  "endpoint": "/api/v1/attendance/checkin",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/attendance/checkin",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
         }
-    ],
-    "extra_config": {
-        "websocket": {
-            "input_headers": [
-                "Cookie",
-                "Authorization"
-            ],
-            "connect_event": true,
-            "disconnect_event": true,
-            "read_buffer_size": 4096,
-            "write_buffer_size": 4096,
-            "message_buffer_size": 4096,
-            "max_message_size": 3200000,
-            "write_wait": "10s",
-            "pong_wait": "60s",
-            "ping_period": "54s",
-            "max_retries": 0,
-            "backoff_strategy": "exponential"
-        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["holiday-service.service.consul"],
+      
+      "disable_host_sanitize": true
     }
+  ]
+},
+{
+  "endpoint": "/api/v1/attendance/checkout",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/attendance/checkout",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["holiday-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/attendance/my-attendance",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/attendance/my-attendance",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["holiday-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/leave",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/leave",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["holiday-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/leave/delete-request",
+  "input_query_strings":["*"],
+  "method": "DELETE",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/leave/delete-request",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "DELETE",
+      
+      "sd": "dns",
+      "host": ["holiday-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/leave/my-request",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/leave/my-request",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["holiday-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/leave/pending-request",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/leave/pending-request",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["holiday-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/leave/{id}",
+  "input_query_strings":["*"],
+  "method": "PUT",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/leave/{id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "PUT",
+      
+      "sd": "dns",
+      "host": ["holiday-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/leave/statistical",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/leave/statistical",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["holiday-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/leave/calendar",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/leave/calendar",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["holiday-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/leave/calendar/{id}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/leave/calendar/{id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["holiday-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/leave/calendar/{id}",
+  "input_query_strings":["*"],
+  "method": "PUT",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/leave/calendar/{id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "PUT",
+      
+      "sd": "dns",
+      "host": ["holiday-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/leave/setting",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/leave/setting",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["holiday-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/leave/setting/{id}",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/leave/setting/{id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["holiday-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
 }
 
 
