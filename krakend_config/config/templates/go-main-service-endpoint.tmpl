@@ -2441,15 +2441,15 @@
   ]
 },
 {
-  "endpoint": "/v1/user/{id}/children",
+  "endpoint": "/v1/user/init",
   "input_query_strings":["*"],
-  "method": "GET",
+  "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/v1/user/{id}/children",
+      "url_pattern": "/v1/user/init",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2458,7 +2458,7 @@
           "log_status_change": true
         }
       },
-      "method": "GET",
+      "method": "POST",
       {{ if $sd_dns }}
       "sd": "dns",
       "host": ["{{ $sd_dns }}"],
@@ -2470,7 +2470,7 @@
   ]
 },
 {
-  "endpoint": "/v1/user/init",
+  "endpoint": "/v1/user/child/init",
   "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
@@ -2478,7 +2478,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/v1/user/init",
+      "url_pattern": "/v1/user/child/init",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -2537,6 +2537,35 @@
   "backend": [
     {
       "url_pattern": "/v1/user/role/update",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/user/avatar",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/user/avatar",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -4161,6 +4190,35 @@
   "backend": [
     {
       "url_pattern": "/v1/organization/join",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/organization/avatar",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/organization/avatar",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
