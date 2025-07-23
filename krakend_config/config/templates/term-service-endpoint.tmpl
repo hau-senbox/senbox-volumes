@@ -1,0 +1,153 @@
+{{ define "TermServiceApiEndpoint" }}
+
+{{ $settings := . }}
+{{ $host := $settings.term_service }}
+{{ $sd_dns := $settings.term_service_dns }}
+
+{
+  "endpoint": "/api/v1/terms",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/terms",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/terms/{id}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/terms/{id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/terms/current",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/terms/current",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/terms",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/terms",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/terms",
+  "input_query_strings":["*"],
+  "method": "PUT",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/terms",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "PUT",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+}
+
+{{end}}

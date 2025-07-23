@@ -154,6 +154,36 @@ services:
       - "27023:27017"
     restart: unless-stopped
 
+  wallet_db:
+    image: mongo:latest
+    container_name: wallet_db
+    hostname: wallet_db
+    volumes:
+      - ./data/db/wallet_db/data:/data/db
+    networks:
+      vpcbr:
+        ipv4_address: 192.0.2.17
+    ports:
+      - "27024:27017"
+    restart: unless-stopped
+
+  gallery_db:
+    image: mongo:latest
+    container_name: gallery_db
+    hostname: gallery_db
+    volumes:
+      - ./data/db/gallery_db/data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: senbox
+      MONGO_INITDB_ROOT_PASSWORD: senbox
+    networks:
+      vpcbr:
+        ipv4_address: 192.0.2.18
+    ports:
+      - "27025:27017"
+    restart: unless-stopped
+
+
   go-main-service-db:
     image: mariadb:latest
     container_name: go-main-service-db
@@ -167,7 +197,7 @@ services:
       - ./db_dumb/go-main-service:/docker-entrypoint-initdb.d # scripts to initialize DB
     networks:
       vpcbr:
-        ipv4_address: 192.0.2.17
+        ipv4_address: 192.0.2.19
     ports:
       - "3308:3306"
     restart: unless-stopped
@@ -362,6 +392,45 @@ services:
     depends_on:
       - consul
       - term_db
+      # - kafka-1
+      # - kafka-2
+      # - kafka-3
+      
+  wallet-service:
+    build:
+      context: ../wallet-service
+      dockerfile: Dockerfile
+    container_name: wallet-service
+    env_file:
+      - ./config/wallet-service.env
+    networks:
+      vpcbr:
+        ipv4_address: 192.0.2.59
+    ports:
+      - "8010:8010"
+    depends_on:
+      - consul
+      - wallet_db
+      # - kafka-1
+      # - kafka-2
+      # - kafka-3
+    restart: unless-stopped
+      
+  gallery-service:
+    build:
+      context: ../gallery-service
+      dockerfile: Dockerfile
+    container_name: gallery-service
+    volumes:
+      - ./config/gallery-service.yaml:/root/.bin/config.dev.yaml
+    networks:
+      vpcbr:
+        ipv4_address: 192.0.2.60
+    ports:
+      - "8011:8011"
+    depends_on:
+      - consul
+      - gallery_db
       # - kafka-1
       # - kafka-2
       # - kafka-3

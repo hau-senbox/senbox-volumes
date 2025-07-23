@@ -1,0 +1,269 @@
+{{ define "WalletServiceApiEndpoint" }}
+
+{{ $settings := . }}
+{{ $host := $settings.wallet_service }}
+{{ $sd_dns := $settings.wallet_service_dns }}
+
+{
+  "endpoint": "/api/v1/exchange",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/exchange",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/exchange",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/exchange",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/exchange/{id}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/exchange/{id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/exchange/{id}",
+  "input_query_strings":["*"],
+  "method": "PUT",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/exchange/{id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "PUT",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/exchange/{id}",
+  "input_query_strings":["*"],
+  "method": "DELETE",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/exchange/{id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "DELETE",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/wallet/{user_id}",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/exchange/{user_id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/wallet/{user_id}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/wallet/{user_id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/wallet/add_balance",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/wallet/add_balance",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/wallet/deduct_balance",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/wallet/deduct_balance",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+}
+
+{{end}}
