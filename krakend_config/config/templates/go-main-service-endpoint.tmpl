@@ -4385,7 +4385,7 @@
   ]
 },
 {
-  "endpoint": "/v1/user/student/application/{id}",
+  "endpoint": "/v1/user/student/application/{id}/{device_id}",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -4393,7 +4393,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/v1/user/student/application/{id}",
+      "url_pattern": "/v1/user/student/application/{id}/{device_id}",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
