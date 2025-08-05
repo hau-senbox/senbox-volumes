@@ -1,5 +1,5 @@
 server:
-  port: "8009"
+  port: "8013"
 
 database:
   active: "mongodb" # or "mongodb"
@@ -15,5 +15,5 @@ consul:
     port: 8500
     
 registry:
-  host: 192.0.2.58
+  host: 192.0.2.62
 

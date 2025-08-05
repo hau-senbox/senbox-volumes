@@ -20,5 +20,9 @@
     "wallet_service": "http://wallet-service:8010",
     "wallet_service_dns": "wallet-service.service.consul",
     "gallery_service": "http://gallery-service:8011",
-    "gallery_service_dns": "gallery-service.service.consul"
+    "gallery_service_dns": "gallery-service.service.consul",
+    "classroom_service": "http://classroom-service:8012",
+    "classroom_service_dns": "classroom-service.service.consul",
+    "topic_service": "http://topic-service:8013",
+    "topic_service_dns": "topic-service.service.consul"
 }
