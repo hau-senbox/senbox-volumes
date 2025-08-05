@@ -183,6 +183,31 @@ services:
       - "27025:27017"
     restart: unless-stopped
 
+  classroom_db:
+    image: mongo:latest
+    container_name: classroom_db
+    hostname: classroom_db
+    volumes:
+      - ./data/db/classroom_db/data:/data/db
+    networks:
+      vpcbr:
+        ipv4_address: 192.0.2.19
+    ports:
+      - "27026:27017"
+    restart: unless-stopped
+
+  topic_db:
+    image: mongo:latest
+    container_name: topic_db
+    hostname: topic_db
+    volumes:
+      - ./data/db/topic_db/data:/data/db
+    networks:
+      vpcbr:
+        ipv4_address: 192.0.2.20
+    ports:
+      - "27027:27017"
+    restart: unless-stopped
 
   go-main-service-db:
     image: mariadb:latest
@@ -197,7 +222,7 @@ services:
       - ./db_dumb/go-main-service:/docker-entrypoint-initdb.d # scripts to initialize DB
     networks:
       vpcbr:
-        ipv4_address: 192.0.2.19
+        ipv4_address: 192.0.2.20
     ports:
       - "3308:3306"
     restart: unless-stopped
@@ -431,6 +456,26 @@ services:
     depends_on:
       - consul
       - gallery_db
+      # - kafka-1
+      # - kafka-2
+      # - kafka-3
+    restart: unless-stopped
+
+  classroom-service:
+    build:
+      context: ../classroom-service
+      dockerfile: Dockerfile
+    container_name: classroom-service
+    env_file:
+      - ./config/classroom-service.env
+    networks:
+      vpcbr:
+        ipv4_address: 192.0.2.61
+    ports:
+      - "8012:8012"
+    depends_on:
+      - consul
+      - classroom_db
       # - kafka-1
       # - kafka-2
       # - kafka-3
