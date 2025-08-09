@@ -30,7 +30,7 @@ zap:
         max_size: 32
 
 mongo:
-  uri: "mongodb://gallery_db:27017/"
+  uri: mongodb://senbox:senbox@gallery_db:27017/
   username: senbox
   password: senbox
   db: gallery-service
@@ -41,6 +41,7 @@ mongo:
   collections:
     cluster: cluster
     folder: folder
+    topic: topic
 
 consul:
   host: consul
