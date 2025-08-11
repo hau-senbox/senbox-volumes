@@ -5840,6 +5840,33 @@
   ]
 },
 {
+  "endpoint": "/v1/organization/check/{device_id}/{organization_id}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/organization/check/{device_id}/{organization_id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
   "endpoint": "/v1/form",
   "input_query_strings":["*"],
   "method": "POST",
@@ -9385,7 +9412,7 @@
 
 
 {
-  "endpoint": "/api/v1/terms",
+  "endpoint": "/api/v1/admin/terms",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -9393,7 +9420,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/terms",
+      "url_pattern": "/api/v1/admin/terms",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -9412,7 +9439,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/terms/{id}",
+  "endpoint": "/api/v1/admin/terms/{id}",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -9420,7 +9447,61 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/terms/{id}",
+      "url_pattern": "/api/v1/admin/terms/{id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["term-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/admin/terms",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/admin/terms",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["term-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/admin/terms/current",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/admin/terms/current",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -9457,60 +9538,6 @@
         }
       },
       "method": "GET",
-      
-      "sd": "dns",
-      "host": ["term-service.service.consul"],
-      
-      "disable_host_sanitize": true
-    }
-  ]
-},
-{
-  "endpoint": "/api/v1/terms",
-  "input_query_strings":["*"],
-  "method": "POST",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
-  "backend": [
-    {
-      "url_pattern": "/api/v1/terms",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
-        }
-      },
-      "method": "POST",
-      
-      "sd": "dns",
-      "host": ["term-service.service.consul"],
-      
-      "disable_host_sanitize": true
-    }
-  ]
-},
-{
-  "endpoint": "/api/v1/terms",
-  "input_query_strings":["*"],
-  "method": "PUT",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
-  "backend": [
-    {
-      "url_pattern": "/api/v1/terms",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
-        }
-      },
-      "method": "PUT",
       
       "sd": "dns",
       "host": ["term-service.service.consul"],
