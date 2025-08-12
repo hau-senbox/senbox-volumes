@@ -209,6 +209,19 @@ services:
       - "27027:27017"
     restart: unless-stopped
 
+  inventory_db:
+    image: mongo:latest
+    container_name: inventory_db
+    hostname: inventory_db
+    volumes:
+      - ./data/db/inventory_db/data:/data/db
+    networks:
+      vpcbr:
+        ipv4_address: 192.0.2.21
+    ports:
+      - "27028:27017"
+    restart: unless-stopped
+
   go-main-service-db:
     image: mariadb:latest
     container_name: go-main-service-db
@@ -222,7 +235,7 @@ services:
       - ./db_dumb/go-main-service:/docker-entrypoint-initdb.d # scripts to initialize DB
     networks:
       vpcbr:
-        ipv4_address: 192.0.2.21
+        ipv4_address: 192.0.2.22
     ports:
       - "3308:3306"
     restart: unless-stopped
@@ -247,31 +260,6 @@ services:
       # - kafka-3
     restart: unless-stopped
   
-  inventory-service:
-    build: 
-      context: ../senbox-inventory
-      dockerfile: Dockerfile
-    container_name: inventory-service
-    environment:
-      - JAVA_HOME=/jre
-      # - TZ=UTC          # Set timezone if needed
-      - SPRING_CLOUD_CONSUL_HOST=consul
-      - SPRING_CLOUD_CONSUL_PORT=8500
-      - SPRING_CLOUD_CONSUL_DISCOVERY_HOSTNAME=192.0.2.51
-    volumes:
-      - ./logs:/app/logs
-    networks:
-      vpcbr:
-        ipv4_address: 192.0.2.51
-    ports:
-      - "8002:8002"
-    depends_on:
-      - consul
-      # - kafka-1
-      # - kafka-2
-      # - kafka-3
-    restart: unless-stopped  # Restart the container unless it is explicitly stopped
-
   product-service:
     build:
       context: ../product-service
@@ -496,6 +484,25 @@ services:
     depends_on:
       - consul
       - topic_db
+      # - kafka-1
+      # - kafka-2
+      # - kafka-3
+  
+  inventory-service:
+    build:
+      context: ../inventory-service
+      dockerfile: Dockerfile
+    container_name: inventory-service
+    env_file:
+      - ./config/inventory-service.env
+    networks:
+      vpcbr:
+        ipv4_address: 192.0.2.63
+    ports:
+      - "8014:8014"
+    depends_on:
+      - consul
+      - inventory_db
       # - kafka-1
       # - kafka-2
       # - kafka-3
