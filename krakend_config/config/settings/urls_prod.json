@@ -24,5 +24,7 @@
     "classroom_service": "http://classroom-service:8012",
     "classroom_service_dns": "classroom-service.service.consul",
     "topic_service": "http://topic-service:8013",
-    "topic_service_dns": "topic-service.service.consul"
+    "topic_service_dns": "topic-service.service.consul",
+    "event_service": "http://event-service:8015",
+    "event_service_dns": "event-service.service.consul"
 }

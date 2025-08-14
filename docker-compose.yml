@@ -196,18 +196,18 @@ services:
       - "27026:27017"
     restart: unless-stopped
 
-  topic_db:
-    image: mongo:latest
-    container_name: topic_db
-    hostname: topic_db
-    volumes:
-      - ./data/db/topic_db/data:/data/db
-    networks:
-      vpcbr:
-        ipv4_address: 192.0.2.20
-    ports:
-      - "27027:27017"
-    restart: unless-stopped
+  # topic_db:
+  #   image: mongo:latest
+  #   container_name: topic_db
+  #   hostname: topic_db
+  #   volumes:
+  #     - ./data/db/topic_db/data:/data/db
+  #   networks:
+  #     vpcbr:
+  #       ipv4_address: 192.0.2.20
+  #   ports:
+  #     - "27027:27017"
+  #   restart: unless-stopped
 
   inventory_db:
     image: mongo:latest
@@ -220,6 +220,19 @@ services:
         ipv4_address: 192.0.2.21
     ports:
       - "27028:27017"
+    restart: unless-stopped
+  
+  event_db:
+    image: mongo:latest
+    container_name: event_db
+    hostname: event_db
+    volumes:
+      - ./data/db/event_db/data:/data/db
+    networks:
+      vpcbr:
+        ipv4_address: 192.0.2.22
+    ports:
+      - "27029:27017"
     restart: unless-stopped
 
   go-main-service-db:
@@ -235,7 +248,7 @@ services:
       - ./db_dumb/go-main-service:/docker-entrypoint-initdb.d # scripts to initialize DB
     networks:
       vpcbr:
-        ipv4_address: 192.0.2.22
+        ipv4_address: 192.0.2.23
     ports:
       - "3308:3306"
     restart: unless-stopped
@@ -469,24 +482,21 @@ services:
       # - kafka-3
     restart: unless-stopped
 
-  topic-service:
-    build:
-      context: ../topic-service
-      dockerfile: Dockerfile
-    container_name: topic-service
-    volumes:
-      - ./config/topic-service.yaml:/configs/config.yaml
-    networks:
-      vpcbr:
-        ipv4_address: 192.0.2.62
-    ports:
-      - "8013:8013"
-    depends_on:
-      - consul
-      - topic_db
-      # - kafka-1
-      # - kafka-2
-      # - kafka-3
+  # topic-service:
+  #   build:
+  #     context: ../topic-service
+  #     dockerfile: Dockerfile
+  #   container_name: topic-service
+  #   volumes:
+  #     - ./config/topic-service.yaml:/configs/config.yaml
+  #   networks:
+  #     vpcbr:
+  #       ipv4_address: 192.0.2.62
+  #   ports:
+  #     - "8013:8013"
+  #   depends_on:
+  #     - consul
+  #     - topic_db
   
   inventory-service:
     build:
@@ -503,6 +513,25 @@ services:
     depends_on:
       - consul
       - inventory_db
+      # - kafka-1
+      # - kafka-2
+      # - kafka-3
+
+  event-service:
+    build:
+      context: ../event-service
+      dockerfile: Dockerfile
+    container_name: event-service
+    env_file:
+      - ./config/event-service.env
+    networks:
+      vpcbr:
+        ipv4_address: 192.0.2.64
+    ports:
+      - "8015:8015"
+    depends_on:
+      - consul
+      - event_db
       # - kafka-1
       # - kafka-2
       # - kafka-3
