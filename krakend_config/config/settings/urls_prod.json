@@ -26,5 +26,7 @@
     "topic_service": "http://topic-service:8013",
     "topic_service_dns": "topic-service.service.consul",
     "event_service": "http://event-service:8015",
-    "event_service_dns": "event-service.service.consul"
+    "event_service_dns": "event-service.service.consul",
+    "todo_service": "http://todo-service:8015",
+    "todo_service_dns": "todo-service.service.consul"
 }

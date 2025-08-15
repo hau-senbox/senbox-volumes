@@ -5,7 +5,7 @@
 {{ $sd_dns := $settings.inventory_service_dns }}
 
 {
-  "endpoint": "/api/v1/locations",
+  "endpoint": "/api/v1/storage",
   "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
@@ -13,7 +13,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/locations",
+      "url_pattern": "/api/v1/storage",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -34,7 +34,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/locations",
+  "endpoint": "/api/v1/storage",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -42,7 +42,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/locations",
+      "url_pattern": "/api/v1/storage",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -63,7 +63,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/locations/{id}",
+  "endpoint": "/api/v1/storage/{id}",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -71,7 +71,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/locations/{id}",
+      "url_pattern": "/api/v1/storage/{id}",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,

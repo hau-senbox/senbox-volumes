@@ -235,6 +235,19 @@ services:
       - "27029:27017"
     restart: unless-stopped
 
+  todo_db:
+    image: mongo:latest
+    container_name: todo_db
+    hostname: todo_db
+    volumes:
+      - ./data/db/todo_db/data:/data/db
+    networks:
+      vpcbr:
+        ipv4_address: 192.0.2.23
+    ports:
+      - "27030:27017"
+    restart: unless-stopped
+
   go-main-service-db:
     image: mariadb:latest
     container_name: go-main-service-db
@@ -248,7 +261,7 @@ services:
       - ./db_dumb/go-main-service:/docker-entrypoint-initdb.d # scripts to initialize DB
     networks:
       vpcbr:
-        ipv4_address: 192.0.2.23
+        ipv4_address: 192.0.2.24
     ports:
       - "3308:3306"
     restart: unless-stopped
@@ -532,6 +545,25 @@ services:
     depends_on:
       - consul
       - event_db
+      # - kafka-1
+      # - kafka-2
+      # - kafka-3
+
+  todo-service:
+    build:
+      context: ../todo-service
+      dockerfile: Dockerfile
+    container_name: todo-service
+    env_file:
+      - ./config/todo-service.env
+    networks:
+      vpcbr:
+        ipv4_address: 192.0.2.65
+    ports:
+      - "8016:8016"
+    depends_on:
+      - consul
+      - todo_db
       # - kafka-1
       # - kafka-2
       # - kafka-3
