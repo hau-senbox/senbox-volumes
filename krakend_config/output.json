@@ -1169,7 +1169,7 @@
   ]
 },
 {
-  "endpoint": "/v1/admin/languages-config,
+  "endpoint": "/v1/admin/languages-config",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -1177,7 +1177,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/v1/admin/languages-config,
+      "url_pattern": "/v1/admin/languages-config",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -1196,7 +1196,7 @@
   ]
 },
 {
-  "endpoint": "/v1/admin/languages-config,
+  "endpoint": "/v1/admin/languages-config",
   "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
@@ -1204,7 +1204,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/v1/admin/languages-config,
+      "url_pattern": "/v1/admin/languages-config",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
