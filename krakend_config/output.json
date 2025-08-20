@@ -358,6 +358,33 @@
   ]
 },
 {
+  "endpoint": "/v1/admin/user/avatar",
+  "input_query_strings":["*"],
+  "method": "DELETE",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/user/avatar",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "DELETE",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
   "endpoint": "/v1/admin/user/teacher/{id}",
   "input_query_strings":["*"],
   "method": "GET",

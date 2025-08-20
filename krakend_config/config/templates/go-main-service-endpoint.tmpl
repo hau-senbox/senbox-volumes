@@ -324,7 +324,7 @@
   ]
 },
 {
-  "endpoint": "/v1/admin/user/avatar,
+  "endpoint": "/v1/admin/user/avatar",
   "input_query_strings":["*"],
   "method": "DELETE",
   "extra_config": {},
@@ -332,7 +332,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/v1/admin/user/avatar,
+      "url_pattern": "/v1/admin/user/avatar",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
