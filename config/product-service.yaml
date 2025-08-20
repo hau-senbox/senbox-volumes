@@ -30,7 +30,7 @@ zap:
         max_size: 32
 
 mongo:
-  uri: "mongodb://mongodb:27017/"
+  uri: "mongodb://senbox:senbox@mongodb:27017/"
   username: senbox
   password: senbox
   db: product-service
