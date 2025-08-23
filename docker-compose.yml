@@ -248,6 +248,19 @@ services:
       - "27030:27017"
     restart: unless-stopped
 
+  colortime_db:
+    image: mongo:latest
+    container_name: colortime_db
+    hostname: colortime_db
+    volumes:
+      - ./data/db/colortime_db/data:/data/db
+    networks:
+      vpcbr:
+        ipv4_address: 192.0.2.24
+    ports:
+      - "27031:27017"
+    restart: unless-stopped
+
   go-main-service-db:
     image: mariadb:latest
     container_name: go-main-service-db
@@ -261,7 +274,7 @@ services:
       - ./db_dumb/go-main-service:/docker-entrypoint-initdb.d # scripts to initialize DB
     networks:
       vpcbr:
-        ipv4_address: 192.0.2.24
+        ipv4_address: 192.0.2.25
     ports:
       - "3308:3306"
     restart: unless-stopped
@@ -561,6 +574,25 @@ services:
         ipv4_address: 192.0.2.65
     ports:
       - "8016:8016"
+    depends_on:
+      - consul
+      - todo_db
+      # - kafka-1
+      # - kafka-2
+      # - kafka-3
+
+  colortime-service:
+    build:
+      context: ../colortime-service
+      dockerfile: Dockerfile
+    container_name: colortime-service
+    env_file:
+      - ./config/colortime-service.env
+    networks:
+      vpcbr:
+        ipv4_address: 192.0.2.66
+    ports:
+      - "8017:8017"
     depends_on:
       - consul
       - todo_db
