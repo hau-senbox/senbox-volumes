@@ -30,6 +30,8 @@
     "todo_service": "http://todo-service:8016",
     "todo_service_dns": "todo-service.service.consul",
     "colortime_service": "http://colortime-service:8017",
-    "colortime_service_dns": "colortime-service.service.consul"
+    "colortime_service_dns": "colortime-service.service.consul",
+    "report_service": "http://report-service:8018",
+    "report_service_dns": "report-service.service.consul"
 
 }

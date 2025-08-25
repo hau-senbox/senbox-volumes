@@ -1,11 +1,11 @@
-{{ define "TermServiceApiEndpoint" }}
+{{ define "ReportServiceApiEndpoint" }}
 
 {{ $settings := . }}
-{{ $host := $settings.term_service }}
-{{ $sd_dns := $settings.term_service_dns }}
+{{ $host := $settings.report_service }}
+{{ $sd_dns := $settings.report_service_dns }}
 
 {
-  "endpoint": "/api/v1/admin/terms",
+  "endpoint": "/api/v1/admin/reports",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -13,7 +13,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/admin/terms",
+      "url_pattern": "/api/v1/admin/reports",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -34,36 +34,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/admin/terms/{id}",
-  "input_query_strings":["*"],
-  "method": "GET",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
-  "backend": [
-    {
-      "url_pattern": "/api/v1/admin/terms/{id}",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
-        }
-      },
-      "method": "GET",
-      {{ if $sd_dns }}
-      "sd": "dns",
-      "host": ["{{ $sd_dns }}"],
-      {{ else }}
-      "host": ["{{ $host }}"],
-      {{ end }}
-      "disable_host_sanitize": true
-    }
-  ]
-},
-{
-  "endpoint": "/api/v1/admin/terms",
+  "endpoint": "/api/v1/admin/reports",
   "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
@@ -71,7 +42,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/admin/terms",
+      "url_pattern": "/api/v1/admin/reports",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -92,7 +63,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/admin/terms/current",
+  "endpoint": "/api/v1/user/reports",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -100,7 +71,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/admin/terms/current",
+      "url_pattern": "/api/v1/user/reports",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -121,15 +92,15 @@
   ]
 },
 {
-  "endpoint": "/api/v1/terms/current",
+  "endpoint": "/api/v1/user/reports",
   "input_query_strings":["*"],
-  "method": "GET",
+  "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/terms/current",
+      "url_pattern": "/api/v1/user/reports",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -138,36 +109,7 @@
           "log_status_change": true
         }
       },
-      "method": "GET",
-      {{ if $sd_dns }}
-      "sd": "dns",
-      "host": ["{{ $sd_dns }}"],
-      {{ else }}
-      "host": ["{{ $host }}"],
-      {{ end }}
-      "disable_host_sanitize": true
-    }
-  ]
-},
-{
-  "endpoint": "/api/v1/terms/current/student/{student_id}",
-  "input_query_strings":["*"],
-  "method": "GET",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
-  "backend": [
-    {
-      "url_pattern": "/api/v1/terms/current/student/{student_id}",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
-        }
-      },
-      "method": "GET",
+      "method": "POST",
       {{ if $sd_dns }}
       "sd": "dns",
       "host": ["{{ $sd_dns }}"],
@@ -178,5 +120,6 @@
     }
   ]
 }
+
 
 {{end}}

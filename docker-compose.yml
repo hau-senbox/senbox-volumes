@@ -261,6 +261,19 @@ services:
       - "27031:27017"
     restart: unless-stopped
 
+  report_db:
+    image: mongo:latest
+    container_name: report_db
+    hostname: report_db
+    volumes:
+      - ./data/db/report_db/data:/data/db
+    networks:
+      vpcbr:
+        ipv4_address: 192.0.2.25
+    ports:
+      - "27032:27017"
+    restart: unless-stopped
+
   go-main-service-db:
     image: mariadb:latest
     container_name: go-main-service-db
@@ -274,7 +287,7 @@ services:
       - ./db_dumb/go-main-service:/docker-entrypoint-initdb.d # scripts to initialize DB
     networks:
       vpcbr:
-        ipv4_address: 192.0.2.25
+        ipv4_address: 192.0.2.26
     ports:
       - "3308:3306"
     restart: unless-stopped
@@ -764,6 +777,26 @@ services:
   #     - kafka-2
   #     - kafka-3
 
+
+  report-service:
+    build:
+      context: ../report-service
+      dockerfile: Dockerfile
+    container_name: report-service
+    volumes:
+      - ./config/report-service.yaml:/configs/config.yaml
+    networks:
+      vpcbr:
+        ipv4_address: 192.0.2.67
+    ports:
+      - "8018:8018"
+    depends_on:
+      - consul
+      - report_db
+      # - kafka-1
+      # - kafka-2
+      # - kafka-3
+      
 networks:
   vpcbr:
     driver: bridge
