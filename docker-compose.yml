@@ -66,9 +66,6 @@ services:
     volumes:
       - ./data/db/mongodb/initdb.d/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
       - ./data/db/mongodb/data:/data/db
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: senbox
-      MONGO_INITDB_ROOT_PASSWORD: senbox
     networks:
       vpcbr:
         ipv4_address: 192.0.2.10
@@ -317,8 +314,10 @@ services:
       context: ../product-service
       dockerfile: Dockerfile
     container_name: product-service
-    volumes:
-      - ./config/product-service.yaml:/root/.bin/config.dev.yaml
+    env_file:
+      - ./config/product-service.env
+    # volumes:
+    #   - ./config/product-service.yaml:/root/.bin/config.dev.yaml
     networks:
       vpcbr:
         ipv4_address: 192.0.2.52
