@@ -9224,6 +9224,33 @@
   ]
 },
 {
+  "endpoint": "/api/v1/admin/terms/student/{student_id}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/admin/terms/student/{student_id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["term-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
   "endpoint": "/api/v1/terms/current",
   "input_query_strings":["*"],
   "method": "GET",
@@ -9251,7 +9278,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/terms/current/student/{student_id}",
+  "endpoint": "/api/v1/terms/student/{student_id}",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -9259,7 +9286,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/terms/current/student/{student_id}",
+      "url_pattern": "/api/v1/terms/student/{student_id}",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -11147,15 +11174,15 @@
 
 
 {
-  "endpoint": "/api/v1/admin/reports",
+  "endpoint": "/api/v1/admin/reports/get-report",
   "input_query_strings":["*"],
-  "method": "GET",
+  "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/admin/reports",
+      "url_pattern": "/api/v1/admin/reports/get-report",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -11164,7 +11191,7 @@
           "log_status_change": true
         }
       },
-      "method": "GET",
+      "method": "POST",
       
       "sd": "dns",
       "host": ["report-service.service.consul"],
@@ -11201,15 +11228,15 @@
   ]
 },
 {
-  "endpoint": "/api/v1/user/reports",
+  "endpoint": "/api/v1/user/reports/get-report",
   "input_query_strings":["*"],
-  "method": "GET",
+  "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/user/reports",
+      "url_pattern": "/api/v1/user/reports/get-report",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -11218,7 +11245,7 @@
           "log_status_change": true
         }
       },
-      "method": "GET",
+      "method": "POST",
       
       "sd": "dns",
       "host": ["report-service.service.consul"],

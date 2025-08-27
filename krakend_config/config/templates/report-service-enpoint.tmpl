@@ -5,15 +5,15 @@
 {{ $sd_dns := $settings.report_service_dns }}
 
 {
-  "endpoint": "/api/v1/admin/reports",
+  "endpoint": "/api/v1/admin/reports/get-report",
   "input_query_strings":["*"],
-  "method": "GET",
+  "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/admin/reports",
+      "url_pattern": "/api/v1/admin/reports/get-report",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -22,7 +22,7 @@
           "log_status_change": true
         }
       },
-      "method": "GET",
+      "method": "POST",
       {{ if $sd_dns }}
       "sd": "dns",
       "host": ["{{ $sd_dns }}"],
@@ -63,15 +63,15 @@
   ]
 },
 {
-  "endpoint": "/api/v1/user/reports",
+  "endpoint": "/api/v1/user/reports/get-report",
   "input_query_strings":["*"],
-  "method": "GET",
+  "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/user/reports",
+      "url_pattern": "/api/v1/user/reports/get-report",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -80,7 +80,7 @@
           "log_status_change": true
         }
       },
-      "method": "GET",
+      "method": "POST",
       {{ if $sd_dns }}
       "sd": "dns",
       "host": ["{{ $sd_dns }}"],
