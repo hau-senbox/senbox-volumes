@@ -6245,15 +6245,15 @@
   ]
 },
 {
-  "endpoint": "/v1/user-menu/teacher/organization/{user_id/{organization_id}",
+  "endpoint": "/v1/user-menu/teacher/organization",
   "input_query_strings":["*"],
-  "method": "GET",
+  "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/v1/user-menu/teacher/organization/{user_id/{organization_id}",
+      "url_pattern": "/v1/user-menu/teacher/organization",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -6262,7 +6262,7 @@
           "log_status_change": true
         }
       },
-      "method": "GET",
+      "method": "POST",
       
       "sd": "dns",
       "host": ["go-main-service.service.consul"],
@@ -8228,7 +8228,7 @@
 
 
 {
-  "endpoint": "/api/v1/portal/student",
+  "endpoint": "/api/v1/drink",
   "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
@@ -8236,7 +8236,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/portal/student",
+      "url_pattern": "/api/v1/drink",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -8255,7 +8255,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/portal",
+  "endpoint": "/api/v1/drink",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -8263,7 +8263,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/portal",
+      "url_pattern": "/api/v1/drink",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -8273,6 +8273,141 @@
         }
       },
       "method": "GET",
+      
+      "sd": "dns",
+      "host": ["portal-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/drink/{id}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/drink/{id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["portal-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/statistics",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/statistics",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["portal-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/bmi",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/bmi",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["portal-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/bmi/{id}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/bmi/{id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["portal-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/bmi",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/bmi",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
       
       "sd": "dns",
       "host": ["portal-service.service.consul"],
