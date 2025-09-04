@@ -193,19 +193,6 @@ services:
       - "27026:27017"
     restart: unless-stopped
 
-  # topic_db:
-  #   image: mongo:latest
-  #   container_name: topic_db
-  #   hostname: topic_db
-  #   volumes:
-  #     - ./data/db/topic_db/data:/data/db
-  #   networks:
-  #     vpcbr:
-  #       ipv4_address: 192.0.2.20
-  #   ports:
-  #     - "27027:27017"
-  #   restart: unless-stopped
-
   inventory_db:
     image: mongo:latest
     container_name: inventory_db
@@ -519,22 +506,6 @@ services:
       # - kafka-2
       # - kafka-3
     restart: unless-stopped
-
-  # topic-service:
-  #   build:
-  #     context: ../topic-service
-  #     dockerfile: Dockerfile
-  #   container_name: topic-service
-  #   volumes:
-  #     - ./config/topic-service.yaml:/configs/config.yaml
-  #   networks:
-  #     vpcbr:
-  #       ipv4_address: 192.0.2.62
-  #   ports:
-  #     - "8013:8013"
-  #   depends_on:
-  #     - consul
-  #     - topic_db
   
   inventory-service:
     build:
