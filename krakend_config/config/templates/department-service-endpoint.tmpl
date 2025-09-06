@@ -63,7 +63,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/admin/departments/{id}",
+  "endpoint": "/api/v1/admin/departments/{department_id}",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -71,7 +71,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/admin/departments/{id}",
+      "url_pattern": "/api/v1/admin/departments/{department_id}",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -92,7 +92,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/admin/departments/{id}",
+  "endpoint": "/api/v1/admin/departments/{department_id}",
   "input_query_strings":["*"],
   "method": "PUT",
   "extra_config": {},
@@ -100,7 +100,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/admin/departments/{id}",
+      "url_pattern": "/api/v1/admin/departments/{department_id}",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
