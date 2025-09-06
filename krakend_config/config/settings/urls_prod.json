@@ -32,6 +32,7 @@
     "colortime_service": "http://colortime-service:8017",
     "colortime_service_dns": "colortime-service.service.consul",
     "report_service": "http://report-service:8018",
-    "report_service_dns": "report-service.service.consul"
-
+    "report_service_dns": "report-service.service.consul",
+    "department_service": "http://department-service:8019",
+    "department_service_dns": "department-service.service.consul"
 }
