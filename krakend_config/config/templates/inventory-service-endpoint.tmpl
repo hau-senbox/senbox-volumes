@@ -92,36 +92,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/location",
-  "input_query_strings":["*"],
-  "method": "POST",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
-  "backend": [
-    {
-      "url_pattern": "/api/v1/location",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
-        }
-      },
-      "method": "POST",
-      {{ if $sd_dns }}
-      "sd": "dns",
-      "host": ["{{ $sd_dns }}"],
-      {{ else }}
-      "host": ["{{ $host }}"],
-      {{ end }}
-      "disable_host_sanitize": true
-    }
-  ]
-},
-{
-  "endpoint": "/api/v1/location",
+  "endpoint": "/api/v1/storage/tree",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -129,7 +100,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/location",
+      "url_pattern": "/api/v1/storage/tree",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -150,36 +121,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/location/{id}",
-  "input_query_strings":["*"],
-  "method": "GET",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
-  "backend": [
-    {
-      "url_pattern": "/api/v1/location/{id}",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
-        }
-      },
-      "method": "GET",
-      {{ if $sd_dns }}
-      "sd": "dns",
-      "host": ["{{ $sd_dns }}"],
-      {{ else }}
-      "host": ["{{ $host }}"],
-      {{ end }}
-      "disable_host_sanitize": true
-    }
-  ]
-},
-{
-  "endpoint": "/api/v1/location/{id}",
+  "endpoint": "/api/v1/storage/{id}",
   "input_query_strings":["*"],
   "method": "PUT",
   "extra_config": {},
@@ -187,7 +129,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/location/{id}",
+      "url_pattern": "/api/v1/storage/{id}",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -208,7 +150,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/location/{id}",
+  "endpoint": "/api/v1/storage/{id}",
   "input_query_strings":["*"],
   "method": "DELETE",
   "extra_config": {},
@@ -216,7 +158,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/location/{id}",
+      "url_pattern": "/api/v1/storage/{id}",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -237,7 +179,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/location/add-product/{id}",
+  "endpoint": "/api/v1/shelf_type",
   "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
@@ -245,7 +187,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/location/add-product/{id}",
+      "url_pattern": "/api/v1/shelf_type",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -255,6 +197,122 @@
         }
       },
       "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/shelf_type",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/shelf_type",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/shelf_type/{id}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/shelf_type/{id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/shelf_type/{id}",
+  "input_query_strings":["*"],
+  "method": "PUT",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/shelf_type/{id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "PUT",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/shelf_type/{id}",
+  "input_query_strings":["*"],
+  "method": "DELETE",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/shelf_type/{id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "DELETE",
       {{ if $sd_dns }}
       "sd": "dns",
       "host": ["{{ $sd_dns }}"],
