@@ -208,7 +208,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/admin/departments/menu",
+  "endpoint": "/api/v1/admin/departments/home-menus",
   "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
@@ -216,7 +216,36 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/admin/departments/menu",
+      "url_pattern": "/api/v1/admin/departments/home-menus",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/admin/departments/organization-menus",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/admin/departments/organization-menus",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -284,6 +313,35 @@
         }
       },
       "method": "PUT",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/admin/departments/remove/leader",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/admin/departments/remove/leader",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
       {{ if $sd_dns }}
       "sd": "dns",
       "host": ["{{ $sd_dns }}"],
