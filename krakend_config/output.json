@@ -4301,6 +4301,33 @@
   ]
 },
 {
+  "endpoint": "/v1/admin/user/set-relogin",
+  "input_query_strings":["*"],
+  "method": "PUT",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/user/set-relogin",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "PUT",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
   "endpoint": "/v1/logout",
   "input_query_strings":["*"],
   "method": "POST",
@@ -12397,7 +12424,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/admin/departments/assign/remove",
+  "endpoint": "/api/v1/admin/departments/remove/staff",
   "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
@@ -12405,7 +12432,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/admin/departments/assign/remove",
+      "url_pattern": "/api/v1/admin/departments/remove/staff",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -12451,7 +12478,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/admin/menu/departments",
+  "endpoint": "/api/v1/admin/regions",
   "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
@@ -12459,7 +12486,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/admin/menu/departments",
+      "url_pattern": "/api/v1/admin/regions",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -12469,6 +12496,33 @@
         }
       },
       "method": "POST",
+      
+      "sd": "dns",
+      "host": ["department-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/admin/regions/{region_id}",
+  "input_query_strings":["*"],
+  "method": "PUT",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/admin/regions/{region_id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "PUT",
       
       "sd": "dns",
       "host": ["department-service.service.consul"],
