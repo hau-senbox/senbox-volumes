@@ -5,7 +5,7 @@
 {{ $sd_dns := $settings.classroom_service_dns }}
 
 {
-  "endpoint": "/api/v1/room",
+  "endpoint": "/api/v1/classrooms/regions",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -13,7 +13,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/room",
+      "url_pattern": "/api/v1/classrooms/regions",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -34,7 +34,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/room/add/leader",
+  "endpoint": "/api/v1/classrooms/regions",
   "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
@@ -42,7 +42,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/room/add/leader",
+      "url_pattern": "/api/v1/classrooms/regions",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -63,7 +63,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/assgin",
+  "endpoint": "/api/v1/classrooms/regions/{id}",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -71,7 +71,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/assgin",
+      "url_pattern": "/api/v1/classrooms/regions/{id}",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -92,36 +92,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/assgin/{id}",
-  "input_query_strings":["*"],
-  "method": "GET",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
-  "backend": [
-    {
-      "url_pattern": "/api/v1/assgin/{id}",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
-        }
-      },
-      "method": "GET",
-      {{ if $sd_dns }}
-      "sd": "dns",
-      "host": ["{{ $sd_dns }}"],
-      {{ else }}
-      "host": ["{{ $host }}"],
-      {{ end }}
-      "disable_host_sanitize": true
-    }
-  ]
-},
-{
-  "endpoint": "/api/v1/assgin",
+  "endpoint": "/api/v1/classrooms/regions/{id}",
   "input_query_strings":["*"],
   "method": "PUT",
   "extra_config": {},
@@ -129,7 +100,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/assgin",
+      "url_pattern": "/api/v1/classrooms/regions/{id}",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -150,7 +121,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/assgin",
+  "endpoint": "/api/v1/classrooms/regions/{id}",
   "input_query_strings":["*"],
   "method": "DELETE",
   "extra_config": {},
@@ -158,7 +129,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/assgin",
+      "url_pattern": "/api/v1/classrooms/regions/{id}",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -179,65 +150,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/notification",
-  "input_query_strings":["*"],
-  "method": "GET",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
-  "backend": [
-    {
-      "url_pattern": "/api/v1/notification",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
-        }
-      },
-      "method": "GET",
-      {{ if $sd_dns }}
-      "sd": "dns",
-      "host": ["{{ $sd_dns }}"],
-      {{ else }}
-      "host": ["{{ $host }}"],
-      {{ end }}
-      "disable_host_sanitize": true
-    }
-  ]
-},
-{
-  "endpoint": "/api/v1/notification/{id}",
-  "input_query_strings":["*"],
-  "method": "PUT",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
-  "backend": [
-    {
-      "url_pattern": "/api/v1/notification/{id}",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
-        }
-      },
-      "method": "PUT",
-      {{ if $sd_dns }}
-      "sd": "dns",
-      "host": ["{{ $sd_dns }}"],
-      {{ else }}
-      "host": ["{{ $host }}"],
-      {{ end }}
-      "disable_host_sanitize": true
-    }
-  ]
-},
-{
-  "endpoint": "/api/v1/notification/delay",
+  "endpoint": "/api/v1/classrooms",
   "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
@@ -245,7 +158,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/notification/delay",
+      "url_pattern": "/api/v1/classrooms",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -266,15 +179,15 @@
   ]
 },
 {
-  "endpoint": "/api/v1/notification/delay",
+  "endpoint": "/api/v1/assigns/{id}",
   "input_query_strings":["*"],
-  "method": "GET",
+  "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/notification/delay",
+      "url_pattern": "/api/v1/assigns/{id}",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -283,7 +196,7 @@
           "log_status_change": true
         }
       },
-      "method": "GET",
+      "method": "POST",
       {{ if $sd_dns }}
       "sd": "dns",
       "host": ["{{ $sd_dns }}"],
@@ -295,15 +208,15 @@
   ]
 },
 {
-  "endpoint": "/api/v1/notification/delay/{id}",
+  "endpoint": "/api/v1/leaders",
   "input_query_strings":["*"],
-  "method": "PUT",
+  "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/notification/delay/{id}",
+      "url_pattern": "/api/v1/leaders",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -312,7 +225,7 @@
           "log_status_change": true
         }
       },
-      "method": "PUT",
+      "method": "POST",
       {{ if $sd_dns }}
       "sd": "dns",
       "host": ["{{ $sd_dns }}"],

@@ -266,7 +266,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/admin/regions",
+  "endpoint": "/api/v1/admin/departments/regions",
   "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
@@ -274,7 +274,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/admin/regions",
+      "url_pattern": "/api/v1/admin/departments/regions",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -295,7 +295,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/admin/regions/{region_id}",
+  "endpoint": "/api/v1/admin/departments/regions/{region_id}",
   "input_query_strings":["*"],
   "method": "PUT",
   "extra_config": {},
@@ -303,7 +303,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/admin/regions/{region_id}",
+      "url_pattern": "/api/v1/admin/departments/regions/{region_id}",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -342,6 +342,35 @@
         }
       },
       "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/user/departments",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/user/departments",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
       {{ if $sd_dns }}
       "sd": "dns",
       "host": ["{{ $sd_dns }}"],
