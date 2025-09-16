@@ -353,6 +353,35 @@
   ]
 },
 {
+  "endpoint": "/v1/admin/user/setting",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/user/setting",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
   "endpoint": "/v1/admin/user/teacher/{id}",
   "input_query_strings":["*"],
   "method": "GET",
@@ -2732,6 +2761,64 @@
   ]
 },
 {
+  "endpoint": "/v1/admin/settings/language",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/settings/language",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/settings/language",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/settings/language",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
   "endpoint": "/v1/admin/monitor/google-api",
   "input_query_strings":["*"],
   "method": "GET",
@@ -3515,6 +3602,64 @@
   ]
 },
 {
+  "endpoint": "/v1/admin/menu/emergency",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/menu/emergency",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/menu/emergency",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/menu/emergency",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
   "endpoint": "/v1/admin/menu/organization/{id}",
   "input_query_strings":["*"],
   "method": "GET",
@@ -4200,6 +4345,35 @@
         }
       },
       "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/device/values-current",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/device/values-current",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
       {{ if $sd_dns }}
       "sd": "dns",
       "host": ["{{ $sd_dns }}"],
@@ -6801,6 +6975,35 @@
   "backend": [
     {
       "url_pattern": "/v1/user-menu/department/device/{device_id}/organization/{organization_id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/user-menu/emergency/organization/{organization_id}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/user-menu/emergency/organization/{organization_id}",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,

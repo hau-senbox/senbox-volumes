@@ -5,7 +5,7 @@
 {{ $sd_dns := $settings.classroom_service_dns }}
 
 {
-  "endpoint": "/api/v1/classrooms/regions",
+  "endpoint": "/api/v1/admin/classrooms/regions",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -13,7 +13,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/classrooms/regions",
+      "url_pattern": "/api/v1/admin/classrooms/regions",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -34,7 +34,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/classrooms/regions",
+  "endpoint": "/api/v1/admin/classrooms/regions",
   "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
@@ -42,7 +42,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/classrooms/regions",
+      "url_pattern": "/api/v1/admin/classrooms/regions",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -63,7 +63,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/classrooms/regions/{id}",
+  "endpoint": "/api/v1/admin/classrooms/regions/{id}",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -71,7 +71,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/classrooms/regions/{id}",
+      "url_pattern": "/api/v1/admin/classrooms/regions/{id}",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -92,7 +92,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/classrooms/regions/{id}",
+  "endpoint": "/api/v1/admin/classrooms/regions/{id}",
   "input_query_strings":["*"],
   "method": "PUT",
   "extra_config": {},
@@ -100,7 +100,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/classrooms/regions/{id}",
+      "url_pattern": "/api/v1/admin/classrooms/regions/{id}",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -121,7 +121,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/classrooms/regions/{id}",
+  "endpoint": "/api/v1/admin/classrooms/regions/{id}",
   "input_query_strings":["*"],
   "method": "DELETE",
   "extra_config": {},
@@ -129,7 +129,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/classrooms/regions/{id}",
+      "url_pattern": "/api/v1/admin/classrooms/regions/{id}",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -150,7 +150,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/classrooms",
+  "endpoint": "/api/v1/admin/classrooms",
   "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
@@ -158,7 +158,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/classrooms",
+      "url_pattern": "/api/v1/admin/classrooms",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -179,7 +179,36 @@
   ]
 },
 {
-  "endpoint": "/api/v1/assigns/{id}",
+  "endpoint": "/api/v1/admin/classrooms/{id}",
+  "input_query_strings":["*"],
+  "method": "PUT",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/admin/classrooms/{id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "PUT",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/admin/classrooms/assigns",
   "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
@@ -187,7 +216,7 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/assigns/{id}",
+      "url_pattern": "/api/v1/admin/classrooms/assigns",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -208,7 +237,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/leaders",
+  "endpoint": "/api/v1/admin/classrooms/remove/assigns",
   "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
@@ -216,7 +245,65 @@
   "input_headers": ["Authorization", "Content-Type"],
   "backend": [
     {
-      "url_pattern": "/api/v1/leaders",
+      "url_pattern": "/api/v1/admin/classrooms/remove/assigns",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/admin/classrooms/leader",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/admin/classrooms/leader",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/admin/classrooms/remove/leader",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/admin/classrooms/remove/leader",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
