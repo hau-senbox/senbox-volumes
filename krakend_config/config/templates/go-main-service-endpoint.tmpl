@@ -2819,6 +2819,35 @@
   ]
 },
 {
+  "endpoint": "/v1/admin/settings/language-published",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/settings/language-published",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
   "endpoint": "/v1/admin/monitor/google-api",
   "input_query_strings":["*"],
   "method": "GET",
@@ -3388,6 +3417,35 @@
         }
       },
       "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/menu/user",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/menu/user",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
       {{ if $sd_dns }}
       "sd": "dns",
       "host": ["{{ $sd_dns }}"],
