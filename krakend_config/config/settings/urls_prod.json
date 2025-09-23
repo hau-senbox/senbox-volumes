@@ -34,5 +34,7 @@
     "report_service": "http://report-service:8018",
     "report_service_dns": "report-service.service.consul",
     "department_service": "http://department-service:8019",
-    "department_service_dns": "department-service.service.consul"
+    "department_service_dns": "department-service.service.consul",
+    "services_service": "http://services-service:8020",
+    "services_service_dns": "services-management.service.consul"
 }

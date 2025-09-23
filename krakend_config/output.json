@@ -12853,7 +12853,6 @@
 
 
 
-
 {
   "endpoint": "/api/v1/admin/departments",
   "input_query_strings":["*"],
@@ -13205,6 +13204,95 @@
     }
   ]
 }
+, 
+
+
+
+
+
+
+{
+  "endpoint": "/api/v1/admin/services",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/admin/services",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["services-management.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/admin/services",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/admin/services",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["services-management.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/admin/services/groups",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/admin/services/groups",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["services-management.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+}
+
 
 
 
