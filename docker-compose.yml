@@ -1,4 +1,36 @@
 services:
+  # redis:
+  #   image: redis:latest
+  #   container_name: redis
+  #   ports:
+  #     - "6379:6379"
+  #   volumes:
+  #     - ./data/db/redis/data:/data
+  #   command:
+  #     [
+  #       "redis-server",
+  #       "--requirepass",
+  #       "senbox",
+  #       "--appendonly",
+  #       "yes",
+  #       "--bind",
+  #       "0.0.0.0",
+  #     ]
+  #   restart: unless-stopped
+  #   networks:
+  #     vpcbr:
+  #       ipv4_address: 192.0.2.1
+
+  # redisinsight:
+  #   image: redislabs/redisinsight:latest
+  #   container_name: redisinsight
+  #   ports:
+  #     - "5540:5540"
+  #   restart: unless-stopped
+  #   networks:
+  #     vpcbr:
+  #       ipv4_address: 192.0.2.2
+
   consul:
     image: hashicorp/consul:latest
     container_name: consul
@@ -33,11 +65,11 @@ services:
       vpcbr:
         ipv4_address: 192.0.2.4
     ports:
-      - "8500:8500"  # Web UI for Consul
+      - "8500:8500" # Web UI for Consul
       - "8600:53/udp"
       - "8600:53/tcp"
     restart: unless-stopped
-  
+
   krakend:
     image: krakend:latest
     container_name: krakend
@@ -48,11 +80,11 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - FC_ENABLE=1  # Enable flexible configuration
-      - FC_SETTINGS=/etc/krakend/config/settings/  # Correct path to settings
-      - FC_PARTIALS=/etc/krakend/config/partials/  # Path for partials
-      - FC_TEMPLATES=/etc/krakend/config/templates/  # Path for templates
-      - FC_OUT=/etc/krakend/output.json  # Optional: Output the final configuration for debugging
+      - FC_ENABLE=1 # Enable flexible configuration
+      - FC_SETTINGS=/etc/krakend/config/settings/ # Correct path to settings
+      - FC_PARTIALS=/etc/krakend/config/partials/ # Path for partials
+      - FC_TEMPLATES=/etc/krakend/config/templates/ # Path for templates
+      - FC_OUT=/etc/krakend/output.json # Optional: Output the final configuration for debugging
     networks:
       - vpcbr
     depends_on:
@@ -206,7 +238,7 @@ services:
     ports:
       - "27028:27017"
     restart: unless-stopped
-  
+
   event_db:
     image: mongo:latest
     container_name: event_db
@@ -285,6 +317,19 @@ services:
       - "27034:27017"
     restart: unless-stopped
 
+  food_db:
+    image: mongo:latest
+    container_name: food_db
+    hostname: food_db
+    volumes:
+      - ./data/db/food_db/data:/data/db
+    networks:
+      vpcbr:
+        ipv4_address: 192.0.2.28
+    ports:
+      - "27035:27017"
+    restart: unless-stopped
+
   go-main-service-db:
     image: mariadb:latest
     container_name: go-main-service-db
@@ -298,13 +343,13 @@ services:
       - ./db_dumb/go-main-service:/docker-entrypoint-initdb.d # scripts to initialize DB
     networks:
       vpcbr:
-        ipv4_address: 192.0.2.28
+        ipv4_address: 192.0.2.29
     ports:
       - "3308:3306"
     restart: unless-stopped
 
   go-main-service:
-    build: 
+    build:
       context: ../senbox-api/src
       dockerfile: Dockerfile
     container_name: go-main-service
@@ -322,7 +367,7 @@ services:
       # - kafka-2
       # - kafka-3
     restart: unless-stopped
-  
+
   product-service:
     build:
       context: ../product-service
@@ -473,7 +518,7 @@ services:
       # - kafka-1
       # - kafka-2
       # - kafka-3
-      
+
   wallet-service:
     build:
       context: ../wallet-service
@@ -493,7 +538,7 @@ services:
       # - kafka-2
       # - kafka-3
     restart: unless-stopped
-      
+
   gallery-service:
     build:
       context: ../gallery-service
@@ -533,7 +578,7 @@ services:
       # - kafka-2
       # - kafka-3
     restart: unless-stopped
-  
+
   inventory-service:
     build:
       context: ../inventory-service
@@ -609,7 +654,7 @@ services:
       # - kafka-1
       # - kafka-2
       # - kafka-3
-      
+
   # # kafka kraft cluster
   # kafka-1:
   #   image: "bitnami/kafka:latest"
@@ -642,7 +687,7 @@ services:
   #       ipv4_address: 192.0.2.5
   #   volumes:
   #     - ./data/kafka/kafka-1:/bitnami/kafka/data
-  
+
   # kafka-2:
   #   image: "bitnami/kafka:latest"
   #   container_name: kafka-2
@@ -674,7 +719,7 @@ services:
   #       ipv4_address: 192.0.2.6
   #   volumes:
   #     - ./data/kafka/kafka-2:/bitnami/kafka/data
-  
+
   # kafka-3:
   #   image: "bitnami/kafka:latest"
   #   container_name: kafka-3
@@ -707,7 +752,7 @@ services:
   #   volumes:
   #     - ./data/kafka/kafka-3:/bitnami/kafka/data
   # # end kafka kraft cluster
-      
+
   # kafka-ui:
   #   image: "provectuslabs/kafka-ui:latest"
   #   container_name: kafka-ui
@@ -792,7 +837,7 @@ services:
       # - kafka-1
       # - kafka-2
       # - kafka-3
-      
+
   department-service:
     build:
       context: ../department-service
@@ -830,14 +875,33 @@ services:
       # - kafka-1
       # - kafka-2
       # - kafka-3
-      
+
+  # food-service:
+  #   build:
+  #     context: ../food-service
+  #     dockerfile: Dockerfile
+  #   container_name: food-service
+  #   env_file:
+  #     - ./config/food-service.env
+  #   networks:
+  #     vpcbr:
+  #       ipv4_address: 192.0.2.70
+  #   ports:
+  #     - "8021:8021"
+  #   depends_on:
+  #     - consul
+  #     - food_db
+  #     - redis
+  #     # - kafka-1
+  #     # - kafka-2
+  #     # - kafka-3
+
 networks:
   vpcbr:
     driver: bridge
     ipam:
       config:
-      - subnet: 192.0.2.0/24
-
+        - subnet: 192.0.2.0/24
 # sudo apib -c 1000000 -d 60 http://localhost:8080/user/
 # h2load -n100000 -c100 -m10 http://localhost:8080/user/
 # autocannon -c 1000 -p 100 -d 60 http://localhost:8080/v1/user/all?role=all

@@ -66,7 +66,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "v1/admin/login",
@@ -93,7 +93,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/users",
@@ -120,7 +120,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/me/new-password",
@@ -147,7 +147,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/user/create",
@@ -174,7 +174,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/user/search",
@@ -201,7 +201,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/user/child/{id}",
@@ -228,7 +228,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/user/student/{id}",
@@ -255,7 +255,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/user/student/add-custom-id",
@@ -282,7 +282,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/user/add-custom-id",
@@ -309,7 +309,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/user/avatar",
@@ -336,7 +336,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/user/avatar/is-main",
@@ -363,7 +363,7 @@
   "method": "DELETE",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/user/avatar",
@@ -390,7 +390,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/user/setting",
@@ -417,7 +417,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/user/teacher/{id}",
@@ -444,7 +444,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/user/staff/{id}",
@@ -471,7 +471,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/user/parent/{id}",
@@ -498,7 +498,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/user/block",
@@ -525,7 +525,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/user/block/{user_id}",
@@ -552,7 +552,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/user/block/student/{student_id}",
@@ -579,7 +579,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/user/block/student",
@@ -606,7 +606,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/user/organization/{organization_id}/assigned-owners",
@@ -633,7 +633,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/application/student",
@@ -660,7 +660,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/application/student/{id}",
@@ -687,7 +687,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/application/teacher",
@@ -714,7 +714,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/application/teacher/{id}",
@@ -741,7 +741,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/application/staff",
@@ -769,7 +769,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/application/student/approve/{id}",
@@ -796,7 +796,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/application/teacher/approve/{id}",
@@ -823,7 +823,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/application/staff/approve/{id}",
@@ -850,7 +850,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/application/staff/{id}",
@@ -877,7 +877,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/application/staff/block/{id}",
@@ -904,7 +904,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/application/teacher/block/{id}",
@@ -931,7 +931,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/application/student/block/{id}",
@@ -958,7 +958,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/sync/form",
@@ -985,7 +985,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/sync/form/check-status",
@@ -1012,7 +1012,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/sync/form/sync-queues",
@@ -1039,7 +1039,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/organization/setting/device/{device_id}",
@@ -1066,7 +1066,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/organization/setting/device",
@@ -1093,7 +1093,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/organization/setting/{organization_id}/device",
@@ -1120,7 +1120,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/organization/setting/{device_id}",
@@ -1147,7 +1147,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/organization/{organization_id}/setting/news",
@@ -1174,7 +1174,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/organization/{organization_id}/setting/device/news",
@@ -1201,7 +1201,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/organization/{organization_id}/setting/portal/news",
@@ -1228,7 +1228,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/organization/{organization_id}/setting/news",
@@ -1255,7 +1255,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/organization/{organization_id}/device/{device_id}",
@@ -1282,7 +1282,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/organization/{organization_id}/device/{device_id}",
@@ -1309,7 +1309,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/organization/switch/{organization_id}",
@@ -1336,7 +1336,7 @@
   "method": "DELETE",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/organization/{organization_id}/device/{device_id}",
@@ -1363,7 +1363,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/languages-config",
@@ -1390,7 +1390,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/languages-config",
@@ -1417,7 +1417,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/device/{device_id}",
@@ -1444,7 +1444,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/form/create",
@@ -1471,7 +1471,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/form/list",
@@ -1498,7 +1498,7 @@
   "method": "DELETE",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/form/delete/{id}",
@@ -1525,7 +1525,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/forms/search",
@@ -1552,7 +1552,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/form/{id}",
@@ -1579,7 +1579,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/forms/import",
@@ -1606,7 +1606,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/forms2/import",
@@ -1633,7 +1633,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/forms3/import",
@@ -1660,7 +1660,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/forms4/import",
@@ -1687,7 +1687,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/forms/partially/import",
@@ -1714,7 +1714,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/forms/signup",
@@ -1741,7 +1741,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/device/deactivate/{device_id}",
@@ -1768,7 +1768,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/device/activate/{device_id}",
@@ -1795,7 +1795,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/device/{device_id}/update",
@@ -1822,7 +1822,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/device/{device_id}/updatev2",
@@ -1849,7 +1849,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/redirect-url/create",
@@ -1876,7 +1876,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/redirect-url/list",
@@ -1903,7 +1903,7 @@
   "method": "DELETE",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/redirect-url/{id}",
@@ -1930,7 +1930,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/redirect-url/{id}",
@@ -1957,7 +1957,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/redirect-url/import",
@@ -1984,7 +1984,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/redirect-url/import/partially",
@@ -2011,7 +2011,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/todo/import",
@@ -2038,7 +2038,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/todo/import/partially",
@@ -2065,7 +2065,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings",
@@ -2092,7 +2092,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/output-sheet",
@@ -2119,7 +2119,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/output-summary",
@@ -2146,7 +2146,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/sync-devices",
@@ -2173,7 +2173,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/email-history",
@@ -2200,7 +2200,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/output-template",
@@ -2227,7 +2227,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/output-template-teacher",
@@ -2254,7 +2254,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/sign-up-button-1",
@@ -2281,7 +2281,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/sign-up-button-2",
@@ -2308,7 +2308,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/sign-up-button-3",
@@ -2335,7 +2335,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/sign-up-button-4",
@@ -2362,7 +2362,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/sign-up-button-5",
@@ -2389,7 +2389,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/sign-up-button-configuration",
@@ -2416,7 +2416,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/registration-form",
@@ -2443,7 +2443,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/registration-submission",
@@ -2470,7 +2470,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/registration-preset-2",
@@ -2497,7 +2497,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/registration-preset-1",
@@ -2524,7 +2524,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/api-distributer",
@@ -2551,7 +2551,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/code-counting-data",
@@ -2578,7 +2578,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/label/name",
@@ -2605,7 +2605,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/logo-refresh-interval",
@@ -2632,7 +2632,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/language",
@@ -2659,7 +2659,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/language",
@@ -2686,7 +2686,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/settings/language-published",
@@ -2713,7 +2713,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/monitor/google-api",
@@ -2740,7 +2740,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/code-counting/list",
@@ -2767,7 +2767,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/code-counting/update",
@@ -2794,7 +2794,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/role-sign-up",
@@ -2821,7 +2821,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/role-sign-up",
@@ -2848,7 +2848,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/menu/section",
@@ -2875,7 +2875,7 @@
   "method": "DELETE",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/menu/section/{id}",
@@ -2902,7 +2902,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/menu/section",
@@ -2929,7 +2929,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/menu/section/student",
@@ -2956,7 +2956,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/menu/section/teacher",
@@ -2983,7 +2983,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/menu/section/staff",
@@ -3010,7 +3010,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/menu/section/child",
@@ -3037,7 +3037,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/menu/section/device",
@@ -3064,7 +3064,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/menu/section/parent",
@@ -3091,7 +3091,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/menu/section/device/{id}",
@@ -3118,7 +3118,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/menu/child/{id}",
@@ -3145,7 +3145,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/menu/child",
@@ -3172,7 +3172,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/menu/student",
@@ -3199,7 +3199,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/menu/teacher",
@@ -3226,7 +3226,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/menu/user/{id}",
@@ -3253,7 +3253,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/menu/user",
@@ -3280,7 +3280,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/menu/section/teacher/organization",
@@ -3307,7 +3307,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/menu/section/teacher/{teacher_id}/organization/{organization_id}",
@@ -3334,7 +3334,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/menu",
@@ -3361,7 +3361,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/menu/top",
@@ -3388,7 +3388,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/menu/bottom",
@@ -3415,7 +3415,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/menu/organization/top",
@@ -3442,7 +3442,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/menu/organization/bottom",
@@ -3469,7 +3469,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/menu/emergency",
@@ -3496,7 +3496,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/menu/emergency",
@@ -3523,7 +3523,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/menu/organization/device/{organization_id}",
@@ -3550,7 +3550,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/menu/organization/device",
@@ -3577,7 +3577,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/menu/organization/{id}",
@@ -3604,7 +3604,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/infra/backup",
@@ -3631,7 +3631,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/sync/start",
@@ -3658,7 +3658,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/sync/stop",
@@ -3685,7 +3685,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/device-component-values/organization/{organization_id}",
@@ -3712,7 +3712,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/device-component-values/device/{organization_id}",
@@ -3739,7 +3739,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/device-component-values/organization",
@@ -3766,7 +3766,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/device-component-values/device",
@@ -3793,7 +3793,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/device/{device_id}",
@@ -3820,7 +3820,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/device/user/{user_id}",
@@ -3847,7 +3847,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/device/org/{organization_id}",
@@ -3874,7 +3874,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/device/org",
@@ -3901,7 +3901,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/device/init",
@@ -3928,7 +3928,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/device/refresh-token",
@@ -3955,7 +3955,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/device/messaging/fcm/register",
@@ -3982,7 +3982,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/device/note",
@@ -4009,7 +4009,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/device/send/email",
@@ -4036,7 +4036,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/device/status/{device_id}",
@@ -4063,7 +4063,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/device/reserve",
@@ -4090,7 +4090,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/device/discover",
@@ -4117,7 +4117,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/device/sign-up",
@@ -4144,7 +4144,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/device/sign-up/form",
@@ -4171,7 +4171,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/device/sign-up/pre-set-1",
@@ -4198,7 +4198,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/device/sign-up/pre-set-2",
@@ -4225,7 +4225,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/device/values-current",
@@ -4252,7 +4252,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/form/submit",
@@ -4279,7 +4279,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/form/submission/last",
@@ -4306,7 +4306,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/form/get-submission-by-condition",
@@ -4333,7 +4333,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/form/get-total-nr-submission-by-condition",
@@ -4360,7 +4360,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/form/get-memory-form",
@@ -4387,7 +4387,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/answer/get-by-key-db",
@@ -4414,7 +4414,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/answer/get-total-by-key-db",
@@ -4441,7 +4441,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/answer/get-chart-nr",
@@ -4468,7 +4468,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/redirect-url",
@@ -4495,7 +4495,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/buttons/notification",
@@ -4522,7 +4522,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/code-counting/reset",
@@ -4549,7 +4549,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/login",
@@ -4576,7 +4576,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/admin/user/set-relogin",
@@ -4603,7 +4603,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/logout",
@@ -4630,7 +4630,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/refresh-token",
@@ -4657,7 +4657,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/current-user",
@@ -4684,7 +4684,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/all",
@@ -4711,7 +4711,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/{id}",
@@ -4738,7 +4738,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/name/{username}",
@@ -4765,7 +4765,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/init",
@@ -4792,7 +4792,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/child/init",
@@ -4819,7 +4819,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/child/create",
@@ -4846,7 +4846,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/child/{id}",
@@ -4873,7 +4873,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/child",
@@ -4900,7 +4900,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/block/{user_id}",
@@ -4927,7 +4927,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/update",
@@ -4954,7 +4954,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/role/update",
@@ -4981,7 +4981,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/avatar",
@@ -5008,7 +5008,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/block/{id}",
@@ -5035,7 +5035,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/org/{organization_id}/{user_id}",
@@ -5062,7 +5062,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/org/{organization_id}/manager",
@@ -5089,7 +5089,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/org/update",
@@ -5116,7 +5116,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/{id}/func",
@@ -5143,7 +5143,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/func",
@@ -5170,7 +5170,7 @@
   "method": "DELETE",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/func",
@@ -5197,7 +5197,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/pre-register/",
@@ -5224,7 +5224,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/pre-register/",
@@ -5251,7 +5251,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/role-sign-up",
@@ -5278,7 +5278,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/teacher/application/",
@@ -5305,7 +5305,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/teacher/application/{id}",
@@ -5332,7 +5332,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/teacher/application/",
@@ -5359,7 +5359,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/teacher/application/{id}/approve",
@@ -5386,7 +5386,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/teacher/application/{id}/block",
@@ -5413,7 +5413,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/staff/application/",
@@ -5440,7 +5440,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/staff/application/{id}",
@@ -5467,7 +5467,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/staff/application/",
@@ -5494,7 +5494,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/staff/application/{id}/approve",
@@ -5521,7 +5521,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/staff/application/{id}/block",
@@ -5548,7 +5548,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/student/application/",
@@ -5575,7 +5575,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/student/application/{id}/{device_id}",
@@ -5602,7 +5602,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/student/application/",
@@ -5629,7 +5629,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/student/application/{id}/approve",
@@ -5656,7 +5656,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/student/application/{id}/block",
@@ -5683,7 +5683,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/student/application/",
@@ -5710,7 +5710,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user/student/application/{id}/language-config",
@@ -5737,7 +5737,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user-role/{id}",
@@ -5764,7 +5764,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user-role/all",
@@ -5791,7 +5791,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user-role/name/{role_name}",
@@ -5818,7 +5818,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user-role/init",
@@ -5845,7 +5845,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user-role",
@@ -5872,7 +5872,7 @@
   "method": "DELETE",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user-role/{id}",
@@ -5899,7 +5899,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/function-claim/{id}",
@@ -5926,7 +5926,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/function-claim/name/{function_name}",
@@ -5953,7 +5953,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/function-claim/init",
@@ -5980,7 +5980,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/function-claim/",
@@ -6007,7 +6007,7 @@
   "method": "DELETE",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/function-claim/{id}",
@@ -6034,7 +6034,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/function-claim-permission/function/{function_claim_id}/all",
@@ -6061,7 +6061,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/function-claim-permission/{id}",
@@ -6088,7 +6088,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/function-claim-permission/name/{permission_name}",
@@ -6115,7 +6115,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/function-claim-permission/init",
@@ -6142,7 +6142,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/function-claim-permission/",
@@ -6169,7 +6169,7 @@
   "method": "DELETE",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/function-claim-permission/{id}",
@@ -6196,7 +6196,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user-menu/super-admin",
@@ -6223,7 +6223,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user-menu/user/super-admin",
@@ -6250,7 +6250,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user-menu/org/{id}",
@@ -6277,7 +6277,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user-menu/user/org/{id}",
@@ -6304,7 +6304,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user-menu/student/{id}",
@@ -6331,7 +6331,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user-menu/teacher/{id}",
@@ -6358,7 +6358,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user-menu/user/{id}",
@@ -6385,7 +6385,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user-menu/device/{id}",
@@ -6412,7 +6412,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user-menu/user/device/{id}",
@@ -6439,7 +6439,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user-menu/common",
@@ -6466,7 +6466,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user-menu/common-by-user",
@@ -6493,7 +6493,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user-menu/section",
@@ -6520,7 +6520,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user-menu/device/organization/{organization_id}",
@@ -6547,7 +6547,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user-menu/super-admin",
@@ -6574,7 +6574,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user-menu/org",
@@ -6601,7 +6601,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user-menu/user",
@@ -6628,7 +6628,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user-menu/device",
@@ -6655,7 +6655,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user-menu/teacher/organization",
@@ -6682,7 +6682,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user-menu/department/device/{device_id}/organization/{organization_id}",
@@ -6709,7 +6709,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user-menu/emergency/organization/{organization_id}",
@@ -6736,7 +6736,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/component/keys",
@@ -6763,7 +6763,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user-token-fcm/register",
@@ -6790,7 +6790,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/user-token-fcm/all/{user_id}",
@@ -6817,7 +6817,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/organization/{id}",
@@ -6844,7 +6844,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/organization/name",
@@ -6871,7 +6871,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/organization/{id}/users",
@@ -6898,7 +6898,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/organization/",
@@ -6925,7 +6925,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/organization/",
@@ -6952,7 +6952,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/organization/join",
@@ -6979,7 +6979,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/organization/avatar",
@@ -7006,7 +7006,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/organization/application/",
@@ -7033,7 +7033,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/organization/application/{id}",
@@ -7060,7 +7060,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/organization/application/",
@@ -7087,7 +7087,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/organization/application/{id}/approve",
@@ -7114,7 +7114,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/organization/application/{id}/block",
@@ -7141,7 +7141,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/organization/check/{device_id}/{organization_id}",
@@ -7168,7 +7168,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/form",
@@ -7195,7 +7195,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/question/show-pics",
@@ -7222,7 +7222,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/todo",
@@ -7249,7 +7249,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/todo",
@@ -7276,7 +7276,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/todo/tasks",
@@ -7303,7 +7303,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/todo/task/log",
@@ -7330,7 +7330,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/images/",
@@ -7357,7 +7357,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/images/icons",
@@ -7384,7 +7384,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/images/icon",
@@ -7411,7 +7411,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/images/upload",
@@ -7438,7 +7438,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/images/delete",
@@ -7465,7 +7465,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/videos/",
@@ -7492,7 +7492,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/videos/upload",
@@ -7519,7 +7519,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/videos/delete",
@@ -7546,7 +7546,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/audios/",
@@ -7573,7 +7573,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/audios/upload",
@@ -7600,7 +7600,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/audios/delete",
@@ -7627,7 +7627,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/pdfs/upload",
@@ -7654,7 +7654,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/pdfs",
@@ -7681,7 +7681,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/pdfs",
@@ -7708,7 +7708,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/app/configs",
@@ -7735,7 +7735,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/app/configs",
@@ -7762,7 +7762,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/gateway/students/{student_id}",
@@ -7789,7 +7789,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/gateway/teachers/{teacher_id}",
@@ -7816,7 +7816,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/gateway/staffs/{staff_id}",
@@ -7843,7 +7843,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/gateway/users/{user_id}",
@@ -7870,7 +7870,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/gateway/organizations",
@@ -7897,7 +7897,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/gateway/menus/department",
@@ -7924,7 +7924,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/gateway/menus/department/{department_id}/organization/{organization_id}",
@@ -7951,7 +7951,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/gateway/images/get-url",
@@ -7978,7 +7978,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/gateway/images/avatar/get-url",
@@ -8005,7 +8005,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/gateway/teachers/get-by-user/{user_id}",
@@ -8032,7 +8032,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/gateway/staffs/get-by-user/{user_id}",
@@ -8059,7 +8059,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/gateway/menus/department/{department_id}",
@@ -8086,7 +8086,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/gateway/teachers/organization/{organization_id}/user/user_id",
@@ -8113,7 +8113,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/v1/gateway/staffs/organization/{organization_id}/user/user_id",
@@ -8126,6 +8126,114 @@
         }
       },
       "method": "GET",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/gateway/messages",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/v1/gateway/messages",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/gateway/messages",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/v1/gateway/messages",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/gateway/messages/get-by-language",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/v1/gateway/messages/get-by-language",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/gateway/messages",
+  "input_query_strings":["*"],
+  "method": "DELETE",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/v1/gateway/messages",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "DELETE",
       
       "sd": "dns",
       "host": ["go-main-service.service.consul"],
@@ -8147,7 +8255,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/storage",
@@ -8174,7 +8282,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/storage",
@@ -8228,7 +8336,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/storage/tree",
@@ -8255,7 +8363,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/storage/{id}",
@@ -8282,7 +8390,7 @@
   "method": "DELETE",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/storage/{id}",
@@ -8309,7 +8417,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/shelf_type",
@@ -8336,7 +8444,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/shelf_type",
@@ -8363,7 +8471,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/shelf_type/{id}",
@@ -8390,7 +8498,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/shelf_type/{id}",
@@ -8417,7 +8525,7 @@
   "method": "DELETE",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/shelf_type/{id}",
@@ -8444,7 +8552,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/product_transaction",
@@ -8471,7 +8579,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/product_placement/shelf/{id}",
@@ -8498,7 +8606,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/product_placement/product/{id}",
@@ -8525,7 +8633,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/shelf_quantity",
@@ -8552,7 +8660,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/shelf_quantity/shelf/{id}",
@@ -8586,7 +8694,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/products",
@@ -8613,7 +8721,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/products/{id}",
@@ -8640,7 +8748,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/products",
@@ -8667,7 +8775,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/products/{id}",
@@ -8694,7 +8802,7 @@
   "method": "DELETE",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/products/{id}",
@@ -8721,7 +8829,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/folders",
@@ -8748,7 +8856,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/folders/{id}",
@@ -8775,7 +8883,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/folders",
@@ -8802,7 +8910,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/folders/{id}",
@@ -8829,7 +8937,7 @@
   "method": "DELETE",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/folders/{id}",
@@ -8864,7 +8972,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/cart/history",
@@ -8891,7 +8999,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/cart",
@@ -8918,7 +9026,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/cart/items",
@@ -8945,7 +9053,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/cart/items",
@@ -8972,7 +9080,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/cart/items/checkout",
@@ -8999,7 +9107,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/cart/items/{product_id}",
@@ -9026,7 +9134,7 @@
   "method": "DELETE",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/cart/items/{product_id}",
@@ -9053,7 +9161,7 @@
   "method": "DELETE",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/cart/items",
@@ -9088,7 +9196,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/orders/",
@@ -9115,7 +9223,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/orders/{id}/verify-payment",
@@ -9142,7 +9250,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/orders/{id}/cancel",
@@ -9169,7 +9277,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/orders",
@@ -9196,7 +9304,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/orders/items",
@@ -9223,7 +9331,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/orders/items/{id}",
@@ -9250,7 +9358,7 @@
   "method": "DELETE",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/orders/items/{id}",
@@ -9285,7 +9393,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/drink",
@@ -9312,7 +9420,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/drink",
@@ -9339,7 +9447,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/drink/{id}",
@@ -9366,7 +9474,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/statistics",
@@ -9393,7 +9501,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/bmi",
@@ -9420,7 +9528,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/bmi/{id}",
@@ -9447,7 +9555,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/bmi",
@@ -9474,7 +9582,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/body",
@@ -9501,7 +9609,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/body",
@@ -9528,7 +9636,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/timer",
@@ -9555,7 +9663,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/timer",
@@ -9582,7 +9690,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/portal",
@@ -9609,7 +9717,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/portal/student",
@@ -9643,7 +9751,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/chat/{group_id}",
@@ -9670,7 +9778,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/chat/check/{group_id}",
@@ -9697,7 +9805,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/chat/download/{group_id}",
@@ -9724,7 +9832,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/chat/information/user",
@@ -9751,7 +9859,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/chat/react/:group_id/{message_id}",
@@ -9778,7 +9886,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/group",
@@ -9805,7 +9913,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/group/{group_id}",
@@ -9832,7 +9940,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/group/count/keywod",
@@ -9859,7 +9967,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/group",
@@ -9886,7 +9994,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/group/generate/qrcode",
@@ -9913,7 +10021,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/group/{group_id}",
@@ -9940,7 +10048,7 @@
   "method": "DELETE",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/group/{group_id}",
@@ -9967,7 +10075,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/group/user",
@@ -9994,7 +10102,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/group/join_group/by_qrcode",
@@ -10021,7 +10129,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/group/user",
@@ -10048,7 +10156,7 @@
   "method": "DELETE",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/group/user/{group_id}",
@@ -10075,7 +10183,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/emergency",
@@ -10102,7 +10210,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/emergency",
@@ -10137,7 +10245,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/attendance/checkin",
@@ -10164,7 +10272,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/attendance/checkout",
@@ -10191,7 +10299,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/attendance/my-attendance",
@@ -10218,7 +10326,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/attendance/student",
@@ -10245,7 +10353,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/attendance/student",
@@ -10272,7 +10380,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/leave",
@@ -10299,7 +10407,7 @@
   "method": "DELETE",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/leave/delete-request",
@@ -10326,7 +10434,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/leave/my-request",
@@ -10353,7 +10461,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/leave/pending-request",
@@ -10380,7 +10488,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/leave/{id}",
@@ -10407,7 +10515,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/leave/statistical",
@@ -10434,7 +10542,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/leave/calendar",
@@ -10461,7 +10569,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/leave/calendar/{id}",
@@ -10488,7 +10596,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/leave/calendar/{id}",
@@ -10515,7 +10623,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/leave/setting",
@@ -10542,7 +10650,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/leave/setting/{id}",
@@ -10576,7 +10684,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/terms",
@@ -10603,7 +10711,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/terms",
@@ -10630,7 +10738,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/terms/{id}",
@@ -10657,7 +10765,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/terms",
@@ -10684,7 +10792,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/terms/current",
@@ -10711,7 +10819,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/terms/student/{student_id}",
@@ -10738,7 +10846,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/terms/current",
@@ -10765,7 +10873,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/terms/student/{student_id}",
@@ -10792,7 +10900,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/holidays",
@@ -10819,7 +10927,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/holidays",
@@ -10854,7 +10962,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/exchange",
@@ -10881,7 +10989,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/exchange",
@@ -10908,7 +11016,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/exchange/{id}",
@@ -10935,7 +11043,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/exchange/{id}",
@@ -10962,7 +11070,7 @@
   "method": "DELETE",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/exchange/{id}",
@@ -10989,7 +11097,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/exchange/{user_id}",
@@ -11016,7 +11124,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/wallet/{user_id}",
@@ -11043,7 +11151,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/wallet/add_balance",
@@ -11070,7 +11178,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/wallet/deduct_balance",
@@ -11105,7 +11213,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/gallery/clusters/",
@@ -11132,7 +11240,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/gallery/clusters/search",
@@ -11159,7 +11267,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/gallery/clusters/{id}",
@@ -11186,7 +11294,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/gallery/clusters/{id}/folders",
@@ -11213,7 +11321,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/gallery/clusters/components",
@@ -11240,7 +11348,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/gallery/clusters/languages",
@@ -11267,7 +11375,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/gallery/clusters/",
@@ -11294,7 +11402,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/gallery/clusters/",
@@ -11321,7 +11429,7 @@
   "method": "DELETE",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/gallery/clusters/{id}",
@@ -11348,7 +11456,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/gallery/folders/",
@@ -11375,7 +11483,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/gallery/folders/search",
@@ -11402,7 +11510,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/gallery/folders/{id}",
@@ -11429,7 +11537,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/gallery/folders/",
@@ -11456,7 +11564,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/gallery/folders/",
@@ -11483,7 +11591,7 @@
   "method": "DELETE",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/gallery/folders/{id}",
@@ -11510,7 +11618,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/gallery/topics",
@@ -11537,7 +11645,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/gallery/topics/{id}",
@@ -11564,7 +11672,7 @@
   "method": "DELETE",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/gallery/topics/{id}",
@@ -11591,7 +11699,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/gallery/topics",
@@ -11618,7 +11726,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/gallery/topics",
@@ -11645,7 +11753,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/user/gallery/topics",
@@ -11672,7 +11780,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/user/gallery/topics/{id}",
@@ -11699,7 +11807,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/gateway/gallery/topics",
@@ -11726,7 +11834,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/gateway/gallery/topics/{id}",
@@ -11761,7 +11869,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/classrooms/regions",
@@ -11788,7 +11896,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/classrooms/regions",
@@ -11815,7 +11923,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/classrooms/regions/{id}",
@@ -11842,7 +11950,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/classrooms/regions/{id}",
@@ -11869,7 +11977,7 @@
   "method": "DELETE",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/classrooms/regions/{id}",
@@ -11896,7 +12004,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/classrooms",
@@ -11923,7 +12031,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/classrooms/{id}",
@@ -11950,7 +12058,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/classrooms/assigns",
@@ -11977,7 +12085,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/classrooms/remove/assigns",
@@ -12004,7 +12112,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/classrooms/leader",
@@ -12031,7 +12139,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/classrooms/remove/leader",
@@ -12065,7 +12173,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/topic",
@@ -12092,7 +12200,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/topic",
@@ -12119,7 +12227,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/topic/{id}",
@@ -12146,7 +12254,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/topic/{id}",
@@ -12181,7 +12289,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/events",
@@ -12208,7 +12316,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/events",
@@ -12235,7 +12343,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/events/{id}",
@@ -12262,7 +12370,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/events/{id}",
@@ -12289,7 +12397,7 @@
   "method": "DELETE",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/events/{id}",
@@ -12316,7 +12424,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/events/toggle-send/{id}",
@@ -12343,7 +12451,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/events/toggle-show/{id}",
@@ -12370,7 +12478,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/events/trigger",
@@ -12404,7 +12512,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/todos",
@@ -12431,7 +12539,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/todos",
@@ -12458,7 +12566,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/todos/{id}",
@@ -12485,7 +12593,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/todos/{id}",
@@ -12512,7 +12620,7 @@
   "method": "DELETE",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/todos/{id}",
@@ -12539,7 +12647,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/todos/join",
@@ -12566,7 +12674,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/todos/add-user",
@@ -12593,7 +12701,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/todos/my-todo",
@@ -12627,7 +12735,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/colortime",
@@ -12654,7 +12762,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/colortime",
@@ -12681,7 +12789,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/colortime/{id}",
@@ -12708,7 +12816,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/colortime/{id}",
@@ -12735,7 +12843,7 @@
   "method": "DELETE",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/colortime/{id}",
@@ -12769,7 +12877,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/reports/get-report",
@@ -12796,7 +12904,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/reports",
@@ -12823,7 +12931,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/user/reports/get-report",
@@ -12850,7 +12958,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/user/reports",
@@ -12886,7 +12994,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/departments",
@@ -12913,7 +13021,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/departments",
@@ -12940,7 +13048,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/departments/{department_id}",
@@ -12967,7 +13075,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/departments/{department_id}",
@@ -12994,7 +13102,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/departments/assign/leader",
@@ -13021,7 +13129,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/departments/assign/staff",
@@ -13048,7 +13156,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/departments/remove/staff",
@@ -13075,7 +13183,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/departments/home-menus",
@@ -13102,7 +13210,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/departments/organization-menus",
@@ -13129,7 +13237,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/departments/regions",
@@ -13156,7 +13264,7 @@
   "method": "PUT",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/departments/regions/{region_id}",
@@ -13183,7 +13291,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/departments/remove/leader",
@@ -13210,7 +13318,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/user/departments",
@@ -13244,7 +13352,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/services",
@@ -13271,7 +13379,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/services",
@@ -13298,7 +13406,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/services/groups",

@@ -10,7 +10,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/admin/orders/",
@@ -39,7 +39,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/orders/{id}/verify-payment",
@@ -68,7 +68,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/orders/{id}/cancel",
@@ -97,7 +97,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/orders",
@@ -126,7 +126,7 @@
   "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/orders/items",
@@ -155,7 +155,7 @@
   "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/orders/items/{id}",
@@ -184,7 +184,7 @@
   "method": "DELETE",
   "extra_config": {},
   "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type"],
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
       "url_pattern": "/api/v1/orders/items/{id}",
