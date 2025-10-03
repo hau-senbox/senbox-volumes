@@ -196,18 +196,18 @@ services:
       - "27024:27017"
     restart: unless-stopped
 
-  media_db:
-    image: mongo:latest
-    container_name: media_db
-    hostname: media_db
-    volumes:
-      - ./data/db/media_db/data:/data/db
-    networks:
-      vpcbr:
-        ipv4_address: 192.0.2.18
-    ports:
-      - "27025:27017"
-    restart: unless-stopped
+  # media_db:
+  #   image: mongo:latest
+  #   container_name: media_db
+  #   hostname: media_db
+  #   volumes:
+  #     - ./data/db/media_db/data:/data/db
+  #   networks:
+  #     vpcbr:
+  #       ipv4_address: 192.0.2.18
+  #   ports:
+  #     - "27025:27017"
+  #   restart: unless-stopped
 
   classroom_db:
     image: mongo:latest
@@ -536,24 +536,24 @@ services:
       # - kafka-3
     restart: unless-stopped
 
-  media-service:
-    build:
-      context: ../media-service
-      dockerfile: Dockerfile
-    container_name: media-service
-    volumes:
-      - ./config/media-service.yaml:/configs/config.yaml
-    networks:
-      vpcbr:
-        ipv4_address: 192.0.2.60
-    ports:
-      - "8011:8011"
-    depends_on:
-      - consul
-      - media_db
-      # - kafka-1
-      # - kafka-2
-      # - kafka-3
+  # media-service:
+  #   build:
+  #     context: ../media-service
+  #     dockerfile: Dockerfile
+  #   container_name: media-service
+  #   volumes:
+  #     - ./config/media-service.yaml:/configs/config.yaml
+  #   networks:
+  #     vpcbr:
+  #       ipv4_address: 192.0.2.60
+  #   ports:
+  #     - "8011:8011"
+  #   depends_on:
+  #     - consul
+  #     - media_db
+  #     # - kafka-1
+  #     # - kafka-2
+  #     # - kafka-3
 
   classroom-service:
     build:
