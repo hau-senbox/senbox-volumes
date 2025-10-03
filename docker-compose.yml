@@ -196,15 +196,12 @@ services:
       - "27024:27017"
     restart: unless-stopped
 
-  gallery_db:
+  media_db:
     image: mongo:latest
-    container_name: gallery_db
-    hostname: gallery_db
+    container_name: media_db
+    hostname: media_db
     volumes:
-      - ./data/db/gallery_db/data:/data/db
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: senbox
-      MONGO_INITDB_ROOT_PASSWORD: senbox
+      - ./data/db/media_db/data:/data/db
     networks:
       vpcbr:
         ipv4_address: 192.0.2.18
@@ -304,18 +301,18 @@ services:
       - "27033:27017"
     restart: unless-stopped
 
-  services_db:
-    image: mongo:latest
-    container_name: services_db
-    hostname: services_db
-    volumes:
-      - ./data/db/services_db/data:/data/db
-    networks:
-      vpcbr:
-        ipv4_address: 192.0.2.27
-    ports:
-      - "27034:27017"
-    restart: unless-stopped
+  # services_db:
+  #   image: mongo:latest
+  #   container_name: services_db
+  #   hostname: services_db
+  #   volumes:
+  #     - ./data/db/services_db/data:/data/db
+  #   networks:
+  #     vpcbr:
+  #       ipv4_address: 192.0.2.27
+  #   ports:
+  #     - "27034:27017"
+  #   restart: unless-stopped
 
   food_db:
     image: mongo:latest
@@ -539,13 +536,13 @@ services:
       # - kafka-3
     restart: unless-stopped
 
-  gallery-service:
+  media-service:
     build:
-      context: ../gallery-service
+      context: ../media-service
       dockerfile: Dockerfile
-    container_name: gallery-service
+    container_name: media-service
     volumes:
-      - ./config/gallery-service.yaml:/root/.bin/config.dev.yaml
+      - ./config/media-service.yaml:/configs/config.yaml
     networks:
       vpcbr:
         ipv4_address: 192.0.2.60
@@ -553,11 +550,10 @@ services:
       - "8011:8011"
     depends_on:
       - consul
-      - gallery_db
+      - media_db
       # - kafka-1
       # - kafka-2
       # - kafka-3
-    restart: unless-stopped
 
   classroom-service:
     build:
@@ -857,24 +853,24 @@ services:
       # - kafka-2
       # - kafka-3
 
-  services-service:
-    build:
-      context: ../services-management
-      dockerfile: Dockerfile
-    container_name: services-service
-    volumes:
-      - ./config/services-management.yaml:/configs/config.yaml
-    networks:
-      vpcbr:
-        ipv4_address: 192.0.2.69
-    ports:
-      - "8020:8020"
-    depends_on:
-      - consul
-      - services_db
-      # - kafka-1
-      # - kafka-2
-      # - kafka-3
+  # services-service:
+  #   build:
+  #     context: ../services-management
+  #     dockerfile: Dockerfile
+  #   container_name: services-service
+  #   volumes:
+  #     - ./config/services-management.yaml:/configs/config.yaml
+  #   networks:
+  #     vpcbr:
+  #       ipv4_address: 192.0.2.69
+  #   ports:
+  #     - "8020:8020"
+  #   depends_on:
+  #     - consul
+  #     - services_db
+  #     # - kafka-1
+  #     # - kafka-2
+  #     # - kafka-3
 
   food-service:
     build:
