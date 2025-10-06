@@ -11308,6 +11308,33 @@
   ]
 },
 {
+  "endpoint": "/api/v2/admin/topics/student/{student_id}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v2/admin/topics/student/{student_id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["media-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
   "endpoint": "/api/v1/user/topics/student/{student_id}",
   "input_query_strings":["*"],
   "method": "GET",
@@ -11892,7 +11919,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/admin/classrooms/assignment-temlates",
+  "endpoint": "/api/v1/admin/classrooms/assignment-templates",
   "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
@@ -11900,7 +11927,61 @@
   "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
-      "url_pattern": "/api/v1/admin/classrooms/assignment-temlates",
+      "url_pattern": "/api/v1/admin/classrooms/assignment-templates",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["classroom-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/admin/classrooms/teacher-assignments",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/admin/classrooms/teacher-assignments",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["classroom-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/admin/classrooms/remove/assignment-templates",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/admin/classrooms/remove/assignment-templates",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
