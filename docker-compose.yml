@@ -91,135 +91,18 @@ services:
       - consul
     restart: unless-stopped
 
-  mongodb:
+  mongo-main:
     image: mongo:latest
-    container_name: mongodb
-    hostname: mongodb
+    container_name: mongo-main
+    hostname: mongo-main
     volumes:
-      - ./data/db/mongodb/initdb.d/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
-      - ./data/db/mongodb/data:/data/db
+      - ./data/db/mongo_db/data:/data/db
     networks:
       vpcbr:
         ipv4_address: 192.0.2.10
+    command: ["mongod", "--replSet", "rs0", "--bind_ip_all"]
     ports:
       - "27017:27017"
-    restart: unless-stopped
-
-  cart_db:
-    image: mongo:latest
-    container_name: cart_db
-    hostname: cart_db
-    volumes:
-      - ./data/db/cart_db/data:/data/db
-    networks:
-      vpcbr:
-        ipv4_address: 192.0.2.11
-    ports:
-      - "27018:27017"
-    restart: unless-stopped
-
-  order_db:
-    image: mongo:latest
-    container_name: order_db
-    hostname: order_db
-    volumes:
-      - ./data/db/order_db/data:/data/db
-    networks:
-      vpcbr:
-        ipv4_address: 192.0.2.12
-    ports:
-      - "27019:27017"
-    restart: unless-stopped
-
-  portal_db:
-    image: mongo:latest
-    container_name: portal_db
-    hostname: portal_db
-    volumes:
-      - ./data/db/portal_db/data:/data/db
-    networks:
-      vpcbr:
-        ipv4_address: 192.0.2.13
-    ports:
-      - "27020:27017"
-    restart: unless-stopped
-
-  chat_db:
-    image: mongo:latest
-    container_name: chat_db
-    hostname: chat_db
-    volumes:
-      - ./data/db/chat_db/data:/data/db
-    networks:
-      vpcbr:
-        ipv4_address: 192.0.2.14
-    ports:
-      - "27021:27017"
-    restart: unless-stopped
-
-  holiday_db:
-    image: mongo:latest
-    container_name: holiday_db
-    hostname: holiday_db
-    volumes:
-      - ./data/db/holiday_db/data:/data/db
-    networks:
-      vpcbr:
-        ipv4_address: 192.0.2.15
-    ports:
-      - "27022:27017"
-    restart: unless-stopped
-
-  term_db:
-    image: mongo:latest
-    container_name: term_db
-    hostname: term_db
-    volumes:
-      - ./data/db/term_db/data:/data/db
-    networks:
-      vpcbr:
-        ipv4_address: 192.0.2.16
-    ports:
-      - "27023:27017"
-    restart: unless-stopped
-
-  wallet_db:
-    image: mongo:latest
-    container_name: wallet_db
-    hostname: wallet_db
-    volumes:
-      - ./data/db/wallet_db/data:/data/db
-    networks:
-      vpcbr:
-        ipv4_address: 192.0.2.17
-    ports:
-      - "27024:27017"
-    restart: unless-stopped
-
-  media_db:
-    image: mongo:latest
-    container_name: media_db
-    hostname: media_db
-    volumes:
-      - ./data/db/media_db/data:/data/db
-    networks:
-      vpcbr:
-        ipv4_address: 192.0.2.18
-    ports:
-      - "27025:27017"
-    restart: unless-stopped
-
-  classroom_db:
-    image: mongo:latest
-    container_name: classroom_db
-    hostname: classroom_db
-    volumes:
-      - ./data/db/classroom_db/data:/data/db
-    networks:
-      vpcbr:
-        ipv4_address: 192.0.2.19
-    ports:
-      - "27026:27017"
     restart: unless-stopped
 
   inventory_db:
@@ -236,71 +119,6 @@ services:
       - "27028:27017"
     restart: unless-stopped
 
-  event_db:
-    image: mongo:latest
-    container_name: event_db
-    hostname: event_db
-    volumes:
-      - ./data/db/event_db/data:/data/db
-    networks:
-      vpcbr:
-        ipv4_address: 192.0.2.22
-    ports:
-      - "27029:27017"
-    restart: unless-stopped
-
-  todo_db:
-    image: mongo:latest
-    container_name: todo_db
-    hostname: todo_db
-    volumes:
-      - ./data/db/todo_db/data:/data/db
-    networks:
-      vpcbr:
-        ipv4_address: 192.0.2.23
-    ports:
-      - "27030:27017"
-    restart: unless-stopped
-
-  colortime_db:
-    image: mongo:latest
-    container_name: colortime_db
-    hostname: colortime_db
-    volumes:
-      - ./data/db/colortime_db/data:/data/db
-    networks:
-      vpcbr:
-        ipv4_address: 192.0.2.24
-    ports:
-      - "27031:27017"
-    restart: unless-stopped
-
-  report_db:
-    image: mongo:latest
-    container_name: report_db
-    hostname: report_db
-    volumes:
-      - ./data/db/report_db/data:/data/db
-    networks:
-      vpcbr:
-        ipv4_address: 192.0.2.25
-    ports:
-      - "27032:27017"
-    restart: unless-stopped
-
-  department_db:
-    image: mongo:latest
-    container_name: department_db
-    hostname: department_db
-    volumes:
-      - ./data/db/department_db/data:/data/db
-    networks:
-      vpcbr:
-        ipv4_address: 192.0.2.26
-    ports:
-      - "27033:27017"
-    restart: unless-stopped
-
   # services_db:
   #   image: mongo:latest
   #   container_name: services_db
@@ -313,20 +131,6 @@ services:
   #   ports:
   #     - "27034:27017"
   #   restart: unless-stopped
-
-  food_db:
-    image: mongo:latest
-    container_name: food_db
-    hostname: food_db
-    volumes:
-      - ./data/db/food_db/data:/data/db
-    networks:
-      vpcbr:
-        ipv4_address: 192.0.2.28
-    ports:
-      - "27035:27017"
-    restart: unless-stopped
-
   go-main-service-db:
     image: mariadb:latest
     container_name: go-main-service-db
@@ -381,7 +185,7 @@ services:
       - "8003:8003"
     depends_on:
       - consul
-      - mongodb
+      - mongo-main
       # - kafka-1
       # - kafka-2
       # - kafka-3
@@ -403,7 +207,7 @@ services:
       - "8004:8004"
     depends_on:
       - consul
-      - cart_db
+      - mongo-main
       # - kafka-1
       # - kafka-2
       # - kafka-3
@@ -425,7 +229,7 @@ services:
       - "8005:8005"
     depends_on:
       - consul
-      - order_db
+      - mongo-main
       # - kafka-1
       # - kafka-2
       # - kafka-3
@@ -447,7 +251,7 @@ services:
       - "8006:8006"
     depends_on:
       - consul
-      - portal_db
+      - mongo-main
       # - kafka-1
       # - kafka-2
       # - kafka-3
@@ -469,7 +273,7 @@ services:
       - "8007:8007"
     depends_on:
       - consul
-      - chat_db
+      - mongo-main
       # - kafka-1
       # - kafka-2
       # - kafka-3
@@ -491,7 +295,7 @@ services:
       - "8008:8008"
     depends_on:
       - consul
-      - holiday_db
+      - mongo-main
       # - kafka-1
       # - kafka-2
       # - kafka-3
@@ -511,7 +315,7 @@ services:
       - "8009:8009"
     depends_on:
       - consul
-      - term_db
+      - mongo-main
       # - kafka-1
       # - kafka-2
       # - kafka-3
@@ -530,7 +334,7 @@ services:
       - "8010:8010"
     depends_on:
       - consul
-      - wallet_db
+      - mongo-main
       # - kafka-1
       # - kafka-2
       # - kafka-3
@@ -550,7 +354,7 @@ services:
       - "8011:8011"
     depends_on:
       - consul
-      - media_db
+      - mongo-main
       # - kafka-1
       # - kafka-2
       # - kafka-3
@@ -569,7 +373,7 @@ services:
       - "8012:8012"
     depends_on:
       - consul
-      - classroom_db
+      - mongo-main
       # - kafka-1
       # - kafka-2
       # - kafka-3
@@ -608,7 +412,7 @@ services:
       - "8015:8015"
     depends_on:
       - consul
-      - event_db
+      - mongo-main
       # - kafka-1
       # - kafka-2
       # - kafka-3
@@ -627,7 +431,7 @@ services:
       - "8016:8016"
     depends_on:
       - consul
-      - todo_db
+      - mongo-main
       # - kafka-1
       # - kafka-2
       # - kafka-3
@@ -646,7 +450,7 @@ services:
       - "8017:8017"
     depends_on:
       - consul
-      - todo_db
+      - mongo-main
       # - kafka-1
       # - kafka-2
       # - kafka-3
@@ -829,7 +633,7 @@ services:
       - "8018:8018"
     depends_on:
       - consul
-      - report_db
+      - mongo-main
       # - kafka-1
       # - kafka-2
       # - kafka-3
@@ -848,7 +652,7 @@ services:
       - "8019:8019"
     depends_on:
       - consul
-      - department_db
+      - mongo-main
       # - kafka-1
       # - kafka-2
       # - kafka-3
@@ -890,7 +694,7 @@ services:
       - "8021:8021"
     depends_on:
       - consul
-      - food_db
+      - mongo-main
       - redis
       # - kafka-1
       # - kafka-2

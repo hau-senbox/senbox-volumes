@@ -4,11 +4,11 @@ server:
 database:
   active: "mongodb" # or "mongodb"
   mongodb:
-    host: "term_db"
+    host: "mongo-main"
     port: "27017"
     # user: "Senbox"
     # password: ""
-    name: "term_service"
+    name: "term_service_db"
 
 consul:
     host: "consul"
