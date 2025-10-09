@@ -150,7 +150,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/gateway/topics/{topic_id}",
+  "endpoint": "/api/v2/gateway/topics/{topic_id}",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -158,7 +158,7 @@
   "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
-      "url_pattern": "/api/v1/gateway/topics/{topic_id}",
+      "url_pattern": "/api/v2/gateway/topics/{topic_id}",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,

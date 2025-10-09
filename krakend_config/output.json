@@ -11246,6 +11246,33 @@
   ]
 },
 {
+  "endpoint": "/api/v1/terms/organization/{organization_id}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/terms/organization/{organization_id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["term-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
   "endpoint": "/api/v1/admin/holidays",
   "input_query_strings":["*"],
   "method": "GET",
@@ -11302,7 +11329,7 @@
 {
   "endpoint": "/api/v1/gateway/terms/{term_id}",
   "input_query_strings":["*"],
-  "method": "POST",
+  "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
   "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
@@ -11317,7 +11344,7 @@
           "log_status_change": true
         }
       },
-      "method": "POST",
+      "method": "GET",
       
       "sd": "dns",
       "host": ["term-service.service.consul"],
@@ -11470,7 +11497,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/gateway/topics/{topic_id}",
+  "endpoint": "/api/v2/gateway/topics/{topic_id}",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -11478,7 +11505,7 @@
   "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
-      "url_pattern": "/api/v1/gateway/topics/{topic_id}",
+      "url_pattern": "/api/v2/gateway/topics/{topic_id}",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -13115,7 +13142,35 @@
       "disable_host_sanitize": true
     }
   ]
+},
+{
+  "endpoint": "/api/v1/user/reports/histories",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/user/reports/histories",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["report-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
 }
+
 
 
 ,
