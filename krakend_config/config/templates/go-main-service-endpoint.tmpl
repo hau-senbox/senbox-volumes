@@ -8184,65 +8184,7 @@
   ]
 },
 {
-  "endpoint": "/v1/pdfs/upload",
-  "input_query_strings":["*"],
-  "method": "POST",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
-  "backend": [
-    {
-      "url_pattern": "/v1/pdfs/upload",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
-        }
-      },
-      "method": "POST",
-      {{ if $sd_dns }}
-      "sd": "dns",
-      "host": ["{{ $sd_dns }}"],
-      {{ else }}
-      "host": ["{{ $host }}"],
-      {{ end }}
-      "disable_host_sanitize": true
-    }
-  ]
-},
-{
-  "endpoint": "/v1/pdfs",
-  "input_query_strings":["*"],
-  "method": "POST",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
-  "backend": [
-    {
-      "url_pattern": "/v1/pdfs",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
-        }
-      },
-      "method": "POST",
-      {{ if $sd_dns }}
-      "sd": "dns",
-      "host": ["{{ $sd_dns }}"],
-      {{ else }}
-      "host": ["{{ $host }}"],
-      {{ end }}
-      "disable_host_sanitize": true
-    }
-  ]
-},
-{
-  "endpoint": "/v1/pdfs",
+  "endpoint": "/v1/gateway/pdfs/get-url",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -8250,7 +8192,7 @@
   "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
-      "url_pattern": "/v1/pdfs",
+      "url_pattern": "/v1/gateway/pdfs/get-url",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -8260,6 +8202,64 @@
         }
       },
       "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/gateway/pdfs/upload",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/v1/gateway/pdfs/upload",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/gateway/pdfs/{key}",
+  "input_query_strings":["*"],
+  "method": "DELETE",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/v1/gateway/pdfs/{key}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "DELETE",
       {{ if $sd_dns }}
       "sd": "dns",
       "host": ["{{ $sd_dns }}"],
@@ -9266,6 +9266,35 @@
   "backend": [
     {
       "url_pattern": "v1/admin/user/pre-register",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "v1/user/organization/{organization_id}/staffs-teachers",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "v1/user/organization/{organization_id}/staffs-teachers",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
