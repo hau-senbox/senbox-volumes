@@ -16,6 +16,13 @@ database:
     password: "senbox"
     db: 1
 
+  redis_cache:
+    ttlSeconds: 0 #config time circle cache
+    host: "redis"
+    port: "6379"
+    password: "senbox"
+    db: 10
+
 consul:
     host: "consul"
     port: 8500
