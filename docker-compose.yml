@@ -19,7 +19,7 @@ services:
     restart: unless-stopped
     networks:
       vpcbr:
-        ipv4_address: 192.0.2.71
+        ipv4_address: 192.0.2.51
 
   redisinsight:
     image: redislabs/redisinsight:latest
@@ -670,6 +670,25 @@ services:
       - consul
       - mongo-main
       - redis
+      # - kafka-1
+      # - kafka-2
+      # - kafka-3
+
+  profile-service:
+    build:
+      context: ../profile-service
+      dockerfile: Dockerfile
+    container_name: profile-service
+    volumes:
+      - ./config/profile-service.yaml:/configs/config.yaml
+    networks:
+      vpcbr:
+        ipv4_address: 192.0.2.71
+    ports:
+      - "8022:8022"
+    depends_on:
+      - consul
+      - mongo-main
       # - kafka-1
       # - kafka-2
       # - kafka-3

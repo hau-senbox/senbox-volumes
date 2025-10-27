@@ -36,6 +36,10 @@
     "department_service": "http://department-service:8019",
     "department_service_dns": "department-service.service.consul",
     "services_service": "http://services-service:8020",
-    "services_service_dns": "services-management.service.consul"
+    "services_service_dns": "services-management.service.consul",
+    "food_service": "http://food-service:8021",
+    "food_service_dns": "food-management.service.consul",
+    "profile_service": "http://profile-service:8022",
+    "profile_service_dns": "profile-management.service.consul"
 
 }

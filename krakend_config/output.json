@@ -1115,6 +1115,33 @@
   ]
 },
 {
+  "endpoint": "/v1/user/organization/{organization_id}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/v1/user/organization/{organization_id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
   "endpoint": "/v1/user/organization/setting/{device_id}",
   "input_query_strings":["*"],
   "method": "GET",
@@ -14188,6 +14215,87 @@
       "disable_host_sanitize": true
     }
   ]
+},
+{
+  "endpoint": "/api/v1/colortime/add-topic/week",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/colortime/add-topic/week",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["colortime-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/colortime/delete-topic/week",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/colortime/delete-topic/week",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["colortime-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/colortime/get-topic/week",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/colortime/get-topic/week",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["colortime-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
 }
 ,
 
@@ -14970,7 +15078,284 @@
   ]
 }
 
+,
 
+
+
+
+
+
+{
+  "endpoint": "/api/v1/gateway/profiles/owner-code/student/{student_id}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/gateway/profiles/owner-code/student/{student_id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["profile-management.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/gateway/profiles/owner-code/teacher/{teacher_id}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/gateway/profiles/owner-code/teacher/{teacher_id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["profile-management.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/gateway/profiles/owner-code/staff/{staff_id}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/gateway/profiles/owner-code/staff/{staff_id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["profile-management.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/gateway/profiles/owner-code/user/{user_id}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/gateway/profiles/owner-code/user/{user_id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["profile-management.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/gateway/profiles/owner-code/child/{child_id}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/gateway/profiles/owner-code/child/{child_id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["profile-management.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/gateway/profiles/owner-code/student/generate",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/gateway/profiles/owner-code/student/generate",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["profile-management.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/gateway/profiles/owner-code/teacher/generate",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/gateway/profiles/owner-code/teacher/generate",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["profile-management.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/gateway/profiles/owner-code/staff/generate",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/gateway/profiles/owner-code/staff/generate",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["profile-management.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/gateway/profiles/owner-code/user/generate",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/gateway/profiles/owner-code/user/generate",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["profile-management.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/gateway/profiles/owner-code/child/generate",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/gateway/profiles/owner-code/child/generate",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["profile-management.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+}
+ 
 
 
   ]
