@@ -21,15 +21,15 @@ services:
       vpcbr:
         ipv4_address: 192.0.2.51
 
-  redisinsight:
-    image: redislabs/redisinsight:latest
-    container_name: redisinsight
-    ports:
-      - "5540:5540"
-    restart: unless-stopped
-    networks:
-      vpcbr:
-        ipv4_address: 192.0.2.72
+  # redisinsight:
+  #   image: redislabs/redisinsight:latest
+  #   container_name: redisinsight
+  #   ports:
+  #     - "5540:5540"
+  #   restart: unless-stopped
+  #   networks:
+  #     vpcbr:
+  #       ipv4_address: 192.0.2.72
 
   consul:
     image: hashicorp/consul:latest

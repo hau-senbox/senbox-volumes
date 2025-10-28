@@ -8754,6 +8754,195 @@
       "disable_host_sanitize": true
     }
   ]
+},
+{
+  "endpoint": "/v1/gateway/children/code/generate",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/v1/gateway/children/code/generate",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/gateway/students/code/generate",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/v1/gateway/students/code/generate",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/gateway/teachers/code/generate",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/v1/gateway/teachers/code/generate",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/gateway/staffs/code/generate",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/v1/gateway/staffs/code/generate",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/gateway/parents/code/generate",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/v1/gateway/parents/code/generate",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/gateway/users/code/generate",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/v1/gateway/users/code/generate",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/gateway/organizations/code/generate",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/v1/gateway/organizations/code/generate",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
 }
 ,
 
@@ -14217,61 +14406,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/colortime/add-topic/week",
-  "input_query_strings":["*"],
-  "method": "POST",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
-  "backend": [
-    {
-      "url_pattern": "/api/v1/colortime/add-topic/week",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
-        }
-      },
-      "method": "POST",
-      
-      "sd": "dns",
-      "host": ["colortime-service.service.consul"],
-      
-      "disable_host_sanitize": true
-    }
-  ]
-},
-{
-  "endpoint": "/api/v1/colortime/delete-topic/week",
-  "input_query_strings":["*"],
-  "method": "POST",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
-  "backend": [
-    {
-      "url_pattern": "/api/v1/colortime/delete-topic/week",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
-        }
-      },
-      "method": "POST",
-      
-      "sd": "dns",
-      "host": ["colortime-service.service.consul"],
-      
-      "disable_host_sanitize": true
-    }
-  ]
-},
-{
-  "endpoint": "/api/v1/colortime/get-topic/week",
+  "endpoint": "/api/v1/colortime/week",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -14279,7 +14414,7 @@
   "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
-      "url_pattern": "/api/v1/colortime/get-topic/week",
+      "url_pattern": "/api/v1/colortime/week",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -14289,6 +14424,114 @@
         }
       },
       "method": "GET",
+      
+      "sd": "dns",
+      "host": ["colortime-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/colortime/add-topic/week/{id}",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/colortime/add-topic/week/{id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["colortime-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/colortime/delete-topic/week/{id}",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/colortime/delete-topic/week/{id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["colortime-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/colortime/add-topic/day/{id}",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/colortime/add-topic/day/{id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["colortime-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/colortime/delete-topic/day/{id}",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/colortime/delete-topic/day/{id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
       
       "sd": "dns",
       "host": ["colortime-service.service.consul"],
@@ -15355,6 +15598,7 @@
     }
   ]
 }
+
  
 
 

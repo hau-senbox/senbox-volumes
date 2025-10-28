@@ -20,6 +20,13 @@ config:
     max_idle_conn: 5
     max_lifetime_conn: 1000000
 
+  redis_cache:
+    ttlSeconds: 0 #config time circle cache
+    host: "redis"
+    port: "6379"
+    password: "senbox"
+    db: 10
+
   environment: production
 
   consul:
