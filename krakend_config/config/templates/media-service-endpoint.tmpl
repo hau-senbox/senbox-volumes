@@ -266,36 +266,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/pdf/student",
-  "input_query_strings":["*"],
-  "method": "GET",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
-  "backend": [
-    {
-      "url_pattern": "/api/v1/pdf/student",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
-        }
-      },
-      "method": "GET",
-      {{ if $sd_dns }}
-      "sd": "dns",
-      "host": ["{{ $sd_dns }}"],
-      {{ else }}
-      "host": ["{{ $host }}"],
-      {{ end }}
-      "disable_host_sanitize": true
-    }
-  ]
-},
-{
-  "endpoint": "/api/v1/pdf/student",
+  "endpoint": "/api/v1/user/resource",
   "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
@@ -303,7 +274,7 @@
   "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
-      "url_pattern": "/api/v1/pdf/student",
+      "url_pattern": "/api/v1/user/resource",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -324,7 +295,36 @@
   ]
 },
 {
-  "endpoint": "/api/v1/pdf/{id}",
+  "endpoint": "/api/v1/user/resource",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/user/resource",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/user/resource/{id}",
   "input_query_strings":["*"],
   "method": "DELETE",
   "extra_config": {},
@@ -332,7 +332,7 @@
   "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
-      "url_pattern": "/api/v1/pdf/{id}",
+      "url_pattern": "/api/v1/user/resource/{id}",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -353,7 +353,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/pdf/{id}",
+  "endpoint": "/api/v1/user/resource/{id}",
   "input_query_strings":["*"],
   "method": "PUT",
   "extra_config": {},
@@ -361,7 +361,36 @@
   "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
-      "url_pattern": "/api/v1/pdf/{id}",
+      "url_pattern": "/api/v1/user/resource/{id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "PUT",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/user/resource/add-signature/{id}",
+  "input_query_strings":["*"],
+  "method": "PUT",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/user/resource/add-signature/{id}",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -381,7 +410,5 @@
     }
   ]
 }
-
-
 
 {{end}}

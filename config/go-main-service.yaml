@@ -12,7 +12,7 @@ config:
 
   mysql:
     host: 'go-main-service-db'
-    port: '3306'
+    port: '3306' 
     user: 'sen_master'
     password: '6Yw4rmmaDUkpZtdm'
     database: 'sen_master_db'

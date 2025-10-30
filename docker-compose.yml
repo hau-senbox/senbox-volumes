@@ -138,6 +138,7 @@ services:
     depends_on:
       - consul
       - go-main-service-db
+      - redis
       # - kafka-1
       # - kafka-2
       # - kafka-3
@@ -290,6 +291,7 @@ services:
     depends_on:
       - consul
       - mongo-main
+      - redis
       # - kafka-1
       # - kafka-2
       # - kafka-3
@@ -329,6 +331,7 @@ services:
     depends_on:
       - consul
       - mongo-main
+      - redis
       # - kafka-1
       # - kafka-2
       # - kafka-3
@@ -689,6 +692,7 @@ services:
     depends_on:
       - consul
       - mongo-main
+      - redis
       # - kafka-1
       # - kafka-2
       # - kafka-3
