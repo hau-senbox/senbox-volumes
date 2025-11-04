@@ -1196,6 +1196,60 @@
   ]
 },
 {
+  "endpoint": "/v1/user/setting/is-first-login",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/v1/user/setting/is-first-login",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/user/setting/welcome-reminder",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/v1/user/setting/welcome-reminder",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
   "endpoint": "/v1/admin/organization/{organization_id}/setting/device/news",
   "input_query_strings":["*"],
   "method": "POST",
@@ -10979,7 +11033,88 @@
       "disable_host_sanitize": true
     }
   ]
-} 
+},
+{
+  "endpoint": "/api/v1/study-preference",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/study-preference",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["portal-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/study-preference/{id}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/study-preference/{id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["portal-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/study-preference/{id}",
+  "input_query_strings":["*"],
+  "method": "PUT",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/study-preference/{id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "PUT",
+      
+      "sd": "dns",
+      "host": ["portal-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+}    
 ,
 
 
@@ -12414,6 +12549,87 @@
   ]
 },
 {
+  "endpoint": "/api/v2/admin/topics/audio/{topic_id}/language/{language_id}",
+  "input_query_strings":["*"],
+  "method": "DELETE",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v2/admin/topics/audio/{topic_id}/language/{language_id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "DELETE",
+      
+      "sd": "dns",
+      "host": ["media-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v2/admin/topics/video/{topic_id}/language/{language_id}",
+  "input_query_strings":["*"],
+  "method": "DELETE",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v2/admin/topics/video/{topic_id}/language/{language_id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "DELETE",
+      
+      "sd": "dns",
+      "host": ["media-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v2/admin/topics/image/{topic_id}/language/{language_id}/type/{image_type}",
+  "input_query_strings":["*"],
+  "method": "DELETE",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v2/admin/topics/image/{topic_id}/language/{language_id}/type/{image_type}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "DELETE",
+      
+      "sd": "dns",
+      "host": ["media-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
   "endpoint": "/api/v2/admin/topics/{topic_id}/progress",
   "input_query_strings":["*"],
   "method": "GET",
@@ -12747,6 +12963,60 @@
   "backend": [
     {
       "url_pattern": "/api/v1/user/resource/add-signature/{id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "PUT",
+      
+      "sd": "dns",
+      "host": ["media-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/user/resource/update-status/{id}",
+  "input_query_strings":["*"],
+  "method": "PUT",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/user/resource/update-status/{id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "PUT",
+      
+      "sd": "dns",
+      "host": ["media-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/user/resource/update-dowload-permission/{id}",
+  "input_query_strings":["*"],
+  "method": "PUT",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/user/resource/update-dowload-permission/{id}",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,

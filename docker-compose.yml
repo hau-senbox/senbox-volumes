@@ -188,27 +188,27 @@ services:
       # - kafka-3
     restart: unless-stopped
 
-  order-service:
-    build:
-      context: ../order-service
-      dockerfile: Dockerfile
-    container_name: order-service
-    env_file:
-      - ./config/order-service.env
-    # volumes:
-    #   - ./config/order-service.env:/root/.env
-    networks:
-      vpcbr:
-        ipv4_address: 192.0.2.54
-    ports:
-      - "8005:8005"
-    depends_on:
-      - consul
-      - mongo-main
-      # - kafka-1
-      # - kafka-2
-      # - kafka-3
-    restart: unless-stopped
+  # order-service:
+  #   build:
+  #     context: ../order-service
+  #     dockerfile: Dockerfile
+  #   container_name: order-service
+  #   env_file:
+  #     - ./config/order-service.env
+  #   # volumes:
+  #   #   - ./config/order-service.env:/root/.env
+  #   networks:
+  #     vpcbr:
+  #       ipv4_address: 192.0.2.54
+  #   ports:
+  #     - "8005:8005"
+  #   depends_on:
+  #     - consul
+  #     - mongo-main
+  #     # - kafka-1
+  #     # - kafka-2
+  #     # - kafka-3
+  #   restart: unless-stopped
 
   portal-service:
     build:
@@ -296,25 +296,25 @@ services:
       # - kafka-2
       # - kafka-3
 
-  wallet-service:
-    build:
-      context: ../wallet-service
-      dockerfile: Dockerfile
-    container_name: wallet-service
-    env_file:
-      - ./config/wallet-service.env
-    networks:
-      vpcbr:
-        ipv4_address: 192.0.2.59
-    ports:
-      - "8010:8010"
-    depends_on:
-      - consul
-      - mongo-main
-      # - kafka-1
-      # - kafka-2
-      # - kafka-3
-    restart: unless-stopped
+  # wallet-service:
+  #   build:
+  #     context: ../wallet-service
+  #     dockerfile: Dockerfile
+  #   container_name: wallet-service
+  #   env_file:
+  #     - ./config/wallet-service.env
+  #   networks:
+  #     vpcbr:
+  #       ipv4_address: 192.0.2.59
+  #   ports:
+  #     - "8010:8010"
+  #   depends_on:
+  #     - consul
+  #     - mongo-main
+  #     # - kafka-1
+  #     # - kafka-2
+  #     # - kafka-3
+  #   restart: unless-stopped
 
   media-service:
     build:
@@ -653,29 +653,29 @@ services:
   #     # - kafka-2
   #     # - kafka-3
 
-  food-service:
-    build:
-      context: ../food-service
-      dockerfile: Dockerfile
-    container_name: food-service
-    env_file:
-      - ./config/food-service.env
-    environment:
-      - REDIS_HOST=redis
-      - REDIS_PORT=6379
-      - REDIS_PASSWORD=senbox
-    networks:
-      vpcbr:
-        ipv4_address: 192.0.2.70
-    ports:
-      - "8021:8021"
-    depends_on:
-      - consul
-      - mongo-main
-      - redis
-      # - kafka-1
-      # - kafka-2
-      # - kafka-3
+  # food-service:
+  #   build:
+  #     context: ../food-service
+  #     dockerfile: Dockerfile
+  #   container_name: food-service
+  #   env_file: 
+  #     - ./config/food-service.env
+  #   environment:
+  #     - REDIS_HOST=redis
+  #     - REDIS_PORT=6379
+  #     - REDIS_PASSWORD=senbox
+  #   networks:
+  #     vpcbr:
+  #       ipv4_address: 192.0.2.70
+  #   ports:
+  #     - "8021:8021"
+  #   depends_on:
+  #     - consul
+  #     - mongo-main
+  #     - redis
+  #     # - kafka-1
+  #     # - kafka-2
+  #     # - kafka-3
 
   profile-service:
     build:

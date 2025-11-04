@@ -13,6 +13,7 @@
     },
     "security/cors": {
       "allow_origins": [
+        "https://main.d2t2j98pn8myti.amplifyapp.com",
         "*"
       ],
       "allow_methods": [
