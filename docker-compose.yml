@@ -658,7 +658,7 @@ services:
   #     context: ../food-service
   #     dockerfile: Dockerfile
   #   container_name: food-service
-  #   env_file: 
+  #   env_file:
   #     - ./config/food-service.env
   #   environment:
   #     - REDIS_HOST=redis
@@ -696,7 +696,7 @@ services:
       # - kafka-1
       # - kafka-2
       # - kafka-3
-  
+
   senbox-admin:
     build:
       context: ../senbox-admin
@@ -708,7 +708,7 @@ services:
       - "3000:3000"
     networks:
       vpcbr:
-        ipv4_address: 192.0.2.2
+        ipv4_address: 192.0.2.73
 
 networks:
   vpcbr:
