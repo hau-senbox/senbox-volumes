@@ -696,6 +696,19 @@ services:
       # - kafka-1
       # - kafka-2
       # - kafka-3
+  
+  senbox-admin:
+    build:
+      context: ../senbox-admin
+      dockerfile: Dockerfile
+    container_name: senbox-admin
+    env_file:
+      - ./config/senbox-admin.env
+    ports:
+      - "3000:3000"
+    networks:
+      vpcbr:
+        ipv4_address: 192.0.2.72
 
 networks:
   vpcbr:
