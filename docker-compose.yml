@@ -708,7 +708,7 @@ services:
       - "3000:3000"
     networks:
       vpcbr:
-        ipv4_address: 192.0.2.72
+        ipv4_address: 192.0.2.2
 
 networks:
   vpcbr:
