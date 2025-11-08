@@ -14,8 +14,7 @@
     },
     "security/cors": {
       "allow_origins": [
-        "http://localhost:3000",
-        "https://web.54.169.56.171.nip.io"
+        "*"
       ],
       "allow_methods": [
         "GET",
@@ -16167,7 +16166,7 @@
       "method": "GET",
       
       "sd": "dns",
-      "host": ["profile-management.service.consul"],
+      "host": ["profile-service.service.consul"],
       
       "disable_host_sanitize": true
     }
@@ -16194,7 +16193,7 @@
       "method": "GET",
       
       "sd": "dns",
-      "host": ["profile-management.service.consul"],
+      "host": ["profile-service.service.consul"],
       
       "disable_host_sanitize": true
     }
@@ -16221,7 +16220,7 @@
       "method": "GET",
       
       "sd": "dns",
-      "host": ["profile-management.service.consul"],
+      "host": ["profile-service.service.consul"],
       
       "disable_host_sanitize": true
     }
@@ -16248,7 +16247,7 @@
       "method": "GET",
       
       "sd": "dns",
-      "host": ["profile-management.service.consul"],
+      "host": ["profile-service.service.consul"],
       
       "disable_host_sanitize": true
     }
@@ -16275,7 +16274,7 @@
       "method": "GET",
       
       "sd": "dns",
-      "host": ["profile-management.service.consul"],
+      "host": ["profile-service.service.consul"],
       
       "disable_host_sanitize": true
     }
@@ -16302,7 +16301,7 @@
       "method": "POST",
       
       "sd": "dns",
-      "host": ["profile-management.service.consul"],
+      "host": ["profile-service.service.consul"],
       
       "disable_host_sanitize": true
     }
@@ -16329,7 +16328,7 @@
       "method": "POST",
       
       "sd": "dns",
-      "host": ["profile-management.service.consul"],
+      "host": ["profile-service.service.consul"],
       
       "disable_host_sanitize": true
     }
@@ -16356,7 +16355,7 @@
       "method": "POST",
       
       "sd": "dns",
-      "host": ["profile-management.service.consul"],
+      "host": ["profile-service.service.consul"],
       
       "disable_host_sanitize": true
     }
@@ -16383,7 +16382,7 @@
       "method": "POST",
       
       "sd": "dns",
-      "host": ["profile-management.service.consul"],
+      "host": ["profile-service.service.consul"],
       
       "disable_host_sanitize": true
     }
@@ -16410,7 +16409,7 @@
       "method": "POST",
       
       "sd": "dns",
-      "host": ["profile-management.service.consul"],
+      "host": ["profile-service.service.consul"],
       
       "disable_host_sanitize": true
     }
@@ -16437,7 +16436,7 @@
       "method": "POST",
       
       "sd": "dns",
-      "host": ["profile-management.service.consul"],
+      "host": ["profile-service.service.consul"],
       
       "disable_host_sanitize": true
     }
@@ -16464,7 +16463,7 @@
       "method": "GET",
       
       "sd": "dns",
-      "host": ["profile-management.service.consul"],
+      "host": ["profile-service.service.consul"],
       
       "disable_host_sanitize": true
     }
