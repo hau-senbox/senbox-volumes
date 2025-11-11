@@ -150,7 +150,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/colortime/week/{id}/block/save",
+  "endpoint": "/api/v1/colortime/week/{id}/slot/{slot_id}",
   "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
@@ -158,7 +158,7 @@
   "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
-      "url_pattern": "/api/v1/colortime/week/{id}/block/save",
+      "url_pattern": "/api/v1/colortime/week/{id}/slot/{slot_id}",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -179,7 +179,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/colortime/week/{id}/block/add-session",
+  "endpoint": "/api/v1/default-colortime/day",
   "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
@@ -187,7 +187,7 @@
   "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
-      "url_pattern": "/api/v1/colortime/week/{id}/block/add-session",
+      "url_pattern": "/api/v1/default-colortime/day",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -208,7 +208,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/default-colortime/week",
+  "endpoint": "/api/v1/default-colortime/day",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -216,7 +216,7 @@
   "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
-      "url_pattern": "/api/v1/default-colortime/week",
+      "url_pattern": "/api/v1/default-colortime/day",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -237,15 +237,15 @@
   ]
 },
 {
-  "endpoint": "/api/v1/default-colortime/week/{id}/block/save",
+  "endpoint": "/api/v1/default-colortime/days",
   "input_query_strings":["*"],
-  "method": "POST",
+  "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
   "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
-      "url_pattern": "/api/v1/default-colortime/week/{id}/block/save",
+      "url_pattern": "/api/v1/default-colortime/days",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -254,7 +254,7 @@
           "log_status_change": true
         }
       },
-      "method": "POST",
+      "method": "GET",
       {{ if $sd_dns }}
       "sd": "dns",
       "host": ["{{ $sd_dns }}"],
@@ -266,15 +266,15 @@
   ]
 },
 {
-  "endpoint": "/api/v1/default-colortime/week/{id}/block/add-session",
+  "endpoint": "/api/v1/default-colortime/all-days",
   "input_query_strings":["*"],
-  "method": "POST",
+  "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
   "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
-      "url_pattern": "/api/v1/default-colortime/week/{id}/block/add-session",
+      "url_pattern": "/api/v1/default-colortime/all-days",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -283,7 +283,94 @@
           "log_status_change": true
         }
       },
-      "method": "POST",
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/default-colortime/day/{id}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/default-colortime/day/{id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/default-colortime/day/{id}/block/{slot_id}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/default-colortime/day/{id}/block/{slot_id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      {{ if $sd_dns }}
+      "sd": "dns",
+      "host": ["{{ $sd_dns }}"],
+      {{ else }}
+      "host": ["{{ $host }}"],
+      {{ end }}
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/default-colortime/day/{id}/slot/edit/{slot_id}",
+  "input_query_strings":["*"],
+  "method": "PUT",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/default-colortime/day/{id}/slot/edit/{slot_id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "PUT",
       {{ if $sd_dns }}
       "sd": "dns",
       "host": ["{{ $sd_dns }}"],
