@@ -3392,6 +3392,33 @@
   ]
 },
 {
+  "endpoint": "/v1/admin/menu/section/student/organization",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/menu/section/student/organization",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
   "endpoint": "/v1/admin/menu/section/teacher/{teacher_id}/organization/{organization_id}",
   "input_query_strings":["*"],
   "method": "GET",
@@ -3401,6 +3428,33 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/menu/section/teacher/{teacher_id}/organization/{organization_id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/menu/section/student/{student_id}/organization/{organization_id}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/menu/section/student/{student_id}/organization/{organization_id}",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -6794,6 +6848,33 @@
   ]
 },
 {
+  "endpoint": "/v1/user-menu/student/organization",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/v1/user-menu/student/organization",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
   "endpoint": "/v1/user-menu/department/device/{device_id}/organization/{organization_id}",
   "input_query_strings":["*"],
   "method": "GET",
@@ -8963,6 +9044,33 @@
   "backend": [
     {
       "url_pattern": "/v1/gateway/parents/code/generate",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/gateway/parents/migrate/department-group",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/v1/gateway/parents/migrate/department-group",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -15882,7 +15990,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/template-colortime",
+  "endpoint": "/api/v1/template-colortime/",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -15890,7 +15998,7 @@
   "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
-      "url_pattern": "/api/v1/template-colortime",
+      "url_pattern": "/api/v1/template-colortime/",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -15909,7 +16017,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/template-colortime",
+  "endpoint": "/api/v1/template-colortime/",
   "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
@@ -15917,7 +16025,7 @@
   "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
-      "url_pattern": "/api/v1/template-colortime",
+      "url_pattern": "/api/v1/template-colortime/",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -16366,6 +16474,33 @@
         }
       },
       "method": "GET",
+      
+      "sd": "dns",
+      "host": ["department-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/gateway/departments/assign/parent-group",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/gateway/departments/assign/parent-group",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
       
       "sd": "dns",
       "host": ["department-service.service.consul"],
