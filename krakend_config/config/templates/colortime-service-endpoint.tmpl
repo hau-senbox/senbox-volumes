@@ -65,7 +65,7 @@
 {
   "endpoint": "/api/v1/colortime/delete-topic/week/{id}",
   "input_query_strings":["*"],
-  "method": "POST",
+  "method": "DELETE",
   "extra_config": {},
   "output_encoding": "no-op",
   "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
@@ -80,7 +80,7 @@
           "log_status_change": true
         }
       },
-      "method": "POST",
+      "method": "DELETE",
       {{ if $sd_dns }}
       "sd": "dns",
       "host": ["{{ $sd_dns }}"],
@@ -123,7 +123,7 @@
 {
   "endpoint": "/api/v1/colortime/delete-topic/day/{id}",
   "input_query_strings":["*"],
-  "method": "POST",
+  "method": "DELETE",
   "extra_config": {},
   "output_encoding": "no-op",
   "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
@@ -138,7 +138,7 @@
           "log_status_change": true
         }
       },
-      "method": "POST",
+      "method": "DELETE",
       {{ if $sd_dns }}
       "sd": "dns",
       "host": ["{{ $sd_dns }}"],
@@ -382,7 +382,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/template-colortime/",
+  "endpoint": "/api/v1/template-colortime",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -390,7 +390,7 @@
   "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
-      "url_pattern": "/api/v1/template-colortime/",
+      "url_pattern": "/api/v1/template-colortime",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -411,7 +411,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/template-colortime/",
+  "endpoint": "/api/v1/template-colortime",
   "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
@@ -419,7 +419,7 @@
   "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
-      "url_pattern": "/api/v1/template-colortime/",
+      "url_pattern": "/api/v1/template-colortime",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,

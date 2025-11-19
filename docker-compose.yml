@@ -1,4 +1,20 @@
 services:
+
+  dozzle:
+    image: amir20/dozzle:latest
+    container_name: dozzle
+    ports:
+      - "8089:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      DOZZLE_TAILLINES: "500"
+      DOZZLE_REFRESH: "2000"
+    networks:
+      vpcbr:
+        ipv4_address: 192.0.2.80
+    restart: unless-stopped
+
   redis:
     image: redis:latest
     container_name: redis
@@ -437,170 +453,6 @@ services:
       - service.consul
     restart: unless-stopped
 
-  # # kafka kraft cluster
-  # kafka-1:
-  #   image: "bitnami/kafka:latest"
-  #   container_name: kafka-1
-  #   hostname: kafka-1
-  #   environment:
-  #     - ALLOW_ANONYMOUS_LOGIN=yes
-  #     - KAFKA_ENABLE_KRAFT=yes
-  #     - KAFKA_CFG_PROCESS_ROLES=broker,controller
-  #     - KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER
-  #     - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=kraft:PLAINTEXT,CONTROLLER:PLAINTEXT,INTERNAL:PLAINTEXT
-  #     - KAFKA_BROKER_ID=1
-  #     - KAFKA_CFG_NODE_ID=1
-  #     - KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=1@kafka-1:9094,2@kafka-2:9094,3@kafka-3:9094
-  #     - ALLOW_PLAINTEXT_LISTENER=yes
-  #     - BITNAMI_DEBUG=yes
-  #     - KAFKA_KRAFT_CLUSTER_ID=OTMwNzFhYTY1ODNiNGE5OT
-  #     - KAFKA_CFG_KRAFT_REPLICATION_FACTOR=3
-  #     - KAFKA_CFG_ADVERTISED_LISTENERS=kraft://kafka-1:9093,INTERNAL://kafka-1:9092
-  #     - KAFKA_CFG_LISTENERS=kraft://0.0.0.0:9093,CONTROLLER://kafka-1:9094,INTERNAL://0.0.0.0:9092
-  #     - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=INTERNAL
-  #     - KAFKA_CFG_DEFAULT_REPLICATION_FACTOR=3
-  #     - KAFKA_CFG_MIN_INSYNC_REPLICAS=2
-  #   ports:
-  #     - "9101:9092"
-  #     - "9102:9093"
-  #     - "9103:9094"
-  #   networks:
-  #     vpcbr:
-  #       ipv4_address: 192.0.2.5
-  #   volumes:
-  #     - ./data/kafka/kafka-1:/bitnami/kafka/data
-
-  # kafka-2:
-  #   image: "bitnami/kafka:latest"
-  #   container_name: kafka-2
-  #   hostname: kafka-2
-  #   environment:
-  #     - ALLOW_ANONYMOUS_LOGIN=yes
-  #     - KAFKA_ENABLE_KRAFT=yes
-  #     - KAFKA_CFG_PROCESS_ROLES=broker,controller
-  #     - KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER
-  #     - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=kraft:PLAINTEXT,CONTROLLER:PLAINTEXT,INTERNAL:PLAINTEXT
-  #     - KAFKA_BROKER_ID=2
-  #     - KAFKA_CFG_NODE_ID=2
-  #     - KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=1@kafka-1:9094,2@kafka-2:9094,3@kafka-3:9094
-  #     - ALLOW_PLAINTEXT_LISTENER=yes
-  #     - BITNAMI_DEBUG=yes
-  #     - KAFKA_KRAFT_CLUSTER_ID=OTMwNzFhYTY1ODNiNGE5OT
-  #     - KAFKA_CFG_KRAFT_REPLICATION_FACTOR=3
-  #     - KAFKA_CFG_ADVERTISED_LISTENERS=kraft://kafka-2:9093,INTERNAL://kafka-2:9092
-  #     - KAFKA_CFG_LISTENERS=kraft://0.0.0.0:9093,CONTROLLER://kafka-2:9094,INTERNAL://0.0.0.0:9092
-  #     - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=INTERNAL
-  #     - KAFKA_CFG_DEFAULT_REPLICATION_FACTOR=3
-  #     - KAFKA_CFG_MIN_INSYNC_REPLICAS=2
-  #   ports:
-  #     - "9095:9092"
-  #     - "9096:9093"
-  #     - "9097:9094"
-  #   networks:
-  #     vpcbr:
-  #       ipv4_address: 192.0.2.6
-  #   volumes:
-  #     - ./data/kafka/kafka-2:/bitnami/kafka/data
-
-  # kafka-3:
-  #   image: "bitnami/kafka:latest"
-  #   container_name: kafka-3
-  #   hostname: kafka-3
-  #   environment:
-  #     - ALLOW_ANONYMOUS_LOGIN=yes
-  #     - KAFKA_ENABLE_KRAFT=yes
-  #     - KAFKA_CFG_PROCESS_ROLES=broker,controller
-  #     - KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER
-  #     - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=kraft:PLAINTEXT,CONTROLLER:PLAINTEXT,INTERNAL:PLAINTEXT
-  #     - KAFKA_BROKER_ID=3
-  #     - KAFKA_CFG_NODE_ID=3
-  #     - KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=1@kafka-1:9094,2@kafka-2:9094,3@kafka-3:9094
-  #     - ALLOW_PLAINTEXT_LISTENER=yes
-  #     - BITNAMI_DEBUG=yes
-  #     - KAFKA_KRAFT_CLUSTER_ID=OTMwNzFhYTY1ODNiNGE5OT
-  #     - KAFKA_CFG_KRAFT_REPLICATION_FACTOR=3
-  #     - KAFKA_CFG_ADVERTISED_LISTENERS=kraft://kafka-3:9093,INTERNAL://kafka-3:9092
-  #     - KAFKA_CFG_LISTENERS=kraft://0.0.0.0:9093,CONTROLLER://kafka-3:9094,INTERNAL://0.0.0.0:9092
-  #     - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=INTERNAL
-  #     - KAFKA_CFG_DEFAULT_REPLICATION_FACTOR=3
-  #     - KAFKA_CFG_MIN_INSYNC_REPLICAS=2
-  #   ports:
-  #     - "9098:9092"
-  #     - "9099:9093"
-  #     - "9100:9094"
-  #   networks:
-  #     vpcbr:
-  #       ipv4_address: 192.0.2.7
-  #   volumes:
-  #     - ./data/kafka/kafka-3:/bitnami/kafka/data
-  # # end kafka kraft cluster
-
-  # kafka-ui:
-  #   image: "provectuslabs/kafka-ui:latest"
-  #   container_name: kafka-ui
-  #   environment:
-  #     # - DYNAMIC_CONFIG_ENABLED=true
-  #     - KAFKA_CLUSTERS_0_NAME=local
-  #     - KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS=kafka-1:9093,kafka-2:9093,kafka-3:9093  # List of your Kafka brokers
-  #   ports:
-  #     - "8088:8080"  # Expose the Kafka UI on port 8080
-  #   networks:
-  #     vpcbr:
-  #       ipv4_address: 192.0.2.8
-  #   depends_on:
-  #     - kafka-1
-  #     - kafka-2
-  #     - kafka-3
-
-  # redpanda-console:
-  #   image: "redpandadata/console:latest"
-  #   container_name: redpanda-console
-  #   environment:
-  #     - KAFKA_BROKERS=kafka-1:9093,kafka-2:9093,kafka-3:9093  # List of your Kafka brokers
-  #   ports:
-  #     - "8011:8080"  # Expose the Kafka UI on port 8080
-  #   networks:
-  #     - kafka
-  #   depends_on:
-  #     - kafka-1
-  #     - kafka-2
-  #     - kafka-3
-
-  # schema-registry:
-  #   image: "confluentinc/cp-schema-registry:latest"
-  #   container_name: schema-registry
-  #   environment:
-  #     - SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS=kafka-1:9093,kafka-2:9093,kafka-3:9093
-  #     - SCHEMA_REGISTRY_LISTENER_HTTP_PORT=8081
-  #     - SCHEMA_REGISTRY_KAFKASTORE_TOPIC=_schemas
-  #     - SCHEMA_REGISTRY_HOST_NAME=schema-registry
-  #   ports:
-  #     - "8081:8081"  # Expose Schema Registry UI
-  #   networks:
-  #     - kafka
-  #   depends_on:
-  #     - kafka-1
-  #     - kafka-2
-  #     - kafka-3
-
-  # rest-proxy:
-  #   image: "confluentinc/cp-kafka-rest:latest"
-  #   container_name: kafka-rest-proxy
-  #   environment:
-  #     - KAFKA_REST_HOST_NAME=kafka-rest-proxy
-  #     - KAFKA_REST_LISTENER=http://0.0.0.0:8082
-  #     - KAFKA_REST_BOOTSTRAP_SERVERS=kafka-1:9093,kafka-2:9093,kafka-3:9093
-  #     - KAFKA_REST_SCHEMA_REGISTRY_URL=http://schema-registry:8081
-  #   ports:
-  #     - "8082:8082"  # Expose REST Proxy API
-  #   networks:
-  #     - kafka
-  #   depends_on:
-  #     - schema-registry
-  #     - kafka-1
-  #     - kafka-2
-  #     - kafka-3
-
   report-service:
     build:
       context: ../report-service
@@ -726,6 +578,3 @@ networks:
     ipam:
       config:
         - subnet: 192.0.2.0/24
-# sudo apib -c 1000000 -d 60 http://localhost:8080/user/
-# h2load -n100000 -c100 -m10 http://localhost:8080/user/
-# autocannon -c 1000 -p 100 -d 60 http://localhost:8080/v1/user/all?role=all
