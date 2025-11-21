@@ -8198,6 +8198,33 @@
   ]
 },
 {
+  "endpoint": "/v1/gateway/organizations/code/generate",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/v1/gateway/organizations/code/generate",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
   "endpoint": "/v1/gateway/menus/department",
   "input_query_strings":["*"],
   "method": "POST",
@@ -9224,33 +9251,6 @@
   ]
 },
 {
-  "endpoint": "/v1/gateway/organizations/code/generate",
-  "input_query_strings":["*"],
-  "method": "POST",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
-  "backend": [
-    {
-      "url_pattern": "/v1/gateway/organizations/code/generate",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
-        }
-      },
-      "method": "POST",
-      
-      "sd": "dns",
-      "host": ["go-main-service.service.consul"],
-      
-      "disable_host_sanitize": true
-    }
-  ]
-},
-{
   "endpoint": "/v1/gateway/devices/code/generate",
   "input_query_strings":["*"],
   "method": "POST",
@@ -9287,6 +9287,33 @@
   "backend": [
     {
       "url_pattern": "/v1/admin/devices",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["go-main-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/v1/admin/devices/{device_id}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/v1/admin/devices/{device_id}",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -17038,6 +17065,33 @@
   ]
 },
 {
+  "endpoint": "/api/v1/gateway/profiles/owner-code/organization/{organization_id}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/gateway/profiles/owner-code/organization/{organization_id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["profile-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
   "endpoint": "/api/v1/gateway/profiles/owner-code/student/generate",
   "input_query_strings":["*"],
   "method": "POST",
@@ -17209,6 +17263,33 @@
   "backend": [
     {
       "url_pattern": "/api/v1/gateway/profiles/owner-code/device/generate",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["profile-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/gateway/profiles/owner-code/organization/generate",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/gateway/profiles/owner-code/organization/generate",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
