@@ -13774,7 +13774,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/admin/upload/videos",
+  "endpoint": "/api/v1/admin/upload/video_folders",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -13782,7 +13782,7 @@
   "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
-      "url_pattern": "/api/v1/admin/upload/videos",
+      "url_pattern": "/api/v1/admin/upload/video_folders",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -13801,7 +13801,34 @@
   ]
 },
 {
-  "endpoint": "/api/v1/admin/upload/videos",
+  "endpoint": "/api/v1/admin/upload/video_folders/{video_folder_id}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/admin/upload/video_folders/{video_folder_id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["media-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/admin/upload/video_folders",
   "input_query_strings":["*"],
   "method": "POST",
   "extra_config": {},
@@ -13809,7 +13836,7 @@
   "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
-      "url_pattern": "/api/v1/admin/upload/videos",
+      "url_pattern": "/api/v1/admin/upload/video_folders",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -13828,34 +13855,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/admin/upload/videos/progress/{video_uploader_id}",
-  "input_query_strings":["*"],
-  "method": "GET",
-  "extra_config": {},
-  "output_encoding": "no-op",
-  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
-  "backend": [
-    {
-      "url_pattern": "/api/v1/admin/upload/videos/progress/{video_uploader_id}",
-      "extra_config": {
-        "qos/circuit-breaker": {
-          "interval": 60,
-          "timeout": 10,
-          "max_errors": 5,
-          "log_status_change": true
-        }
-      },
-      "method": "GET",
-      
-      "sd": "dns",
-      "host": ["media-service.service.consul"],
-      
-      "disable_host_sanitize": true
-    }
-  ]
-},
-{
-  "endpoint": "/api/v1/admin/upload/videos/{video_uploader_id}",
+  "endpoint": "/api/v1/admin/upload/video_folders/{video_folder_id}",
   "input_query_strings":["*"],
   "method": "DELETE",
   "extra_config": {},
@@ -13863,7 +13863,7 @@
   "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
-      "url_pattern": "/api/v1/admin/upload/videos/{video_uploader_id}",
+      "url_pattern": "/api/v1/admin/upload/video_folders/{video_folder_id}",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -16366,6 +16366,33 @@
       "disable_host_sanitize": true
     }
   ]
+},
+{
+  "endpoint": "/api/v1/colortime/day",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/colortime/day",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["colortime-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
 }
 ,
 
@@ -17416,7 +17443,97 @@
   ]
 }
 
- 
+ ,
+
+
+
+
+
+
+{
+  "endpoint": "/api/v1/wiki",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/wiki",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
+      
+      "sd": "dns",
+      "host": ["wiki-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/wiki",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/wiki",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["wiki-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/wiki/{id}",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/wiki/{id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["wiki-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+}
+
+
+
 
 
   ]

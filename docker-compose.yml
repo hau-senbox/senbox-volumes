@@ -36,16 +36,6 @@ services:
       vpcbr:
         ipv4_address: 192.0.2.51
 
-  # redisinsight:
-  #   image: redislabs/redisinsight:latest
-  #   container_name: redisinsight
-  #   ports:
-  #     - "5540:5540"
-  #   restart: unless-stopped
-  #   networks:
-  #     vpcbr:
-  #       ipv4_address: 192.0.2.72
-
   consul:
     image: hashicorp/consul:latest
     container_name: consul
@@ -298,6 +288,7 @@ services:
     container_name: term-service
     volumes:
       - ./config/term-service.yaml:/configs/config.yaml
+      - ./logs/term-service:/root/logs/term-service
     networks:
       vpcbr:
         ipv4_address: 192.0.2.58
@@ -447,11 +438,6 @@ services:
       # - kafka-1
       # - kafka-2
       # - kafka-3
-    dns:
-      - 192.0.2.4
-    dns_search:
-      - service.consul
-    restart: unless-stopped
 
   report-service:
     build:
@@ -479,6 +465,7 @@ services:
     container_name: department-service
     volumes:
       - ./config/department-service.yaml:/configs/config.yaml
+      - ./logs/department-service:/root/logs/department-service
     networks:
       vpcbr:
         ipv4_address: 192.0.2.68
@@ -541,6 +528,7 @@ services:
     container_name: profile-service
     volumes:
       - ./config/profile-service.yaml:/configs/config.yaml
+      - ./logs/profile-service:/root/logs/profile-service
     networks:
       vpcbr:
         ipv4_address: 192.0.2.71
@@ -571,6 +559,25 @@ services:
   #   networks:
   #     vpcbr:
   #       ipv4_address: 192.0.2.73
+
+  wiki-service:
+    build:
+      context: ../wiki-service
+      dockerfile: Dockerfile
+    container_name: wiki-service
+    env_file:
+      - ./config/wiki-service.env
+    networks:
+      vpcbr:
+        ipv4_address: 192.0.2.72
+    ports:
+      - "8023:8023"
+    depends_on:
+      - consul
+      - mongo-main
+      # - kafka-1
+      # - kafka-2
+      # - kafka-3
 
 networks:
   vpcbr:

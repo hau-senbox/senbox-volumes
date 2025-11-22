@@ -40,6 +40,8 @@
     "food_service": "http://food-service:8021",
     "food_service_dns": "food-management.service.consul",
     "profile_service": "http://profile-service:8022",
-    "profile_service_dns": "profile-service.service.consul"
+    "profile_service_dns": "profile-service.service.consul",
+    "wiki_service": "http://wiki-service:8023",
+    "wiki_service_dns": "wiki-service.service.consul"
 
 }
