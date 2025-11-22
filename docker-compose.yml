@@ -1,5 +1,4 @@
 services:
-
   dozzle:
     image: amir20/dozzle:latest
     container_name: dozzle
@@ -339,6 +338,7 @@ services:
     container_name: media-service
     volumes:
       - ./config/media-service.yaml:/configs/config.yaml
+      - ./logs/media-service:/root/logs/media-service
     networks:
       vpcbr:
         ipv4_address: 192.0.2.60
