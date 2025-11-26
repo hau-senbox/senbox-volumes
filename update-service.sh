@@ -26,6 +26,7 @@ SERVICES=(
   "todo-service"
   "wallet-service"
   "profile-service"
+  "wiki-service"
 )
 
 # Hàm cập nhật một service

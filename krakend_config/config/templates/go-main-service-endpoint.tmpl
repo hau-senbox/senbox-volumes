@@ -7287,7 +7287,7 @@
 {
   "endpoint": "/v1/user-menu/student/organization",
   "input_query_strings":["*"],
-  "method": "POST",
+  "method": "GET",
   "extra_config": {},
   "output_encoding": "no-op",
   "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
@@ -7302,7 +7302,7 @@
           "log_status_change": true
         }
       },
-      "method": "POST",
+      "method": "GET",
       {{ if $sd_dns }}
       "sd": "dns",
       "host": ["{{ $sd_dns }}"],

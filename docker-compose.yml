@@ -542,24 +542,6 @@ services:
       # - kafka-2
       # - kafka-3
 
-  # senbox-admin:
-  #   build:
-  #     context: ../senbox-admin
-  #     dockerfile: Dockerfile
-  #     args:
-  #       NEXT_PUBLIC_JWT_SECRET_KEY: "ca385f66e6eb01becebca3c346e0127c875a838cbecf42ac94aad1686dc43480219eb29ffca277fabeadd01b1a65a4686691586b2d67385bace20dd60afd03d0"
-  #       NEXT_PUBLIC_API_ENDPOINT: "http://krakend:8080"
-  #       NEXT_PUBLIC_API_MEDIA_ENDPOINT: "https://media.api.54.169.86.171.nip.io"
-  #       NEXT_PUBLIC_LOG_FETCH: "false"
-  #   container_name: senbox-admin
-  #   ports:
-  #     - "3000:3000"
-  #   environment:
-  #     - NODE_ENV=production
-  #   networks:
-  #     vpcbr:
-  #       ipv4_address: 192.0.2.73
-
   wiki-service:
     build:
       context: ../wiki-service
