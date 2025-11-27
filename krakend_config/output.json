@@ -6850,7 +6850,7 @@
 {
   "endpoint": "/v1/user-menu/student/organization",
   "input_query_strings":["*"],
-  "method": "GET",
+  "method": "POST",
   "extra_config": {},
   "output_encoding": "no-op",
   "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
@@ -6865,7 +6865,7 @@
           "log_status_change": true
         }
       },
-      "method": "GET",
+      "method": "POST",
       
       "sd": "dns",
       "host": ["go-main-service.service.consul"],
@@ -16888,7 +16888,7 @@
   ]
 },
 {
-  "endpoint": "/api/v1/user/departments/announcement-noti-history",
+  "endpoint": "/api/v1/user/departments/announcements/noti-history",
   "input_query_strings":["*"],
   "method": "GET",
   "extra_config": {},
@@ -16896,7 +16896,7 @@
   "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
   "backend": [
     {
-      "url_pattern": "/api/v1/user/departments/announcement-noti-history",
+      "url_pattern": "/api/v1/user/departments/announcements/noti-history",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
@@ -16906,6 +16906,33 @@
         }
       },
       "method": "GET",
+      
+      "sd": "dns",
+      "host": ["department-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/user/departments/announcements/sign",
+  "input_query_strings":["*"],
+  "method": "POST",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/user/departments/announcements/sign",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "POST",
       
       "sd": "dns",
       "host": ["department-service.service.consul"],
@@ -17784,6 +17811,33 @@
   "backend": [
     {
       "url_pattern": "/api/v1/wikis/{id}",
+      "extra_config": {
+        "qos/circuit-breaker": {
+          "interval": 60,
+          "timeout": 10,
+          "max_errors": 5,
+          "log_status_change": true
+        }
+      },
+      "method": "GET",
+      
+      "sd": "dns",
+      "host": ["wiki-service.service.consul"],
+      
+      "disable_host_sanitize": true
+    }
+  ]
+},
+{
+  "endpoint": "/api/v1/wikis/code",
+  "input_query_strings":["*"],
+  "method": "GET",
+  "extra_config": {},
+  "output_encoding": "no-op",
+  "input_headers": ["Authorization", "Content-Type", "X-App-Language"],
+  "backend": [
+    {
+      "url_pattern": "/api/v1/wikis/code",
       "extra_config": {
         "qos/circuit-breaker": {
           "interval": 60,
