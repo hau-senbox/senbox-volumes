@@ -27,8 +27,12 @@ config:
     password: "senbox"
     db: 10
 
-  environment: production
+  # development,
+  environment: development
 
+  # #production
+  # environment: production
+  
   consul:
     host: "consul" 
     port: "8500"
